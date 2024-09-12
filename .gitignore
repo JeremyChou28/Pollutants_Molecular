@@ -1,4 +1,22 @@
-datasets/f/
-datasets/outputs/
+datasets/ChangjiangRiver_check/f_filter/
+datasets/ChangjiangRiver_check/library&librarymatch
+datasets/ChangjiangRiver_check/outputs
+
+datasets/Honey_neg_check/f_filter/
+datasets/Honey_neg_check/library&librarymatch
+datasets/Honey_neg_check/outputs
+
+datasets/Honey_pos_check/f_filter/
+datasets/Honey_pos_check/library&librarymatch
+datasets/Honey_pos_check/outputs
+
+datasets/HuangpujiangRiver_check/f_filter/
+datasets/HuangpujiangRiver_check/library&librarymatch
+datasets/HuangpujiangRiver_check/outputs
+
+datasets/Sediment_check/f_filter/
+datasets/Sediment_check/library&librarymatch
+datasets/Sediment_check/outputs
 
 src/MLP_train.ipynb
+src/dataprocess.ipynb
