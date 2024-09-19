@@ -9,8 +9,6 @@
 
 It's a pytorch implementation of pollutant molecular network prediction.
 
-## Catelog
-
 ```
 .
 └─Pollutants_Molecular
@@ -27,4 +25,13 @@ It's a pytorch implementation of pollutant molecular network prediction.
   ├─scripts                             运行脚本文件
   ├─src                                 核心代码源文件
   ├─utils                               工具函数源文件
+```
+
+## How to Run
+
+```
+pip install -r requirements.txt
+
+cd scripts
+bash run_mlp_changjiang.sh
 ```
