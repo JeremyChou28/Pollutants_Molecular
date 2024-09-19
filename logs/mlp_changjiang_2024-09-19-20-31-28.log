@@ -1,0 +1,352 @@
+dataset_path: ../datasets/ChangjiangRiver_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+The following files missing: [778, 895, 1388, 1590, 1836, 3195, 5021, 5881, 6487, 8121, 8989, 13399, 15457]
+Epoch [1], Loss:  102.0306
+
+Epoch [1], Validation Acc:  0.0000
+
+Epoch [2], Loss:  102.9803
+
+Epoch [2], Validation Acc:  0.0000
+
+Epoch [3], Loss:  105.1699
+
+Epoch [3], Validation Acc:  0.0000
+
+Epoch [4], Loss:  100.6142
+
+Epoch [4], Validation Acc:  0.0000
+
+Epoch [5], Loss:  104.8219
+
+Epoch [5], Validation Acc:  0.0000
+
+Epoch [6], Loss:  105.5002
+
+Epoch [6], Validation Acc:  0.0000
+
+Epoch [7], Loss:  104.1521
+
+Epoch [7], Validation Acc:  0.0000
+
+Epoch [8], Loss:  105.6496
+
+Epoch [8], Validation Acc:  0.0000
+
+Epoch [9], Loss:  100.5703
+
+Epoch [9], Validation Acc:  0.0000
+
+Epoch [10], Loss:  101.2461
+
+Epoch [10], Validation Acc:  0.0000
+
+Epoch [11], Loss:  107.5139
+
+Epoch [11], Validation Acc:  0.0000
+
+Epoch [12], Loss:  107.1126
+
+Epoch [12], Validation Acc:  0.0000
+
+Epoch [13], Loss:  99.5964
+
+Epoch [13], Validation Acc:  0.0000
+
+Epoch [14], Loss:  100.6637
+
+Epoch [14], Validation Acc:  0.0000
+
+Epoch [15], Loss:  103.5377
+
+Epoch [15], Validation Acc:  0.0000
+
+Epoch [16], Loss:  107.3315
+
+Epoch [16], Validation Acc:  0.0000
+
+Epoch [17], Loss:  110.8052
+
+Epoch [17], Validation Acc:  0.0000
+
+Epoch [18], Loss:  107.5371
+
+Epoch [18], Validation Acc:  0.0000
+
+Epoch [19], Loss:  107.8048
+
+Epoch [19], Validation Acc:  0.0000
+
+Epoch [20], Loss:  105.4587
+
+Epoch [20], Validation Acc:  0.0000
+
+Epoch [21], Loss:  112.3010
+
+Epoch [21], Validation Acc:  0.0000
+
+Epoch [22], Loss:  104.9370
+
+Epoch [22], Validation Acc:  0.0000
+
+Epoch [23], Loss:  111.5113
+
+Epoch [23], Validation Acc:  0.0000
+
+Epoch [24], Loss:  101.9262
+
+Epoch [24], Validation Acc:  0.0000
+
+Epoch [25], Loss:  105.6440
+
+Epoch [25], Validation Acc:  0.0000
+
+Epoch [26], Loss:  98.9636
+
+Epoch [26], Validation Acc:  0.0000
+
+Epoch [27], Loss:  108.8222
+
+Epoch [27], Validation Acc:  0.0000
+
+Epoch [28], Loss:  105.9408
+
+Epoch [28], Validation Acc:  0.0000
+
+Epoch [29], Loss:  103.0663
+
+Epoch [29], Validation Acc:  0.0000
+
+Epoch [30], Loss:  105.0555
+
+Epoch [30], Validation Acc:  0.0000
+
+Epoch [31], Loss:  103.5681
+
+Epoch [31], Validation Acc:  0.0000
+
+Epoch [32], Loss:  106.0068
+
+Epoch [32], Validation Acc:  0.0000
+
+Epoch [33], Loss:  103.3264
+
+Epoch [33], Validation Acc:  0.0000
+
+Epoch [34], Loss:  104.7858
+
+Epoch [34], Validation Acc:  0.0000
+
+Epoch [35], Loss:  100.6042
+
+Epoch [35], Validation Acc:  0.0000
+
+Epoch [36], Loss:  106.2282
+
+Epoch [36], Validation Acc:  0.0000
+
+Epoch [37], Loss:  108.9081
+
+Epoch [37], Validation Acc:  0.0000
+
+Epoch [38], Loss:  103.6234
+
+Epoch [38], Validation Acc:  0.0000
+
+Epoch [39], Loss:  100.9316
+
+Epoch [39], Validation Acc:  0.0000
+
+Epoch [40], Loss:  103.2469
+
+Epoch [40], Validation Acc:  0.0000
+
+Epoch [41], Loss:  101.9725
+
+Epoch [41], Validation Acc:  0.0000
+
+Epoch [42], Loss:  103.8164
+
+Epoch [42], Validation Acc:  0.0000
+
+Epoch [43], Loss:  104.5937
+
+Epoch [43], Validation Acc:  0.0000
+
+Epoch [44], Loss:  104.1606
+
+Epoch [44], Validation Acc:  0.0000
+
+Epoch [45], Loss:  103.5960
+
+Epoch [45], Validation Acc:  0.0000
+
+Epoch [46], Loss:  99.5765
+
+Epoch [46], Validation Acc:  0.0000
+
+Epoch [47], Loss:  103.7470
+
+Epoch [47], Validation Acc:  0.0000
+
+Epoch [48], Loss:  104.8852
+
+Epoch [48], Validation Acc:  0.0000
+
+Epoch [49], Loss:  101.2222
+
+Epoch [49], Validation Acc:  0.0000
+
+Epoch [50], Loss:  108.7410
+
+Epoch [50], Validation Acc:  0.0000
+
+Epoch [51], Loss:  105.1855
+
+Epoch [51], Validation Acc:  0.0000
+
+Epoch [52], Loss:  105.4609
+
+Epoch [52], Validation Acc:  0.0000
+
+Epoch [53], Loss:  102.8244
+
+Epoch [53], Validation Acc:  0.0000
+
+Epoch [54], Loss:  104.7132
+
+Epoch [54], Validation Acc:  0.0000
+
+Epoch [55], Loss:  104.7996
+
+Epoch [55], Validation Acc:  0.0000
+
+Epoch [56], Loss:  107.7062
+
+Epoch [56], Validation Acc:  0.0000
+
+Epoch [57], Loss:  106.3931
+
+Epoch [57], Validation Acc:  0.0000
+
+Epoch [58], Loss:  106.6380
+
+Epoch [58], Validation Acc:  0.0000
+
+Epoch [59], Loss:  97.4063
+
+Epoch [59], Validation Acc:  0.0000
+
+Epoch [60], Loss:  106.2746
+
+Epoch [60], Validation Acc:  0.0000
+
+Epoch [61], Loss:  102.3538
+
+Epoch [61], Validation Acc:  0.0000
+
+Epoch [62], Loss:  100.2579
+
+Epoch [62], Validation Acc:  0.0000
+
+Epoch [63], Loss:  96.8668
+
+Epoch [63], Validation Acc:  0.0000
+
+Epoch [64], Loss:  102.6817
+
+Epoch [64], Validation Acc:  0.0000
+
+Epoch [65], Loss:  105.4334
+
+Epoch [65], Validation Acc:  0.0000
+
+Epoch [66], Loss:  108.8496
+
+Epoch [66], Validation Acc:  0.0000
+
+Epoch [67], Loss:  101.6156
+
+Epoch [67], Validation Acc:  0.0000
+
+Epoch [68], Loss:  98.4835
+
+Epoch [68], Validation Acc:  0.0000
+
+Epoch [69], Loss:  107.4260
+
+Epoch [69], Validation Acc:  0.0000
+
+Epoch [70], Loss:  107.9346
+
+Epoch [70], Validation Acc:  0.0000
+
+Epoch [71], Loss:  101.5318
+
+Epoch [71], Validation Acc:  0.0000
+
+Epoch [72], Loss:  103.9163
+
+Epoch [72], Validation Acc:  0.0000
+
+Epoch [73], Loss:  102.9271
+
+Epoch [73], Validation Acc:  0.0000
+
+Epoch [74], Loss:  101.8484
+
+Epoch [74], Validation Acc:  0.0000
+
+Epoch [75], Loss:  99.6280
+
+Epoch [75], Validation Acc:  0.0000
+
+Epoch [76], Loss:  108.3575
+
+Epoch [76], Validation Acc:  0.0000
+
+Epoch [77], Loss:  105.3092
+
+Epoch [77], Validation Acc:  0.0000
+
+Epoch [78], Loss:  110.4116
+
+Epoch [78], Validation Acc:  0.0000
+
+Epoch [79], Loss:  105.7841
+
+Epoch [79], Validation Acc:  0.0000
+
+Epoch [80], Loss:  105.7737
+
+Epoch [80], Validation Acc:  0.0000
+
+Epoch [81], Loss:  106.7560
+
+Epoch [81], Validation Acc:  0.0000
+
+Epoch [82], Loss:  98.0679
+
+Epoch [82], Validation Acc:  0.0000
+
+Epoch [83], Loss:  109.9298
+
+Epoch [83], Validation Acc:  0.0000
+
+Epoch [84], Loss:  103.2149
+
+Epoch [84], Validation Acc:  0.0000
+
+Epoch [85], Loss:  108.5092
+
+Epoch [85], Validation Acc:  0.0000
+
+Epoch [86], Loss:  102.0043
+
+Epoch [86], Validation Acc:  0.0000
+

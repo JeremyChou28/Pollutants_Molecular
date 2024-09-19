@@ -19,28 +19,37 @@ from sklearn.model_selection import train_test_split
 
 # rebuild the code later
 
+dataset_path = "../datasets/ChangjiangRiver_check/"
 # basic data preprocessing
-allNodes = pd.read_csv('nodes_data.csv')
-correlation = pd.read_csv('cor.csv')
-library_m = pd.read_csv('m.csv')
-edges = pd.read_csv('edges.csv')
-NlibraryNodes = allNodes[~allNodes['ID'].isin(library_m['ID'])].reset_index(drop=True)
-libraryNodes = allNodes[allNodes['ID'].isin(library_m['ID'])].reset_index(drop=True)
+allNodes = pd.read_csv(dataset_path + "nodes_data.csv")
+correlation = pd.read_csv(dataset_path + "cor.csv")
+library_m = pd.read_csv(dataset_path + "m.csv")
+edges = pd.read_csv(dataset_path + "edges.csv")
+NlibraryNodes = allNodes[~allNodes["ID"].isin(library_m["ID"])].reset_index(drop=True)
+libraryNodes = allNodes[allNodes["ID"].isin(library_m["ID"])].reset_index(drop=True)
 libraryNodes = libraryNodes.iloc[::-1]
 libraryNodes = libraryNodes.reset_index(drop=True)
 # connected library nodes
-connected_library_nodes = edges[edges['Library_node'].isin(libraryNodes['ID']) & edges['Connected_node'].isin(libraryNodes['ID'])].reset_index(drop=True)
+connected_library_nodes = edges[
+    edges["Library_node"].isin(libraryNodes["ID"])
+    & edges["Connected_node"].isin(libraryNodes["ID"])
+].reset_index(drop=True)
 
 data = connected_library_nodes
 
 # renaming
-library_nodes = data[['Library_node', 'SMILES']].rename(columns={'Library_node': 'ID', 'SMILES': 'SMILES'})
-connected_nodes = data[['Connected_node', 'Expected_SMILES']].rename(columns={'Connected_node': 'ID', 'Expected_SMILES': 'SMILES'})
+library_nodes = data[["Library_node", "SMILES"]].rename(
+    columns={"Library_node": "ID", "SMILES": "SMILES"}
+)
+connected_nodes = data[["Connected_node", "Expected_SMILES"]].rename(
+    columns={"Connected_node": "ID", "Expected_SMILES": "SMILES"}
+)
 
 # union all
 merged_nodes = pd.concat([library_nodes, connected_nodes]).drop_duplicates()
 
-folder_path = './f_filter'
+folder_path = dataset_path + "/f_filter"
+
 
 # check the existence of the files in f_filter
 def check_files_exist(df, column_name, folder_path):
@@ -51,15 +60,15 @@ def check_files_exist(df, column_name, folder_path):
             missing_files.append(item)
     return missing_files
 
-missing_files = check_files_exist(merged_nodes, 'ID', folder_path)
+
+missing_files = check_files_exist(merged_nodes, "ID", folder_path)
 
 if len(missing_files) == 0:
     print("所有文件都存在")
 else:
     print(f"以下文件缺失: {missing_files}")
 
-final = merged_nodes[~merged_nodes['ID'].isin(missing_files)].reset_index(drop=True)
-
+final = merged_nodes[~merged_nodes["ID"].isin(missing_files)].reset_index(drop=True)
 
 
 # load the csv files correspond to the id of the nodes
@@ -83,7 +92,7 @@ def calcTanimotoCoef(smile, smileSet):
     smile_fp = smiles2Fingerprint(smile)
     if smile_fp is None:
         return [0] * len(smileSet)
-    
+
     tanimoto_scores = []
     for s in smileSet:
         s_fp = smiles2Fingerprint(s)
@@ -176,7 +185,7 @@ class ScoringModel(nn.Module):
 
         self.nodeFolder = nodeFolder
         self.connectedNodeFolder = connectedNodeFolder
-    
+
     def forward(
         self, nodeId, connectedNodeIds, edges, libraryNodes, library_m, correlation
     ):
@@ -194,11 +203,11 @@ class ScoringModel(nn.Module):
         tani = torch.tensor(tani_list, dtype=torch.float32)
 
         m = calcM(nodeId, edges, libraryNodes, library_m)
-    
+
         # print(f"tani: {tani}")
         # print(f"m: {m}")
         # print(f"m * tani: {m * tani}")
-    
+
         cors = torch.tensor(
             getCorrelation(nodeId, connectedNodeIds, correlation), dtype=torch.float32
         )
@@ -207,8 +216,6 @@ class ScoringModel(nn.Module):
         s = self.alpha * f + (1 - self.alpha) * torch.sum(sig)
 
         return labels, s
-
-
 
 
 def train_and_predict(
@@ -282,13 +289,13 @@ def train_and_predict(
                 predicted_label = labels.iloc[predicted_label_index]
 
                 # print(
-                    # f"Node ID: {nodeId}, Labels: {predicted_label}, Ground Truth: {smiles}"
+                # f"Node ID: {nodeId}, Labels: {predicted_label}, Ground Truth: {smiles}"
                 # )
                 if predicted_label == smiles:
                     validation_correct += 1
 
         validation_acc = validation_correct / len(validation_data)
-        # if (epoch + 1) % 10 == 0: 
+        # if (epoch + 1) % 10 == 0:
         print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
 
     # Testing on test data
@@ -311,13 +318,15 @@ def train_and_predict(
             s__probs = F.softmax(s__, dim=0)
             predicted_label_index = s__probs.argmax().item()
             predicted_label = labels.iloc[predicted_label_index]
-            
+
             # write in the file
             with open("./test_exact.txt", "a") as f:
-                f.write(f"node ID: {nodeId}, predicted SMILE:{predicted_label}, ground truth SMILE: {smiles}")
+                f.write(
+                    f"node ID: {nodeId}, predicted SMILE:{predicted_label}, ground truth SMILE: {smiles}"
+                )
                 f.write("\n")
                 f.close
-            
+
             if predicted_label == smiles:
                 test_correct += 1
 
@@ -326,7 +335,7 @@ def train_and_predict(
     print(f"Final alpha: {model.alpha.item(): .4f}")
     print(f"Final beta: {model.beta.item(): .4f}")
     print(f"Final gamma: {model.gamma.item(): .4f}")
-    
+
     with open("./test_exact.txt", "a") as f:
         f.write(f"Test Acc: {test_acc: .4f} \n")
         f.write(f"Final alpha: {model.alpha.item(): .4f} \n")
