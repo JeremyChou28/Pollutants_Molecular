@@ -1,0 +1,15 @@
+dataset_path: ../datasets/ChangjiangRiver_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+The following files missing: [778, 895, 1388, 1590, 1836, 3195, 5021, 5881, 6487, 8121, 8989, 13399, 15457]
+Epoch [1], Loss:  98.4556
+
+Epoch [1], Validation Acc:  0.2000
+
+Epoch [2], Loss:  101.2602
+
