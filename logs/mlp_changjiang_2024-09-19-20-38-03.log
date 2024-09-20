@@ -379,3 +379,37 @@ Epoch [93], Loss:  102.6878
 
 Epoch [93], Validation Acc:  0.0000
 
+Epoch [94], Loss:  108.7867
+
+Epoch [94], Validation Acc:  0.0000
+
+Epoch [95], Loss:  97.4028
+
+Epoch [95], Validation Acc:  0.0000
+
+Epoch [96], Loss:  105.3136
+
+Epoch [96], Validation Acc:  0.0000
+
+Epoch [97], Loss:  100.3293
+
+Epoch [97], Validation Acc:  0.0000
+
+Epoch [98], Loss:  104.2521
+
+Epoch [98], Validation Acc:  0.0000
+
+Epoch [99], Loss:  106.5494
+
+Epoch [99], Validation Acc:  0.0000
+
+Epoch [100], Loss:  97.6019
+
+Epoch [100], Validation Acc:  0.0000
+
+Testing on test data...
+Test Acc:  0.0238
+Final alpha:  1.2081
+Final beta: -9.0095
+Final gamma:  0.6138
+Spend time: 5733.237350702286

@@ -402,3 +402,13 @@ Epoch [99], Loss:  105.4326
 
 Epoch [99], Validation Acc:  0.0000
 
+Epoch [100], Loss:  105.1724
+
+Epoch [100], Validation Acc:  0.0000
+
+Testing on test data...
+Test Acc:  0.0238
+Final alpha:  1.1968
+Final beta: -8.9944
+Final gamma:  0.6018
+Spend time: 5848.693071365356

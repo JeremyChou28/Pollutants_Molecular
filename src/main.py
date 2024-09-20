@@ -328,6 +328,7 @@ def main(args):
             )
 
     # Testing
+    model.load_state_dict(torch.load(os.path.join(checkpoint_path, "best_model.pth")))
     print("Testing on test data...")
     test_correct = 0
     with torch.no_grad():

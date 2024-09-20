@@ -349,3 +349,67 @@ Epoch [85], Validation Acc:  0.0000
 
 Epoch [86], Loss:  54.0312
 
+Epoch [86], Validation Acc:  0.0000
+
+Epoch [87], Loss:  54.4954
+
+Epoch [87], Validation Acc:  0.0000
+
+Epoch [88], Loss:  52.8338
+
+Epoch [88], Validation Acc:  0.0000
+
+Epoch [89], Loss:  53.0406
+
+Epoch [89], Validation Acc:  0.0000
+
+Epoch [90], Loss:  54.9161
+
+Epoch [90], Validation Acc:  0.0000
+
+Epoch [91], Loss:  53.0288
+
+Epoch [91], Validation Acc:  0.0000
+
+Epoch [92], Loss:  54.9087
+
+Epoch [92], Validation Acc:  0.0000
+
+Epoch [93], Loss:  53.3456
+
+Epoch [93], Validation Acc:  0.0000
+
+Epoch [94], Loss:  55.0890
+
+Epoch [94], Validation Acc:  0.0000
+
+Epoch [95], Loss:  54.2254
+
+Epoch [95], Validation Acc:  0.0000
+
+Epoch [96], Loss:  56.1055
+
+Epoch [96], Validation Acc:  0.0000
+
+Epoch [97], Loss:  54.4339
+
+Epoch [97], Validation Acc:  0.0000
+
+Epoch [98], Loss:  55.4340
+
+Epoch [98], Validation Acc:  0.0000
+
+Epoch [99], Loss:  53.2980
+
+Epoch [99], Validation Acc:  0.0000
+
+Epoch [100], Loss:  53.5545
+
+Epoch [100], Validation Acc:  0.0000
+
+Testing on test data...
+Test Acc:  0.0000
+Final alpha:  0.8310
+Final beta: -8.9781
+Final gamma:  0.5771
+Spend time: 5511.197005033493
