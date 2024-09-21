@@ -9,7 +9,7 @@
 current_datetime=$(date +'%Y-%m-%d-%H-%M-%S')
 echo $current_datetime
 
-dataset_path="../datasets/ChangjiangRiver_check"
+dataset_path="../datasets/Sediment_check"
 result_path="../results"
 checkpoint_path="../checkpoints"
 train_sample_ratio=0.8
@@ -17,10 +17,9 @@ learning_rate=0.001
 epochs=100
 device="cuda:0"
 seed=1
-situation="mlp_changjiang, "
+situation="mlp_Sediment, "
 corSituation="with cor insider sigmoid function, "
 peakPickNum=0
-
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \
@@ -33,4 +32,4 @@ nohup python -u ../src/main.py \
     --seed $seed \
     --situation $situation \
     --corSituation $corSituation \
-    --peakPickNum $peakPickNum > ../logs/mlp_changjiang_${current_datetime}.log 2>&1 &
+    --peakPickNum $peakPickNum > ../logs/mlp_sediment_${current_datetime}.log 2>&1 &

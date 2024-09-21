@@ -241,6 +241,13 @@ def main(args):
     # Define model and optimizer
     model = ScoringModel().to(device)
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    
+    # bring necessary information
+    peak_pick_num = args.peakPickNum
+    situation = args.situation
+    cor_situation = args.corSituation
+    test_val_situation = f"test and validation with peak pick number to be {peak_pick_num}"
+    print(situation + cor_situation + test_val_situation)
 
     best_val_acc = 0
     # Training

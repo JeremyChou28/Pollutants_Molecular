@@ -17,6 +17,9 @@ learning_rate=0.001
 epochs=100
 device="cuda:0"
 seed=1
+situation="mlp_Huangpujiang, "
+corSituation="with cor insider sigmoid function, "
+peakPickNum=0
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \
@@ -26,4 +29,7 @@ nohup python -u ../src/main.py \
     --learning_rate $learning_rate \
     --epochs $epochs \
     --device $device \
-    --seed $seed > ../logs/mlp_huangpujiang_${current_datetime}.log 2>&1 &
+    --seed $seed \
+    --situation $situation \
+    --corSituation $corSituation \
+    --peakPickNum $peakPickNum > ../logs/mlp_huangpujiang_${current_datetime}.log 2>&1 &
