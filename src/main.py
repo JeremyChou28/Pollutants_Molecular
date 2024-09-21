@@ -243,9 +243,9 @@ def main(args):
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     
     # bring necessary information
-    peak_pick_num = args.peakPickNum
+    peak_pick_num = args.peak_pick_num
     situation = args.situation
-    cor_situation = args.corSituation
+    cor_situation = args.cor_situation
     test_val_situation = f"test and validation with peak pick number to be {peak_pick_num}"
     print(situation + cor_situation + test_val_situation)
 
@@ -365,8 +365,8 @@ def main(args):
             '''
             
             top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
-            top_n_indices = top_n_indices.numpy()
-            top_n_smiles = labels.iloc[top_n_indices]['SMILES'].tolist()
+            top_n_indices = top_n_indices.cpu().numpy()
+            top_n_smiles = labels.iloc[top_n_indices].tolist()
 
             # write in the file 
             with open(result_path + f"/{args.situation}_test_top_{peak_pick_num}.txt", "a") as f:
@@ -402,6 +402,16 @@ def main(args):
     print(f"Final alpha: {model.alpha.item(): .4f}")
     print(f"Final beta: {model.beta.item(): .4f}")
     print(f"Final gamma: {model.gamma.item(): .4f}")
+    with open(result_path + f"/{args.situation}_test_acc_exact.txt", "a") as f:
+        f.write(f"Test Acc: {test_acc: .4f}")
+        f.write("\n")
+        f.write(f"Final alpha: {model.alpha.item(): .4f}")
+        f.write("\n")
+        f.write(f"Final beta: {model.beta.item(): .4f}")
+        f.write("\n")
+        f.write(f"Final gamma: {model.gamma.item(): .4f}")
+        f.write("\n")
+        f.close()
 
 
 if __name__ == "__main__":
@@ -461,12 +471,12 @@ if __name__ == "__main__":
         default="mlp_combo",
     )
     parser.add_argument(
-        "--corSituation", 
+        "--cor_situation", 
         type=str,
         default="no correlation",
     )
     parser.add_argument(
-        "--peakPickNum",
+        "--peak_pick_num",
         type=int,
         default=0,
     )
