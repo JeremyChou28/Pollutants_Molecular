@@ -10,8 +10,8 @@ current_datetime=$(date +'%Y-%m-%d-%H-%M-%S')
 echo $current_datetime
 
 dataset_path="../datasets/ChangjiangRiver_check"
-result_path="../results"
-checkpoint_path="../checkpoints"
+result_path="../results/changjiang"
+checkpoint_path="../checkpoints/changjiang"
 train_sample_ratio=0.8
 learning_rate=0.001
 epochs=100

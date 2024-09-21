@@ -10,8 +10,8 @@ current_datetime=$(date +'%Y-%m-%d-%H-%M-%S')
 echo $current_datetime
 
 dataset_path="../datasets/combo"
-result_path="../results"
-checkpoint_path="../checkpoints"
+result_path="../results/combo"
+checkpoint_path="../checkpoints/combo"
 train_sample_ratio=0.8
 learning_rate=0.001
 epochs=100

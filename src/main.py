@@ -219,6 +219,11 @@ def main(args):
     learning_rate = args.learning_rate
     epochs = args.epochs
 
+    if not os.path.exists(result_path):
+        os.makedirs(result_path)
+    if not os.path.exists(checkpoint_path):
+        os.makedirs(checkpoint_path)
+
     # set seed
     seed_torch(args.seed)
 
