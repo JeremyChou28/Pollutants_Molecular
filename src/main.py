@@ -360,7 +360,8 @@ def main(args):
             predicted_label = labels.iloc[predicted_label_index]
 
             # write in the file
-            with open(result_path + "/test_exact.txt", "a") as f:
+            with open(result_path + f"/{args.situation}_test_exact.txt", "a") as f:
+                f.write(situation + cor_situation + test_val_situation)
                 f.write(
                     f"node ID: {nodeId}, predicted SMILE:{predicted_label}, ground truth SMILE: {smiles}"
                 )
