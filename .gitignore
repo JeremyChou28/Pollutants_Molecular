@@ -20,5 +20,8 @@ datasets/Sediment_check/outputs
 
 datasets/combo/f_filter/
 
+models/__pycache__/
+utils/__pycache__/
+
 src/MLP_train.ipynb
 src/dataprocess.ipynb
