@@ -18,5 +18,7 @@ datasets/Sediment_check/f_filter/
 datasets/Sediment_check/library&librarymatch
 datasets/Sediment_check/outputs
 
+datasets/combo/f_filter/
+
 src/MLP_train.ipynb
 src/dataprocess.ipynb
