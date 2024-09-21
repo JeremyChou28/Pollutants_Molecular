@@ -403,6 +403,7 @@ def main(args):
     print(f"Final beta: {model.beta.item(): .4f}")
     print(f"Final gamma: {model.gamma.item(): .4f}")
     with open(result_path + f"/{args.situation}_test_acc_exact.txt", "a") as f:
+        f.write(situation + cor_situation + test_val_situation)
         f.write(f"Test Acc: {test_acc: .4f}")
         f.write("\n")
         f.write(f"Final alpha: {model.alpha.item(): .4f}")
