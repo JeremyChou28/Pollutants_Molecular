@@ -1,0 +1,129 @@
+dataset_path: ../datasets/ChangjiangRiver_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+situation: mlp_changjiang,
+cor_situation: without_cor,
+peak_pick_num: 5
+The following files missing: [778, 895, 1388, 1590, 1836, 3195, 5021, 5881, 6487, 8121, 8989, 13399, 15457]
+mlp_changjiang,without_cor,test and validation with peak pick number to be 5
+Epoch [1], Loss:  91.0133
+
+Epoch [1], Validation Acc:  0.6000
+
+Epoch [2], Loss:  91.9631
+
+Epoch [2], Validation Acc:  0.4000
+
+Epoch [3], Loss:  94.1858
+
+Epoch [3], Validation Acc:  0.8000
+
+Epoch [4], Loss:  88.0809
+
+Epoch [4], Validation Acc:  0.6000
+
+Epoch [5], Loss:  85.0148
+
+Epoch [5], Validation Acc:  0.8000
+
+Epoch [6], Loss:  93.3157
+
+Epoch [6], Validation Acc:  0.6000
+
+Epoch [7], Loss:  88.2386
+
+Epoch [7], Validation Acc:  0.8000
+
+Epoch [8], Loss:  85.1904
+
+Epoch [8], Validation Acc:  0.8000
+
+Epoch [9], Loss:  81.9156
+
+Epoch [9], Validation Acc:  0.6000
+
+Epoch [10], Loss:  89.0441
+
+Epoch [10], Validation Acc:  0.6000
+
+Epoch [11], Loss:  92.9397
+
+Epoch [11], Validation Acc:  0.8000
+
+Epoch [12], Loss:  97.3076
+
+Epoch [12], Validation Acc:  0.6000
+
+Epoch [13], Loss:  87.7556
+
+Epoch [13], Validation Acc:  0.4000
+
+Epoch [14], Loss:  87.4265
+
+Epoch [14], Validation Acc:  0.4000
+
+Epoch [15], Loss:  90.0211
+
+Epoch [15], Validation Acc:  0.8000
+
+Epoch [16], Loss:  89.3024
+
+Epoch [16], Validation Acc:  0.6000
+
+Epoch [17], Loss:  82.7826
+
+Epoch [17], Validation Acc:  0.4000
+
+Epoch [18], Loss:  82.6710
+
+Epoch [18], Validation Acc:  0.6000
+
+Epoch [19], Loss:  89.1658
+
+Epoch [19], Validation Acc:  0.6000
+
+Epoch [20], Loss:  84.9042
+
+Epoch [20], Validation Acc:  0.6000
+
+Epoch [21], Loss:  85.1785
+
+Epoch [21], Validation Acc:  0.6000
+
+Epoch [22], Loss:  84.8407
+
+Epoch [22], Validation Acc:  1.0000
+
+Epoch [23], Loss:  82.8410
+
+Epoch [23], Validation Acc:  0.6000
+
+Epoch [24], Loss:  88.5712
+
+Epoch [24], Validation Acc:  0.6000
+
+Epoch [25], Loss:  89.0407
+
+Epoch [25], Validation Acc:  0.4000
+
+Epoch [26], Loss:  90.2469
+
+Epoch [26], Validation Acc:  0.8000
+
+Epoch [27], Loss:  83.0676
+
+Epoch [27], Validation Acc:  0.2000
+
+Epoch [28], Loss:  85.7447
+
+Epoch [28], Validation Acc:  0.4000
+
+Epoch [29], Loss:  83.0732
+
+Epoch [29], Validation Acc:  0.4000
+

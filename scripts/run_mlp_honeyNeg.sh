@@ -14,11 +14,11 @@ result_path="../results"
 checkpoint_path="../checkpoints"
 train_sample_ratio=0.8
 learning_rate=0.001
-epochs=1
+epochs=100
 device="cuda:0"
 seed=1
 situation="mlp_HoneyNeg, "
-cor_situation="without cor, "
+cor_situation="with_cor_inside_sig, "
 peak_pick_num=10
 
 nohup python -u ../src/main.py \

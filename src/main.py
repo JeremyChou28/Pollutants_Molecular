@@ -474,7 +474,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--cor_situation", 
         type=str,
-        default="no correlation",
+        default="no_correlation",
     )
     parser.add_argument(
         "--peak_pick_num",

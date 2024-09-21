@@ -28,7 +28,6 @@ class ScoringModel(nn.Module):
         sig = torch.sigmoid(-self.beta * (m * tani - self.gamma))
         s = self.alpha * f + (1 - self.alpha) * torch.sum(sig, dim=1)
         
-        
         '''
         # situation of correlation outside the sigmoid function
         sig = torch.sigmoid(-self.beta * (m * tani - self.gamma))

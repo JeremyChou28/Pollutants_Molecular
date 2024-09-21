@@ -1,0 +1,33 @@
+dataset_path: ../datasets/HuangpujiangRiver_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+situation: mlp_Huangpujiang,
+cor_situation: with_cor_outside_the_sigmoid_function,
+peak_pick_num: 5
+The following files missing: [732, 1687, 1825, 2538, 4304, 4962, 7578, 10013]
+mlp_Huangpujiang,with_cor_outside_the_sigmoid_function,test and validation with peak pick number to be 5
+Epoch [1], Loss:  53.6405
+
+Epoch [1], Validation Acc:  0.0000
+
+Epoch [2], Loss:  52.8675
+
+Epoch [2], Validation Acc:  0.5000
+
+Epoch [3], Loss:  52.9095
+
+Epoch [3], Validation Acc:  0.5000
+
+Epoch [4], Loss:  52.8390
+
+Epoch [4], Validation Acc:  0.5000
+
+Epoch [5], Loss:  54.4064
+
+Epoch [5], Validation Acc:  0.5000
+

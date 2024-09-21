@@ -1,0 +1,33 @@
+dataset_path: ../datasets/Honey_pos_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+situation: mlp_HoneyPos,
+cor_situation: with_cor_inside_the_sigmoid_function,
+peak_pick_num: 5
+The following files missing: [2023, 3231, 3349, 3358, 3688, 4173, 5607, 14129, 18276, 10320]
+mlp_HoneyPos,with_cor_inside_the_sigmoid_function,test and validation with peak pick number to be 5
+Epoch [1], Loss:  76.2456
+
+Epoch [1], Validation Acc:  0.6667
+
+Epoch [2], Loss:  74.7418
+
+Epoch [2], Validation Acc:  0.3333
+
+Epoch [3], Loss:  72.4827
+
+Epoch [3], Validation Acc:  0.3333
+
+Epoch [4], Loss:  78.6122
+
+Epoch [4], Validation Acc:  1.0000
+
+Epoch [5], Loss:  71.4871
+
+Epoch [5], Validation Acc:  0.6667
+

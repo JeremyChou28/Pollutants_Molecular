@@ -9,7 +9,7 @@
 current_datetime=$(date +'%Y-%m-%d-%H-%M-%S')
 echo $current_datetime
 
-dataset_path="../datasets/combo_check"
+dataset_path="../datasets/combo"
 result_path="../results"
 checkpoint_path="../checkpoints"
 train_sample_ratio=0.8
@@ -18,8 +18,9 @@ epochs=100
 device="cuda:0"
 seed=1
 situation="mlp_Combo, "
-cor_situation="with cor insider sigmoid function, "
-peak_pick_num=0
+# cor_situation="with_cor_outside_the_sigmoid_function, "
+cor_situation="without_cor"
+peak_pick_num=10
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \

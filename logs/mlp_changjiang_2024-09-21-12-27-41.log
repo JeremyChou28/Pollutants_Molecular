@@ -1,0 +1,97 @@
+dataset_path: ../datasets/ChangjiangRiver_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+situation: mlp_changjiang,
+cor_situation: with_cor_inside_sig,
+peak_pick_num: 5
+The following files missing: [778, 895, 1388, 1590, 1836, 3195, 5021, 5881, 6487, 8121, 8989, 13399, 15457]
+mlp_changjiang,with_cor_inside_sig,test and validation with peak pick number to be 5
+Epoch [1], Loss:  98.8012
+
+Epoch [1], Validation Acc:  0.2000
+
+Epoch [2], Loss:  101.2906
+
+Epoch [2], Validation Acc:  0.4000
+
+Epoch [3], Loss:  102.7542
+
+Epoch [3], Validation Acc:  0.2000
+
+Epoch [4], Loss:  96.7370
+
+Epoch [4], Validation Acc:  0.2000
+
+Epoch [5], Loss:  95.6270
+
+Epoch [5], Validation Acc:  0.4000
+
+Epoch [6], Loss:  100.8733
+
+Epoch [6], Validation Acc:  0.0000
+
+Epoch [7], Loss:  99.6174
+
+Epoch [7], Validation Acc:  0.6000
+
+Epoch [8], Loss:  94.5110
+
+Epoch [8], Validation Acc:  0.2000
+
+Epoch [9], Loss:  94.1351
+
+Epoch [9], Validation Acc:  0.2000
+
+Epoch [10], Loss:  99.3074
+
+Epoch [10], Validation Acc:  0.0000
+
+Epoch [11], Loss:  106.1165
+
+Epoch [11], Validation Acc:  0.6000
+
+Epoch [12], Loss:  109.6241
+
+Epoch [12], Validation Acc:  0.4000
+
+Epoch [13], Loss:  99.0850
+
+Epoch [13], Validation Acc:  0.4000
+
+Epoch [14], Loss:  99.9466
+
+Epoch [14], Validation Acc:  0.4000
+
+Epoch [15], Loss:  102.0043
+
+Epoch [15], Validation Acc:  0.4000
+
+Epoch [16], Loss:  100.6145
+
+Epoch [16], Validation Acc:  0.0000
+
+Epoch [17], Loss:  95.9892
+
+Epoch [17], Validation Acc:  0.0000
+
+Epoch [18], Loss:  98.0766
+
+Epoch [18], Validation Acc:  0.4000
+
+Epoch [19], Loss:  103.3784
+
+Epoch [19], Validation Acc:  0.6000
+
+Epoch [20], Loss:  96.8333
+
+Epoch [20], Validation Acc:  0.2000
+
+Epoch [21], Loss:  99.3123
+
+Epoch [21], Validation Acc:  0.2000
+
