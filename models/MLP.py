@@ -22,9 +22,22 @@ class ScoringModel(nn.Module):
     def forward(self, m, f, tani, cors):
         # input: m,f,tani
         # output: s
-
+        # comment things out to choose the one to run and test
+        
+        # situation of no correlation
+        sig = torch.sigmoid(-self.beta * (m * tani - self.gamma))
+        s = self.alpha * f + (1 - self.alpha) * torch.sum(sig, dim=1)
+        
+        
+        '''
+        # situation of correlation outside the sigmoid function
         sig = torch.sigmoid(-self.beta * (m * tani - self.gamma))
         s = self.alpha * f + (1 - self.alpha) * torch.sum(torch.abs(cors) * sig, dim=1)
-        # s = self.alpha * f + (1 - self.alpha) * torch.sum(sig)
-
+        '''
+        
+        '''
+        # situation of correlation inside the sigmoid function
+        sig = torch.sigmoid(-self.beta * (torch.abs(cors) * m * tani - self.gamma))
+        s = self.alpha * f + (1 - self.alpha) * torch.sum(sig, dim=1)
+        '''
         return s
