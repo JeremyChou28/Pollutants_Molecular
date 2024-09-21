@@ -7,7 +7,7 @@
 
 # Pollutants_Molecular
 
-It's a pytorch implementation of pollutant molecular network prediction.
+It's a pytorch implementation of pollutant molecular network predictions.
 
 ```
 .
