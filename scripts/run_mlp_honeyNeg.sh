@@ -14,12 +14,12 @@ result_path="../results"
 checkpoint_path="../checkpoints"
 train_sample_ratio=0.8
 learning_rate=0.001
-epochs=100
+epochs=1
 device="cuda:0"
 seed=1
 situation="mlp_HoneyNeg, "
-corSituation="with cor insider sigmoid function, "
-peakPickNum=0
+corSituation="without cor, "
+peakPickNum=10
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \
