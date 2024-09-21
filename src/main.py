@@ -339,6 +339,9 @@ def main(args):
     print("Testing on test data...")
     test_correct = 0
     with torch.no_grad():
+        with open(result_path + f"/{args.situation}_test_exact.txt", "a") as f:
+            f.write(situation + cor_situation + test_val_situation)
+            f.close
         for i, row in test_df.iterrows():
             nodeId = row["ID"]
             smiles = row["SMILES"]
@@ -356,18 +359,37 @@ def main(args):
             s = model(m, f, tani, cors)
             s_probs = F.softmax(s, dim=0)
 
+            '''
+            # choose whether to use different choosing strategy
+            top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
+            top_n_indices = top_n_indices.numpy()
+            top_n_smiles = labels.iloc[top_n_indices]['SMILES'].tolist()
+
+            # write in the file 
+            with open(result_path + f"/{args.situation}_test_top_{peak_pick_num}.txt", "a") as f:
+                f.write(f"node ID: {nodeId}, ground truth SMILE: {smiles}")
+                f.write("\n")
+                f.write(f"top {peak_pick_num} test cadidates: \n")
+                for idx, value, prob in zip(top_n_indices, top_n_smiles, top_n_probs):
+                    f.write(f"smiles: {value}, probs: {prob.item(): .5f}")
+                    f.write("\n")
+                f.close()
+                f.close
+            if smiles in top_n_smiles:
+                test_correct += 1
+            else:
+                continue
+            '''
+            
             predicted_label_index = s_probs.argmax().item()
             predicted_label = labels.iloc[predicted_label_index]
-
             # write in the file
             with open(result_path + f"/{args.situation}_test_exact.txt", "a") as f:
-                f.write(situation + cor_situation + test_val_situation)
                 f.write(
                     f"node ID: {nodeId}, predicted SMILE:{predicted_label}, ground truth SMILE: {smiles}"
                 )
                 f.write("\n")
                 f.close
-
             if predicted_label == smiles:
                 test_correct += 1
 
