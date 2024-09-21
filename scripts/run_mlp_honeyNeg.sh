@@ -18,8 +18,8 @@ epochs=1
 device="cuda:0"
 seed=1
 situation="mlp_HoneyNeg, "
-corSituation="without cor, "
-peakPickNum=10
+cor_situation="without cor, "
+peak_pick_num=10
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \
@@ -31,5 +31,5 @@ nohup python -u ../src/main.py \
     --device $device \
     --seed $seed \
     --situation $situation \
-    --corSituation $corSituation \
-    --peakPickNum $peakPickNum > ../logs/mlp_honeyneg_${current_datetime}.log 2>&1 &
+    --cor_situation $cor_situation \
+    --peak_pick_num $peak_pick_num > ../logs/mlp_honeyneg_${current_datetime}.log 2>&1 &

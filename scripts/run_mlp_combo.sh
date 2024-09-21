@@ -18,8 +18,8 @@ epochs=100
 device="cuda:0"
 seed=1
 situation="mlp_Combo, "
-corSituation="with cor insider sigmoid function, "
-peakPickNum=0
+cor_situation="with cor insider sigmoid function, "
+peak_pick_num=0
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \
@@ -31,5 +31,5 @@ nohup python -u ../src/main.py \
     --device $device \
     --seed $seed \
     --situation $situation \
-    --corSituation $corSituation \
-    --peakPickNum $peakPickNum > ../logs/mlp_combo_${current_datetime}.log 2>&1 &
+    --cor_situation $cor_situation \
+    --peak_pick_num $peak_pick_num > ../logs/mlp_combo_${current_datetime}.log 2>&1 &
