@@ -360,7 +360,10 @@ def main(args):
             s_probs = F.softmax(s, dim=0)
 
             '''
-            # choose whether to use different choosing strategy
+            # choose whether to use different choosing strategy and uncomment the one you want to use
+            
+            '''
+            
             top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
             top_n_indices = top_n_indices.numpy()
             top_n_smiles = labels.iloc[top_n_indices]['SMILES'].tolist()
@@ -379,8 +382,8 @@ def main(args):
                 test_correct += 1
             else:
                 continue
-            '''
             
+            '''
             predicted_label_index = s_probs.argmax().item()
             predicted_label = labels.iloc[predicted_label_index]
             # write in the file
@@ -392,6 +395,7 @@ def main(args):
                 f.close
             if predicted_label == smiles:
                 test_correct += 1
+            '''
 
     test_acc = test_correct / len(test_df)
     print(f"Test Acc: {test_acc: .4f}")
@@ -448,6 +452,21 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--seed",
+        type=int,
+        default=0,
+    )
+    parser.add_argument(
+        "--situation",
+        type=str,
+        default="mlp_combo",
+    )
+    parser.add_argument(
+        "--corSituation", 
+        type=str,
+        default="no correlation",
+    )
+    parser.add_argument(
+        "--peakPickNum",
         type=int,
         default=0,
     )
