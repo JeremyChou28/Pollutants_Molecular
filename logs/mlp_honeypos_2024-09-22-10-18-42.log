@@ -297,3 +297,15 @@ Epoch [48], Loss:  74.9896
 
 Epoch [48], Validation Acc:  0.0000
 
+Epoch [48], Test Acc:  0.0294
+
+Epoch [49], Loss:  78.9926
+
+Epoch [49], Validation Acc:  0.0000
+
+Epoch [49], Test Acc:  0.0294
+
+Epoch [50], Loss:  76.2497
+
+Epoch [50], Validation Acc:  0.3333
+

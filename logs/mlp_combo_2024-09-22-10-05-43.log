@@ -93,3 +93,5 @@ Epoch [14], Loss:  327.8074
 
 Epoch [14], Validation Acc:  0.0833
 
+Epoch [14], Test Acc:  0.0946
+

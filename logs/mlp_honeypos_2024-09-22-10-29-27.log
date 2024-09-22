@@ -507,3 +507,33 @@ Epoch [83], Loss:  78.6116
 
 Epoch [83], Validation Acc:  0.3333
 
+Epoch [83], Test Acc:  0.0294
+
+Epoch [84], Loss:  75.4931
+
+Epoch [84], Validation Acc:  0.0000
+
+Epoch [84], Test Acc:  0.0294
+
+Epoch [85], Loss:  78.0888
+
+Epoch [85], Validation Acc:  0.0000
+
+Epoch [85], Test Acc:  0.0294
+
+Epoch [86], Loss:  80.8361
+
+Epoch [86], Validation Acc:  0.0000
+
+Epoch [86], Test Acc:  0.0294
+
+Epoch [87], Loss:  76.5496
+
+Epoch [87], Validation Acc:  0.0000
+
+Epoch [87], Test Acc:  0.0294
+
+Epoch [88], Loss:  78.9413
+
+Epoch [88], Validation Acc:  0.3333
+
