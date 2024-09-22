@@ -1,5 +1,0 @@
-mlp_Huangpujiang_with_cor_outside_sig_test and validation with peak pick number to be 1
-Test Acc:  0.0000
-Final alpha:  0.6102
-Final beta: -0.3321
-Final gamma:  0.4554

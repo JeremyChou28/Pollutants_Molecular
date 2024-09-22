@@ -30,13 +30,13 @@ class ScoringModel(nn.Module):
         
         
         # situation of correlation outside the sigmoid function
-        sig = torch.sigmoid(-self.beta * (m * tani - self.gamma))
-        s = self.alpha * f + (1 - self.alpha) * torch.sum(torch.abs(cors) * sig, dim=1)
+        # sig = torch.sigmoid(-self.beta * (m * tani - self.gamma))
+        # s = self.alpha * f + (1 - self.alpha) * torch.sum(torch.abs(cors) * sig, dim=1)
         
         
         
         # situation of correlation inside the sigmoid function
-        # sig = torch.sigmoid(-self.beta * (torch.abs(cors) * m * tani - self.gamma))
-        # s = self.alpha * f + (1 - self.alpha) * torch.sum(sig, dim=1)
+        sig = torch.sigmoid(-self.beta * (torch.abs(cors) * m * tani - self.gamma))
+        s = self.alpha * f + (1 - self.alpha) * torch.sum(sig, dim=1)
         
         return s

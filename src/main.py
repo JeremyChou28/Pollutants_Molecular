@@ -326,43 +326,43 @@ def main(args):
 
         validation_acc = validation_correct / len(validation_data)
         print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
-        test_correct = 0
-        with torch.no_grad():
-            for i, row in test_df.iterrows():
-                nodeId = row["ID"]
-                smiles = row["SMILES"]
+        # test_correct = 0
+        # with torch.no_grad():
+        #     for i, row in test_df.iterrows():
+        #         nodeId = row["ID"]
+        #         smiles = row["SMILES"]
 
-                node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
-                    nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder
-                )
+        #         node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
+        #             nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder
+        #         )
 
-                f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
-                tani = torch.tensor(tani, dtype=torch.float32).to(device)
-                m = torch.tensor(m, dtype=torch.float32).to(device)
-                cors = torch.tensor(cors, dtype=torch.float32).to(device)
-                ground_truth_vector = ground_truth_vector.to(device)
+        #         f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
+        #         tani = torch.tensor(tani, dtype=torch.float32).to(device)
+        #         m = torch.tensor(m, dtype=torch.float32).to(device)
+        #         cors = torch.tensor(cors, dtype=torch.float32).to(device)
+        #         ground_truth_vector = ground_truth_vector.to(device)
 
-                s = model(m, f, tani, cors)
-                s_probs = F.softmax(s, dim=0)
+        #         s = model(m, f, tani, cors)
+        #         s_probs = F.softmax(s, dim=0)
 
-                '''
-                # choose whether to use different choosing strategy and uncomment the one you want to use
+        #         '''
+        #         # choose whether to use different choosing strategy and uncomment the one you want to use
             
-                '''
+        #         '''
             
-                top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
-                top_n_indices = top_n_indices.cpu().numpy()
-                top_n_smiles = labels.iloc[top_n_indices].tolist()
-                if smiles in top_n_smiles:
-                    test_correct += 1
-                else:
-                    continue
+        #         top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
+        #         top_n_indices = top_n_indices.cpu().numpy()
+        #         top_n_smiles = labels.iloc[top_n_indices].tolist()
+        #         if smiles in top_n_smiles:
+        #             test_correct += 1
+        #         else:
+        #             continue
 
-        trial_test_acc = test_correct / len(test_df)
-        print(f"Epoch [{epoch + 1}], Test Acc: {trial_test_acc: .4f}\n")
+        # trial_test_acc = test_correct / len(test_df)
+        # print(f"Epoch [{epoch + 1}], Test Acc: {trial_test_acc: .4f}\n")
         # saving the best model on validation set
-        if trial_test_acc >= best_trial_test_acc:
-            best_trial_test_acc = trial_test_acc
+        if validation_acc >= best_trial_test_acc:
+            best_trial_test_acc = validation_acc
             torch.save(
                 model.state_dict(), os.path.join(checkpoint_path, f"{situation+cor_situation+test_val_situation}best_model.pth")
             )
