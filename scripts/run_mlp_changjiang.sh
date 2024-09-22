@@ -17,8 +17,10 @@ learning_rate=0.001
 epochs=100
 device="cuda:0"
 seed=1
-situation="mlp_changjiang, "
-cor_situation="with_cor_inside_sig, "
+situation="mlp_changjiang_ "
+# cor_situation="with_cor_inside_sig_ "
+# cor_situation="with_cor_outside_sig_ "
+cor_situation="without_cor_"
 peak_pick_num=10
 
 

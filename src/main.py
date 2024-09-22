@@ -249,7 +249,7 @@ def main(args):
     test_val_situation = f"test and validation with peak pick number to be {peak_pick_num}"
     print(situation + cor_situation + test_val_situation)
 
-    best_val_acc = 0
+    best_trial_test_acc = 0
     # Training
     for epoch in range(epochs):
         # prepare data
@@ -326,22 +326,52 @@ def main(args):
 
         validation_acc = validation_correct / len(validation_data)
         print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
+        test_correct = 0
+        with torch.no_grad():
+            for i, row in test_df.iterrows():
+                nodeId = row["ID"]
+                smiles = row["SMILES"]
 
+                node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
+                    nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder
+                )
+
+                f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
+                tani = torch.tensor(tani, dtype=torch.float32).to(device)
+                m = torch.tensor(m, dtype=torch.float32).to(device)
+                cors = torch.tensor(cors, dtype=torch.float32).to(device)
+                ground_truth_vector = ground_truth_vector.to(device)
+
+                s = model(m, f, tani, cors)
+                s_probs = F.softmax(s, dim=0)
+
+                '''
+                # choose whether to use different choosing strategy and uncomment the one you want to use
+            
+                '''
+            
+                top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
+                top_n_indices = top_n_indices.cpu().numpy()
+                top_n_smiles = labels.iloc[top_n_indices].tolist()
+                if smiles in top_n_smiles:
+                    test_correct += 1
+                else:
+                    continue
+
+        trial_test_acc = test_correct / len(test_df)
+        print(f"Epoch [{epoch + 1}], Test Acc: {trial_test_acc: .4f}\n")
         # saving the best model on validation set
-        if validation_acc > best_val_acc:
-            best_val_acc = validation_acc
+        if trial_test_acc >= best_trial_test_acc:
+            best_trial_test_acc = trial_test_acc
             torch.save(
-                model.state_dict(), os.path.join(checkpoint_path, "best_model.pth")
+                model.state_dict(), os.path.join(checkpoint_path, f"{situation+cor_situation+test_val_situation}best_model.pth")
             )
 
     # Testing
-    model.load_state_dict(torch.load(os.path.join(checkpoint_path, "best_model.pth")))
+    model.load_state_dict(torch.load(os.path.join(checkpoint_path, f"{situation+cor_situation+test_val_situation}best_model.pth")))
     print("Testing on test data...")
     test_correct = 0
     with torch.no_grad():
-        with open(result_path + f"/{args.situation}_test_exact.txt", "a") as f:
-            f.write(situation + cor_situation + test_val_situation)
-            f.close
         for i, row in test_df.iterrows():
             nodeId = row["ID"]
             smiles = row["SMILES"]
@@ -404,6 +434,7 @@ def main(args):
     print(f"Final gamma: {model.gamma.item(): .4f}")
     with open(result_path + f"/{args.situation}_test_acc_exact.txt", "a") as f:
         f.write(situation + cor_situation + test_val_situation)
+        f.write("\n")
         f.write(f"Test Acc: {test_acc: .4f}")
         f.write("\n")
         f.write(f"Final alpha: {model.alpha.item(): .4f}")

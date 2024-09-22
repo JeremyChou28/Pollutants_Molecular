@@ -17,10 +17,11 @@ learning_rate=0.001
 epochs=100
 device="cuda:0"
 seed=1
-situation="mlp_Huangpujiang, "
-cor_situation="with_cor_inside_the_sigmoid_function, "
+situation="mlp_Huangpujiang_"
+# cor_situation="with_cor_inside_sig_"
+cor_situation="with_cor_outside_sig_ "
 # cor_situation="without_cor"
-peak_pick_num=10
+peak_pick_num=1
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \

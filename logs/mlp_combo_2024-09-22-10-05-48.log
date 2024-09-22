@@ -1,0 +1,95 @@
+dataset_path: ../datasets/combo
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+situation: mlp_Combo_
+cor_situation: without_cor_
+peak_pick_num: 5
+The following files missing: [1, 3, 6, 8, 11, 16, 23, 27, 28, 35, 41, 52, 59, 103, 106, 113, 123, 124, 131, 168, 174, 177, 178, 181, 185, 195, 206, 208, 211, 247, 251, 253, 258, 262, 264, 272, 274, 318, 320, 321, 322, 327]
+mlp_Combo_without_cor_test and validation with peak pick number to be 5
+Epoch [1], Loss:  337.4363
+
+Epoch [1], Validation Acc:  0.0000
+
+Epoch [1], Test Acc:  0.0068
+
+Epoch [2], Loss:  332.4397
+
+Epoch [2], Validation Acc:  0.0000
+
+Epoch [2], Test Acc:  0.0068
+
+Epoch [3], Loss:  339.6434
+
+Epoch [3], Validation Acc:  0.0000
+
+Epoch [3], Test Acc:  0.0608
+
+Epoch [4], Loss:  337.2981
+
+Epoch [4], Validation Acc:  0.0000
+
+Epoch [4], Test Acc:  0.0743
+
+Epoch [5], Loss:  333.7235
+
+Epoch [5], Validation Acc:  0.0833
+
+Epoch [5], Test Acc:  0.1014
+
+Epoch [6], Loss:  329.6289
+
+Epoch [6], Validation Acc:  0.0833
+
+Epoch [6], Test Acc:  0.1351
+
+Epoch [7], Loss:  332.6383
+
+Epoch [7], Validation Acc:  0.0833
+
+Epoch [7], Test Acc:  0.1622
+
+Epoch [8], Loss:  335.1026
+
+Epoch [8], Validation Acc:  0.2500
+
+Epoch [8], Test Acc:  0.1757
+
+Epoch [9], Loss:  332.3585
+
+Epoch [9], Validation Acc:  0.1667
+
+Epoch [9], Test Acc:  0.1757
+
+Epoch [10], Loss:  332.7172
+
+Epoch [10], Validation Acc:  0.2500
+
+Epoch [10], Test Acc:  0.1757
+
+Epoch [11], Loss:  340.4741
+
+Epoch [11], Validation Acc:  0.0833
+
+Epoch [11], Test Acc:  0.1757
+
+Epoch [12], Loss:  329.9251
+
+Epoch [12], Validation Acc:  0.1667
+
+Epoch [12], Test Acc:  0.1892
+
+Epoch [13], Loss:  322.7246
+
+Epoch [13], Validation Acc:  0.1667
+
+Epoch [13], Test Acc:  0.1892
+
+Epoch [14], Loss:  327.8074
+
+Epoch [14], Validation Acc:  0.0833
+
