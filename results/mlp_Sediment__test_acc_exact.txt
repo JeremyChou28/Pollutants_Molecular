@@ -1,5 +1,56 @@
-mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 1
-Test Acc:  0.0000
-Final alpha:  0.4092
-Final beta: -0.0673
-Final gamma:  0.0736
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1053
+Final alpha:  0.3850
+Final beta: -9.1326
+Final gamma:  0.4253
+mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.3684
+Final alpha:  0.3577
+Final beta: -9.1717
+Final gamma:  0.4951
+mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.2105
+Final alpha:  0.3577
+Final beta: -9.1717
+Final gamma:  0.4951
+mlp_Sediment_without_cor_test and validation with peak pick number to be 20
+Test Acc:  0.7895
+Final alpha:  0.0276
+Final beta: -9.2408
+Final gamma:  0.4242
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.2632
+Final alpha:  0.3850
+Final beta: -9.1326
+Final gamma:  0.4253
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.1579
+Final alpha:  0.3850
+Final beta: -9.1326
+Final gamma:  0.4253
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.2105
+Final alpha:  0.3850
+Final beta: -9.1326
+Final gamma:  0.4253
+mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.2632
+Final alpha:  0.3577
+Final beta: -9.1717
+Final gamma:  0.4951
+mlp_Sediment_without_cor_test and validation with peak pick number to be 5
+Test Acc:  0.6316
+Final alpha: -0.0150
+Final beta: -9.2965
+Final gamma:  0.4133
+mlp_Sediment_without_cor_test and validation with peak pick number to be 10
+Test Acc:  0.7368
+Final alpha:  0.1387
+Final beta: -9.1151
+Final gamma:  0.4818
+mlp_Sediment_without_cor_test and validation with peak pick number to be 1
+Test Acc:  0.5263
+Final alpha:  0.1584
+Final beta: -9.0979
+Final gamma:  0.4950
+#####################################################
