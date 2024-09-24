@@ -1,5 +1,7 @@
 dataset_path: ../datasets/combo
+
 result_path: ../results
+
 checkpoint_path: ../checkpoints
 train_sample_ratio: 0.8
 learning_rate: 0.001
