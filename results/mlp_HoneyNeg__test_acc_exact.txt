@@ -1,0 +1,60 @@
+mlp_HoneyNeg_with_cor_outside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.2963
+Final alpha: -0.0549
+Final beta: -9.4019
+Final gamma:  0.3961
+mlp_HoneyNeg_with_cor_inside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.2963
+Final alpha: -0.0495
+Final beta: -9.2674
+Final gamma:  0.2599
+mlp_HoneyNeg_with_cor_outside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.2963
+Final alpha: -0.0549
+Final beta: -9.4019
+Final gamma:  0.3961
+mlp_HoneyNeg_without_cor_test and validation with peak pick number to be 10
+Test Acc:  0.5185
+Final alpha: -0.4729
+Final beta: -9.8265
+Final gamma:  0.3637
+mlp_HoneyNeg_without_cor_test and validation with peak pick number to be 1
+Test Acc:  0.3704
+Final alpha: -0.4729
+Final beta: -9.8265
+Final gamma:  0.3637
+mlp_HoneyNeg_without_cor_test and validation with peak pick number to be 5
+Test Acc:  0.4815
+Final alpha: -0.4729
+Final beta: -9.8265
+Final gamma:  0.3637
+mlp_HoneyNeg_with_cor_inside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.2963
+Final alpha: -0.0495
+Final beta: -9.2674
+Final gamma:  0.2599
+mlp_HoneyNeg_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.2963
+Final alpha: -0.0495
+Final beta: -9.2674
+Final gamma:  0.2599
+mlp_HoneyNeg_with_cor_inside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.2963
+Final alpha: -0.0495
+Final beta: -9.2674
+Final gamma:  0.2599
+mlp_HoneyNeg_with_cor_outside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.2963
+Final alpha: -0.0549
+Final beta: -9.4019
+Final gamma:  0.3961
+mlp_HoneyNeg_with_cor_outside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.2963
+Final alpha: -0.0549
+Final beta: -9.4019
+Final gamma:  0.3961
+mlp_HoneyNeg_without_cor_test and validation with peak pick number to be 20
+Test Acc:  0.5926
+Final alpha: -0.4729
+Final beta: -9.8265
+Final gamma:  0.3637

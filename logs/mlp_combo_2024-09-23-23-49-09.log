@@ -1,0 +1,619 @@
+dataset_path: ../datasets/combo
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 150
+device: cuda:0
+seed: 1
+situation: mlp_Combo_
+cor_situation: with_cor_inside_sig_
+peak_pick_num: 10
+The following files missing: [1, 3, 6, 8, 11, 16, 23, 27, 28, 35, 41, 52, 59, 103, 106, 113, 123, 124, 131, 168, 174, 177, 178, 181, 185, 195, 206, 208, 211, 247, 251, 253, 258, 262, 264, 272, 274, 318, 320, 321, 322, 327]
+mlp_Combo_with_cor_inside_sig_test and validation with peak pick number to be 10
+Epoch [1], Loss:  324.0940
+
+Epoch [1], Validation Acc:  0.1667
+
+Epoch [2], Loss:  319.2793
+
+Epoch [2], Validation Acc:  0.1667
+
+Epoch [3], Loss:  326.9641
+
+Epoch [3], Validation Acc:  0.4167
+
+Epoch [4], Loss:  325.3032
+
+Epoch [4], Validation Acc:  0.5000
+
+Epoch [5], Loss:  319.8441
+
+Epoch [5], Validation Acc:  0.3333
+
+Epoch [6], Loss:  315.2062
+
+Epoch [6], Validation Acc:  0.4167
+
+Epoch [7], Loss:  319.4489
+
+Epoch [7], Validation Acc:  0.4167
+
+Epoch [8], Loss:  318.8469
+
+Epoch [8], Validation Acc:  0.1667
+
+Epoch [9], Loss:  316.0095
+
+Epoch [9], Validation Acc:  0.1667
+
+Epoch [10], Loss:  319.3184
+
+Epoch [10], Validation Acc:  0.3333
+
+Epoch [11], Loss:  326.5795
+
+Epoch [11], Validation Acc:  0.4167
+
+Epoch [12], Loss:  315.8420
+
+Epoch [12], Validation Acc:  0.5000
+
+Epoch [13], Loss:  307.4754
+
+Epoch [13], Validation Acc:  0.4167
+
+Epoch [14], Loss:  311.7471
+
+Epoch [14], Validation Acc:  0.3333
+
+Epoch [15], Loss:  317.4900
+
+Epoch [15], Validation Acc:  0.4167
+
+Epoch [16], Loss:  312.2810
+
+Epoch [16], Validation Acc:  0.2500
+
+Epoch [17], Loss:  308.6998
+
+Epoch [17], Validation Acc:  0.3333
+
+Epoch [18], Loss:  307.8908
+
+Epoch [18], Validation Acc:  0.3333
+
+Epoch [19], Loss:  317.2935
+
+Epoch [19], Validation Acc:  0.2500
+
+Epoch [20], Loss:  308.9647
+
+Epoch [20], Validation Acc:  0.5000
+
+Epoch [21], Loss:  307.7702
+
+Epoch [21], Validation Acc:  0.4167
+
+Epoch [22], Loss:  310.6172
+
+Epoch [22], Validation Acc:  0.4167
+
+Epoch [23], Loss:  318.1596
+
+Epoch [23], Validation Acc:  0.3333
+
+Epoch [24], Loss:  318.4925
+
+Epoch [24], Validation Acc:  0.2500
+
+Epoch [25], Loss:  316.3519
+
+Epoch [25], Validation Acc:  0.5833
+
+Epoch [26], Loss:  308.9411
+
+Epoch [26], Validation Acc:  0.4167
+
+Epoch [27], Loss:  310.8401
+
+Epoch [27], Validation Acc:  0.2500
+
+Epoch [28], Loss:  305.0491
+
+Epoch [28], Validation Acc:  0.3333
+
+Epoch [29], Loss:  304.6491
+
+Epoch [29], Validation Acc:  0.3333
+
+Epoch [30], Loss:  302.8451
+
+Epoch [30], Validation Acc:  0.3333
+
+Epoch [31], Loss:  314.1586
+
+Epoch [31], Validation Acc:  0.4167
+
+Epoch [32], Loss:  318.6556
+
+Epoch [32], Validation Acc:  0.2500
+
+Epoch [33], Loss:  315.3378
+
+Epoch [33], Validation Acc:  0.0833
+
+Epoch [34], Loss:  297.6987
+
+Epoch [34], Validation Acc:  0.2500
+
+Epoch [35], Loss:  318.1251
+
+Epoch [35], Validation Acc:  0.3333
+
+Epoch [36], Loss:  303.8361
+
+Epoch [36], Validation Acc:  0.1667
+
+Epoch [37], Loss:  297.6942
+
+Epoch [37], Validation Acc:  0.1667
+
+Epoch [38], Loss:  310.2184
+
+Epoch [38], Validation Acc:  0.4167
+
+Epoch [39], Loss:  315.3508
+
+Epoch [39], Validation Acc:  0.3333
+
+Epoch [40], Loss:  308.9241
+
+Epoch [40], Validation Acc:  0.3333
+
+Epoch [41], Loss:  306.0914
+
+Epoch [41], Validation Acc:  0.4167
+
+Epoch [42], Loss:  307.0428
+
+Epoch [42], Validation Acc:  0.2500
+
+Epoch [43], Loss:  308.6426
+
+Epoch [43], Validation Acc:  0.4167
+
+Epoch [44], Loss:  302.3812
+
+Epoch [44], Validation Acc:  0.2500
+
+Epoch [45], Loss:  305.6848
+
+Epoch [45], Validation Acc:  0.3333
+
+Epoch [46], Loss:  298.6627
+
+Epoch [46], Validation Acc:  0.3333
+
+Epoch [47], Loss:  300.5171
+
+Epoch [47], Validation Acc:  0.1667
+
+Epoch [48], Loss:  302.8803
+
+Epoch [48], Validation Acc:  0.3333
+
+Epoch [49], Loss:  309.4893
+
+Epoch [49], Validation Acc:  0.2500
+
+Epoch [50], Loss:  307.1480
+
+Epoch [50], Validation Acc:  0.5000
+
+Epoch [51], Loss:  302.1420
+
+Epoch [51], Validation Acc:  0.1667
+
+Epoch [52], Loss:  300.8406
+
+Epoch [52], Validation Acc:  0.1667
+
+Epoch [53], Loss:  301.0414
+
+Epoch [53], Validation Acc:  0.2500
+
+Epoch [54], Loss:  295.5879
+
+Epoch [54], Validation Acc:  0.0833
+
+Epoch [55], Loss:  307.9429
+
+Epoch [55], Validation Acc:  0.5000
+
+Epoch [56], Loss:  311.2681
+
+Epoch [56], Validation Acc:  0.4167
+
+Epoch [57], Loss:  303.0644
+
+Epoch [57], Validation Acc:  0.5000
+
+Epoch [58], Loss:  301.3390
+
+Epoch [58], Validation Acc:  0.4167
+
+Epoch [59], Loss:  292.8479
+
+Epoch [59], Validation Acc:  0.2500
+
+Epoch [60], Loss:  300.7529
+
+Epoch [60], Validation Acc:  0.4167
+
+Epoch [61], Loss:  300.6172
+
+Epoch [61], Validation Acc:  0.3333
+
+Epoch [62], Loss:  315.9751
+
+Epoch [62], Validation Acc:  0.4167
+
+Epoch [63], Loss:  304.8973
+
+Epoch [63], Validation Acc:  0.3333
+
+Epoch [64], Loss:  296.7746
+
+Epoch [64], Validation Acc:  0.1667
+
+Epoch [65], Loss:  295.4240
+
+Epoch [65], Validation Acc:  0.1667
+
+Epoch [66], Loss:  298.3573
+
+Epoch [66], Validation Acc:  0.4167
+
+Epoch [67], Loss:  301.8765
+
+Epoch [67], Validation Acc:  0.3333
+
+Epoch [68], Loss:  300.7877
+
+Epoch [68], Validation Acc:  0.1667
+
+Epoch [69], Loss:  295.6589
+
+Epoch [69], Validation Acc:  0.4167
+
+Epoch [70], Loss:  301.6789
+
+Epoch [70], Validation Acc:  0.3333
+
+Epoch [71], Loss:  291.1710
+
+Epoch [71], Validation Acc:  0.0833
+
+Epoch [72], Loss:  307.4860
+
+Epoch [72], Validation Acc:  0.3333
+
+Epoch [73], Loss:  307.3304
+
+Epoch [73], Validation Acc:  0.2500
+
+Epoch [74], Loss:  302.4213
+
+Epoch [74], Validation Acc:  0.5000
+
+Epoch [75], Loss:  298.3935
+
+Epoch [75], Validation Acc:  0.3333
+
+Epoch [76], Loss:  297.4853
+
+Epoch [76], Validation Acc:  0.5000
+
+Epoch [77], Loss:  307.4654
+
+Epoch [77], Validation Acc:  0.3333
+
+Epoch [78], Loss:  292.5877
+
+Epoch [78], Validation Acc:  0.2500
+
+Epoch [79], Loss:  307.7773
+
+Epoch [79], Validation Acc:  0.5000
+
+Epoch [80], Loss:  296.5558
+
+Epoch [80], Validation Acc:  0.3333
+
+Epoch [81], Loss:  287.6060
+
+Epoch [81], Validation Acc:  0.0833
+
+Epoch [82], Loss:  286.1632
+
+Epoch [82], Validation Acc:  0.3333
+
+Epoch [83], Loss:  305.6516
+
+Epoch [83], Validation Acc:  0.5833
+
+Epoch [84], Loss:  296.6366
+
+Epoch [84], Validation Acc:  0.1667
+
+Epoch [85], Loss:  299.5687
+
+Epoch [85], Validation Acc:  0.4167
+
+Epoch [86], Loss:  301.5756
+
+Epoch [86], Validation Acc:  0.5833
+
+Epoch [87], Loss:  306.0136
+
+Epoch [87], Validation Acc:  0.2500
+
+Epoch [88], Loss:  305.7714
+
+Epoch [88], Validation Acc:  0.4167
+
+Epoch [89], Loss:  313.8169
+
+Epoch [89], Validation Acc:  0.4167
+
+Epoch [90], Loss:  306.6453
+
+Epoch [90], Validation Acc:  0.3333
+
+Epoch [91], Loss:  303.4562
+
+Epoch [91], Validation Acc:  0.5000
+
+Epoch [92], Loss:  303.7079
+
+Epoch [92], Validation Acc:  0.3333
+
+Epoch [93], Loss:  290.6469
+
+Epoch [93], Validation Acc:  0.2500
+
+Epoch [94], Loss:  295.4697
+
+Epoch [94], Validation Acc:  0.2500
+
+Epoch [95], Loss:  296.6840
+
+Epoch [95], Validation Acc:  0.1667
+
+Epoch [96], Loss:  301.0990
+
+Epoch [96], Validation Acc:  0.3333
+
+Epoch [97], Loss:  293.0948
+
+Epoch [97], Validation Acc:  0.2500
+
+Epoch [98], Loss:  309.9136
+
+Epoch [98], Validation Acc:  0.4167
+
+Epoch [99], Loss:  299.3999
+
+Epoch [99], Validation Acc:  0.3333
+
+Epoch [100], Loss:  289.5263
+
+Epoch [100], Validation Acc:  0.4167
+
+Epoch [101], Loss:  299.4040
+
+Epoch [101], Validation Acc:  0.4167
+
+Epoch [102], Loss:  291.3061
+
+Epoch [102], Validation Acc:  0.3333
+
+Epoch [103], Loss:  288.6517
+
+Epoch [103], Validation Acc:  0.0833
+
+Epoch [104], Loss:  303.9964
+
+Epoch [104], Validation Acc:  0.5000
+
+Epoch [105], Loss:  297.2198
+
+Epoch [105], Validation Acc:  0.4167
+
+Epoch [106], Loss:  290.8852
+
+Epoch [106], Validation Acc:  0.1667
+
+Epoch [107], Loss:  307.7739
+
+Epoch [107], Validation Acc:  0.4167
+
+Epoch [108], Loss:  293.2217
+
+Epoch [108], Validation Acc:  0.3333
+
+Epoch [109], Loss:  281.7980
+
+Epoch [109], Validation Acc:  0.0000
+
+Epoch [110], Loss:  299.1202
+
+Epoch [110], Validation Acc:  0.4167
+
+Epoch [111], Loss:  288.6844
+
+Epoch [111], Validation Acc:  0.3333
+
+Epoch [112], Loss:  289.7775
+
+Epoch [112], Validation Acc:  0.3333
+
+Epoch [113], Loss:  282.7838
+
+Epoch [113], Validation Acc:  0.1667
+
+Epoch [114], Loss:  299.6398
+
+Epoch [114], Validation Acc:  0.3333
+
+Epoch [115], Loss:  287.0027
+
+Epoch [115], Validation Acc:  0.1667
+
+Epoch [116], Loss:  280.1087
+
+Epoch [116], Validation Acc:  0.1667
+
+Epoch [117], Loss:  298.8873
+
+Epoch [117], Validation Acc:  0.2500
+
+Epoch [118], Loss:  280.5215
+
+Epoch [118], Validation Acc:  0.3333
+
+Epoch [119], Loss:  291.7894
+
+Epoch [119], Validation Acc:  0.3333
+
+Epoch [120], Loss:  301.0779
+
+Epoch [120], Validation Acc:  0.3333
+
+Epoch [121], Loss:  296.8444
+
+Epoch [121], Validation Acc:  0.5000
+
+Epoch [122], Loss:  292.7828
+
+Epoch [122], Validation Acc:  0.4167
+
+Epoch [123], Loss:  305.5972
+
+Epoch [123], Validation Acc:  0.5000
+
+Epoch [124], Loss:  276.9642
+
+Epoch [124], Validation Acc:  0.1667
+
+Epoch [125], Loss:  286.1810
+
+Epoch [125], Validation Acc:  0.2500
+
+Epoch [126], Loss:  292.0122
+
+Epoch [126], Validation Acc:  0.2500
+
+Epoch [127], Loss:  294.3485
+
+Epoch [127], Validation Acc:  0.3333
+
+Epoch [128], Loss:  293.3999
+
+Epoch [128], Validation Acc:  0.4167
+
+Epoch [129], Loss:  285.0103
+
+Epoch [129], Validation Acc:  0.2500
+
+Epoch [130], Loss:  282.7293
+
+Epoch [130], Validation Acc:  0.2500
+
+Epoch [131], Loss:  296.8573
+
+Epoch [131], Validation Acc:  0.3333
+
+Epoch [132], Loss:  282.9682
+
+Epoch [132], Validation Acc:  0.1667
+
+Epoch [133], Loss:  298.1225
+
+Epoch [133], Validation Acc:  0.2500
+
+Epoch [134], Loss:  276.1838
+
+Epoch [134], Validation Acc:  0.0833
+
+Epoch [135], Loss:  297.5470
+
+Epoch [135], Validation Acc:  0.4167
+
+Epoch [136], Loss:  290.5293
+
+Epoch [136], Validation Acc:  0.5000
+
+Epoch [137], Loss:  286.9382
+
+Epoch [137], Validation Acc:  0.4167
+
+Epoch [138], Loss:  285.0090
+
+Epoch [138], Validation Acc:  0.4167
+
+Epoch [139], Loss:  283.4826
+
+Epoch [139], Validation Acc:  0.1667
+
+Epoch [140], Loss:  279.4487
+
+Epoch [140], Validation Acc:  0.3333
+
+Epoch [141], Loss:  290.9100
+
+Epoch [141], Validation Acc:  0.2500
+
+Epoch [142], Loss:  283.9333
+
+Epoch [142], Validation Acc:  0.0833
+
+Epoch [143], Loss:  289.1873
+
+Epoch [143], Validation Acc:  0.4167
+
+Epoch [144], Loss:  278.1570
+
+Epoch [144], Validation Acc:  0.1667
+
+Epoch [145], Loss:  278.2086
+
+Epoch [145], Validation Acc:  0.2500
+
+Epoch [146], Loss:  287.7138
+
+Epoch [146], Validation Acc:  0.1667
+
+Epoch [147], Loss:  296.5641
+
+Epoch [147], Validation Acc:  0.4167
+
+Epoch [148], Loss:  287.8342
+
+Epoch [148], Validation Acc:  0.3333
+
+Epoch [149], Loss:  288.4870
+
+Epoch [149], Validation Acc:  0.0833
+
+Epoch [150], Loss:  279.6846
+
+Epoch [150], Validation Acc:  0.0833
+
+Testing on test data...
+Test Acc:  0.3311
+Final alpha: -1.2842
+Final beta: -11.5237
+Final gamma:  0.3006
+Spend time: 28802.04469060898

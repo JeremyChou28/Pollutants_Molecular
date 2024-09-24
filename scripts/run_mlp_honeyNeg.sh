@@ -19,9 +19,9 @@ device="cuda:0"
 seed=1
 situation="mlp_HoneyNeg_"
 # cor_situation="with_cor_inside_sig_ "
-cor_situation="with_cor_outside_sig_ "
-# cor_situation="without_cor_"
-peak_pick_num=1
+# cor_situation="with_cor_outside_sig_ "
+cor_situation="without_cor_"
+peak_pick_num=20
 
 nohup python -u ../src/main.py \
     --dataset_path $dataset_path \

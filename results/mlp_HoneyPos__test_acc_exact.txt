@@ -1,0 +1,61 @@
+mlp_HoneyPos_without_cortest and validation with peak pick number to be 5
+Test Acc:  0.5000
+Final alpha: -0.4735
+Final beta: -9.8510
+Final gamma:  0.4613
+mlp_HoneyPos_without_cortest and validation with peak pick number to be 20
+Test Acc:  0.5294
+Final alpha: -0.4735
+Final beta: -9.8510
+Final gamma:  0.4613
+mlp_HoneyPos_with_cor_outside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.3824
+Final alpha: -0.3693
+Final beta: -9.7709
+Final gamma:  0.3672
+mlp_HoneyPos_with_cor_outside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.3824
+Final alpha: -0.3693
+Final beta: -9.7709
+Final gamma:  0.3672
+mlp_HoneyPos_without_cortest and validation with peak pick number to be 1
+Test Acc:  0.4118
+Final alpha: -0.4735
+Final beta: -9.8510
+Final gamma:  0.4613
+mlp_HoneyPos_without_cortest and validation with peak pick number to be 10
+Test Acc:  0.5000
+Final alpha: -0.4735
+Final beta: -9.8510
+Final gamma:  0.4613
+##########################################################################################################3
+mlp_HoneyPos_with_cor_inside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.3824
+Final alpha: -0.3693
+Final beta: -9.7709
+Final gamma:  0.3672
+mlp_HoneyPos_with_cor_outside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.4118
+Final alpha: -0.3553
+Final beta: -9.7801
+Final gamma:  0.4574
+mlp_HoneyPos_with_cor_inside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.3824
+Final alpha: -0.3693
+Final beta: -9.7709
+Final gamma:  0.3672
+mlp_HoneyPos_with_cor_inside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.3824
+Final alpha: -0.3693
+Final beta: -9.7709
+Final gamma:  0.3672
+mlp_HoneyPos_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.3235
+Final alpha: -0.3693
+Final beta: -9.7709
+Final gamma:  0.3672
+mlp_HoneyPos_with_cor_outside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.3529
+Final alpha: -0.3553
+Final beta: -9.7801
+Final gamma:  0.4574

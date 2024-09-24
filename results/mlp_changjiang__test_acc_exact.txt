@@ -1,0 +1,45 @@
+mlp_changjiang_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1905
+Final alpha: -0.4201
+Final beta: -10.4019
+Final gamma:  0.3610
+mlp_changjiang_with_cor_inside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.3810
+Final alpha: -0.4201
+Final beta: -10.4019
+Final gamma:  0.3610
+mlp_changjiang_with_cor_outside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.3810
+Final alpha: -0.3896
+Final beta: -10.3687
+Final gamma:  0.4126
+mlp_changjiang_without_cor_test and validation with peak pick number to be 5
+Test Acc:  0.6429
+Final alpha: -1.4881
+Final beta: -11.0523
+Final gamma:  0.4706
+mlp_changjiang_without_cor_test and validation with peak pick number to be 1
+Test Acc:  0.4048
+Final alpha: -1.4881
+Final beta: -11.0523
+Final gamma:  0.4706
+mlp_changjiang_with_cor_inside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.2857
+Final alpha: -0.4201
+Final beta: -10.4019
+Final gamma:  0.3610
+mlp_changjiang_without_cor_test and validation with peak pick number to be 10
+Test Acc:  0.6905
+Final alpha: -1.4881
+Final beta: -11.0523
+Final gamma:  0.4706
+mlp_changjiang_with_cor_outside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1905
+Final alpha: -0.3896
+Final beta: -10.3687
+Final gamma:  0.4126
+mlp_changjiang_with_cor_outside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.3095
+Final alpha: -0.3896
+Final beta: -10.3687
+Final gamma:  0.4126

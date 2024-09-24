@@ -1,0 +1,65 @@
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.2632
+Final alpha:  0.3839
+Final beta: -9.1059
+Final gamma:  0.4381
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.1053
+Final alpha:  0.3839
+Final beta: -9.1059
+Final gamma:  0.4381
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.1579
+Final alpha:  0.3839
+Final beta: -9.1059
+Final gamma:  0.4381
+mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.4737
+Final alpha: -0.0401
+Final beta: -9.3309
+Final gamma:  0.4036
+mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.2632
+Final alpha:  0.3546
+Final beta: -9.1575
+Final gamma:  0.4986
+mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1579
+Final alpha:  0.3546
+Final beta: -9.1575
+Final gamma:  0.4986
+mlp_Sediment_without_cor_test and validation with peak pick number to be 20
+Test Acc:  0.7368
+Final alpha: -0.0401
+Final beta: -9.3309
+Final gamma:  0.4036
+mlp_Sediment_without_cor_test and validation with peak pick number to be 10
+Test Acc:  0.6842
+Final alpha: -0.0401
+Final beta: -9.3309
+Final gamma:  0.4036
+mlp_Sediment_without_cor_test and validation with peak pick number to be 5
+Test Acc:  0.5789
+Final alpha: -0.0401
+Final beta: -9.3309
+Final gamma:  0.4036
+mlp_Sediment_without_cor_test and validation with peak pick number to be 1
+Test Acc:  0.4737
+Final alpha: -0.0401
+Final beta: -9.3309
+Final gamma:  0.4036
+mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.3684
+Final alpha:  0.3546
+Final beta: -9.1575
+Final gamma:  0.4986
+mlp_Sediment_with_cor_outside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.2105
+Final alpha:  0.3546
+Final beta: -9.1575
+Final gamma:  0.4986
+###########################################################################################################3mlp_Sediment_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1053
+Final alpha:  0.3839
+Final beta: -9.1059
+Final gamma:  0.4381

@@ -1,0 +1,26 @@
+dataset_path: ../datasets/Honey_pos_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+situation: mlp_HoneyPos_
+cor_situation: with_cor_inside_sig_
+peak_pick_num: 10
+The following files missing: [2023, 3231, 3349, 3358, 3688, 4173, 5607, 14129, 18276, 10320]
+Traceback (most recent call last):
+  File "/home/zgjgroup/lyz/hjwrw/MolecularNetwork/datasets/inputfiles_check/branches/Pollutants_Molecular/scripts/../src/main.py", line 519, in <module>
+    main(args)
+  File "/home/zgjgroup/lyz/hjwrw/MolecularNetwork/datasets/inputfiles_check/branches/Pollutants_Molecular/scripts/../src/main.py", line 242, in main
+    model = ScoringModel().to(device)
+  File "/home/zgjgroup/miniconda3/envs/tensorflow/lib/python3.9/site-packages/torch/nn/modules/module.py", line 927, in to
+    return self._apply(convert)
+  File "/home/zgjgroup/miniconda3/envs/tensorflow/lib/python3.9/site-packages/torch/nn/modules/module.py", line 602, in _apply
+    param_applied = fn(param)
+  File "/home/zgjgroup/miniconda3/envs/tensorflow/lib/python3.9/site-packages/torch/nn/modules/module.py", line 925, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

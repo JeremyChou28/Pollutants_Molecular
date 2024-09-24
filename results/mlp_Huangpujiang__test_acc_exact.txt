@@ -1,0 +1,66 @@
+mlp_Huangpujiang_without_cortest and validation with peak pick number to be 20
+Test Acc:  0.5385
+Final alpha: -0.0087
+Final beta: -9.4279
+Final gamma:  0.2310
+mlp_Huangpujiang_without_cortest and validation with peak pick number to be 20
+Test Acc:  0.5385
+Final alpha: -0.0087
+Final beta: -9.4279
+Final gamma:  0.2310
+mlp_Huangpujiang_without_cortest and validation with peak pick number to be 20
+Test Acc:  0.5385
+Final alpha: -0.0087
+Final beta: -9.4279
+Final gamma:  0.2310
+###################################################################################################################
+mlp_Huangpujiang_without_cortest and validation with peak pick number to be 10
+Test Acc:  0.6538
+Final alpha: -0.2659
+Final beta: -9.6840
+Final gamma:  0.4106
+mlp_Huangpujiang_with_cor_outside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.4231
+Final alpha: -0.0220
+Final beta: -9.6195
+Final gamma:  0.4177
+mlp_Huangpujiang_without_cortest and validation with peak pick number to be 5
+Test Acc:  0.5000
+Final alpha: -0.2659
+Final beta: -9.6840
+Final gamma:  0.4106
+mlp_Huangpujiang_with_cor_outside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.2308
+Final alpha: -0.0220
+Final beta: -9.6195
+Final gamma:  0.4177
+mlp_Huangpujiang_with_cor_outside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.3462
+Final alpha: -0.0220
+Final beta: -9.6195
+Final gamma:  0.4177
+mlp_Huangpujiang_with_cor_inside_sig_test and validation with peak pick number to be 20
+Test Acc:  0.5385
+Final alpha: -0.0087
+Final beta: -9.4279
+Final gamma:  0.2310
+mlp_Huangpujiang_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1923
+Final alpha: -0.0087
+Final beta: -9.4279
+Final gamma:  0.2310
+mlp_Huangpujiang_with_cor_inside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.3462
+Final alpha: -0.0087
+Final beta: -9.4279
+Final gamma:  0.2310
+mlp_Huangpujiang_with_cor_inside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.4231
+Final alpha: -0.0087
+Final beta: -9.4279
+Final gamma:  0.2310
+mlp_Huangpujiang_without_cortest and validation with peak pick number to be 1
+Test Acc:  0.3077
+Final alpha: -0.2659
+Final beta: -9.6840
+Final gamma:  0.4106

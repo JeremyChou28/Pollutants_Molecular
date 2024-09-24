@@ -1,0 +1,45 @@
+mlp_Combo_with_cor_inside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1959
+Final alpha: -1.2842
+Final beta: -11.5237
+Final gamma:  0.3006
+mlp_Combo_without_cor_test and validation with peak pick number to be 1
+Test Acc:  0.3986
+Final alpha: -0.1765
+Final beta: -9.5299
+Final gamma:  0.4207
+mlp_Combo_with_cor_outside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.2568
+Final alpha: -1.9216
+Final beta: -12.9200
+Final gamma:  0.4308
+mlp_Combo_with_cor_inside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.3311
+Final alpha: -1.2842
+Final beta: -11.5237
+Final gamma:  0.3006
+mlp_Combo_with_cor_inside_sig_test and validation with peak pick number to be 5
+Test Acc:  0.2838
+Final alpha: -1.2842
+Final beta: -11.5237
+Final gamma:  0.3006
+mlp_Combo_with_cor_outside_sig_test and validation with peak pick number to be 10
+Test Acc:  0.2973
+Final alpha: -1.9216
+Final beta: -12.9200
+Final gamma:  0.4308
+mlp_Combo_without_cor_test and validation with peak pick number to be 5
+Test Acc:  0.5608
+Final alpha: -0.1765
+Final beta: -9.5299
+Final gamma:  0.4207
+mlp_Combo_with_cor_outside_sig_test and validation with peak pick number to be 1
+Test Acc:  0.1824
+Final alpha: -1.9216
+Final beta: -12.9200
+Final gamma:  0.4308
+mlp_Combo_without_cor_test and validation with peak pick number to be 10
+Test Acc:  0.6351
+Final alpha: -0.1765
+Final beta: -9.5299
+Final gamma:  0.4207
