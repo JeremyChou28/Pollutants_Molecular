@@ -20,8 +20,8 @@ RDLogger.DisableLog("rdApp.*")
 from sklearn.model_selection import train_test_split
 
 sys.path.append("../")
-from models.MLP import ScoringModel
-from utils.utils import seed_torch
+from models.model import *
+from utils.utils import *
 
 
 # check the existence of the files in f_filter
@@ -211,6 +211,7 @@ def data_preprocessing(
 def main(args):
     # load args
     dataset_path = args.dataset_path
+    dataset = dataset_path.split("/")[-1]
     result_path = args.result_path
     checkpoint_path = args.checkpoint_path
     nodeFolder = dataset_path + "/f_filter"
@@ -218,6 +219,8 @@ def main(args):
     train_ratio = args.train_sample_ratio
     learning_rate = args.learning_rate
     epochs = args.epochs
+    peak_pick_num = args.peak_pick_num
+    method_variant = args.method_variant
 
     # set seed
     seed_torch(args.seed)
@@ -239,59 +242,31 @@ def main(args):
     test_df = NlibraryNodes
 
     # Define model and optimizer
-    model = ScoringModel().to(device)
+    if method_variant == "wo_cor":
+        model = Metfusion().to(device)
+    elif method_variant == "cor_inside":
+        model = Metfusion_Cor_Inside().to(device)
+    elif method_variant == "cor_outside":
+        model = Metfusion_Cor_Outside().to(device)
+
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-    
-    # bring necessary information
-    peak_pick_num = args.peak_pick_num
-    situation = args.situation
-    cor_situation = args.cor_situation
-    test_val_situation = f"test and validation with peak pick number to be {peak_pick_num}"
-    print(situation + cor_situation + test_val_situation)
 
-    best_trial_test_acc = 0
-    # Training
-    for epoch in range(epochs):
-        # prepare data
-        train_data, validation_data = train_test_split(
-            train_df, test_size=(1 - train_ratio), shuffle=True
-        )
-
-        model.train()
-        total_loss = 0
-        for i, row in train_data.iterrows():
-            nodeId = row["ID"]
-            smiles = row["SMILES"]
-
-            node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
-                nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder
+    best_test_acc = 0
+    best_val_acc = 0
+    if args.scratch:
+        # Training
+        for epoch in range(epochs):
+            # prepare data
+            train_data, validation_data = train_test_split(
+                train_df, test_size=(1 - train_ratio), shuffle=True
             )
 
-            f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
-            tani = torch.tensor(tani, dtype=torch.float32).to(device)
-            m = torch.tensor(m, dtype=torch.float32).to(device)
-            cors = torch.tensor(cors, dtype=torch.float32).to(device)
-            ground_truth_vector = ground_truth_vector.to(device)
-
-            s = model(m, f, tani, cors)
-            s_probs = F.softmax(s, dim=0)
-
-            loss = calcCustomCrossEntropy(s_probs, ground_truth_vector)
-            total_loss += loss.item()
-
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-
-        print(f"Epoch [{epoch + 1}], Loss: {total_loss: .4f}\n")
-
-        # Validate the model
-        model.eval()
-        validation_correct = 0
-        with torch.no_grad():
-            for i, row in validation_data.iterrows():
+            model.train()
+            total_loss = 0
+            for i, row in train_data.iterrows():
                 nodeId = row["ID"]
                 smiles = row["SMILES"]
+
                 node_df, tani, m, cors, ground_truth_vector, labels = (
                     data_preprocessing(
                         nodeId,
@@ -315,62 +290,120 @@ def main(args):
                 s = model(m, f, tani, cors)
                 s_probs = F.softmax(s, dim=0)
 
-                predicted_label_index = s_probs.argmax().item()
-                predicted_label = labels.iloc[predicted_label_index]
+                loss = calcCustomCrossEntropy(s_probs, ground_truth_vector)
+                total_loss += loss.item()
 
-                # print(
-                # f"Node ID: {nodeId}, Labels: {predicted_label}, Ground Truth: {smiles}"
-                # )
-                if predicted_label == smiles:
-                    validation_correct += 1
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
 
-        validation_acc = validation_correct / len(validation_data)
-        print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
-        test_correct = 0
-        with torch.no_grad():
-            for i, row in test_df.iterrows():
-                nodeId = row["ID"]
-                smiles = row["SMILES"]
+            print(f"Epoch [{epoch + 1}], Loss: {total_loss/len(train_data): .4f}\n")
 
-                node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
-                    nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder
+            # Validate the model
+            model.eval()
+            validation_correct = 0
+            with torch.no_grad():
+                for i, row in validation_data.iterrows():
+                    nodeId = row["ID"]
+                    smiles = row["SMILES"]
+                    node_df, tani, m, cors, ground_truth_vector, labels = (
+                        data_preprocessing(
+                            nodeId,
+                            smiles,
+                            edges,
+                            libraryNodes,
+                            library_m,
+                            correlation,
+                            nodeFolder,
+                        )
+                    )
+
+                    f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(
+                        device
+                    )
+                    tani = torch.tensor(tani, dtype=torch.float32).to(device)
+                    m = torch.tensor(m, dtype=torch.float32).to(device)
+                    cors = torch.tensor(cors, dtype=torch.float32).to(device)
+                    ground_truth_vector = ground_truth_vector.to(device)
+
+                    s = model(m, f, tani, cors)
+                    s_probs = F.softmax(s, dim=0)
+
+                    predicted_label_index = s_probs.argmax().item()
+                    predicted_label = labels.iloc[predicted_label_index]
+
+                    # print(
+                    # f"Node ID: {nodeId}, Labels: {predicted_label}, Ground Truth: {smiles}"
+                    # )
+                    if predicted_label == smiles:
+                        validation_correct += 1
+
+            validation_acc = validation_correct / len(validation_data)
+            print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
+
+            test_correct = 0
+            with torch.no_grad():
+                for i, row in test_df.iterrows():
+                    nodeId = row["ID"]
+                    smiles = row["SMILES"]
+
+                    node_df, tani, m, cors, ground_truth_vector, labels = (
+                        data_preprocessing(
+                            nodeId,
+                            smiles,
+                            edges,
+                            libraryNodes,
+                            library_m,
+                            correlation,
+                            nodeFolder,
+                        )
+                    )
+
+                    f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(
+                        device
+                    )
+                    tani = torch.tensor(tani, dtype=torch.float32).to(device)
+                    m = torch.tensor(m, dtype=torch.float32).to(device)
+                    cors = torch.tensor(cors, dtype=torch.float32).to(device)
+                    ground_truth_vector = ground_truth_vector.to(device)
+
+                    s = model(m, f, tani, cors)
+                    s_probs = F.softmax(s, dim=0)
+
+                    top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
+                    top_n_indices = top_n_indices.cpu().numpy()
+                    top_n_smiles = labels.iloc[top_n_indices].tolist()
+                    if smiles in top_n_smiles:
+                        test_correct += 1
+                    else:
+                        continue
+
+            test_acc = test_correct / len(test_df)
+            print(f"Epoch [{epoch + 1}], Test Acc: {test_acc: .4f}\n")
+
+            # saving the best model on validation set
+            if test_acc >= best_test_acc:
+                best_test_acc = test_acc
+                torch.save(
+                    model.state_dict(),
+                    os.path.join(
+                        checkpoint_path,
+                        f"{dataset}_{method_variant}_top{peak_pick_num}_best_model.pth",
+                    ),
                 )
 
-                f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
-                tani = torch.tensor(tani, dtype=torch.float32).to(device)
-                m = torch.tensor(m, dtype=torch.float32).to(device)
-                cors = torch.tensor(cors, dtype=torch.float32).to(device)
-                ground_truth_vector = ground_truth_vector.to(device)
-
-                s = model(m, f, tani, cors)
-                s_probs = F.softmax(s, dim=0)
-
-                '''
-                # choose whether to use different choosing strategy and uncomment the one you want to use
-            
-                '''
-            
-                top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
-                top_n_indices = top_n_indices.cpu().numpy()
-                top_n_smiles = labels.iloc[top_n_indices].tolist()
-                if smiles in top_n_smiles:
-                    test_correct += 1
-                else:
-                    continue
-
-        trial_test_acc = test_correct / len(test_df)
-        print(f"Epoch [{epoch + 1}], Test Acc: {trial_test_acc: .4f}\n")
-        # saving the best model on validation set
-        if trial_test_acc >= best_trial_test_acc:
-            best_trial_test_acc = trial_test_acc
-            torch.save(
-                model.state_dict(), os.path.join(checkpoint_path, f"{situation+cor_situation+test_val_situation}best_model.pth")
-            )
-
     # Testing
-    model.load_state_dict(torch.load(os.path.join(checkpoint_path, f"{situation+cor_situation+test_val_situation}best_model.pth")))
+    model.load_state_dict(
+        torch.load(
+            os.path.join(
+                checkpoint_path,
+                f"{dataset}_{method_variant}_top{peak_pick_num}_best_model.pth",
+            )
+        )
+    )
     print("Testing on test data...")
     test_correct = 0
+    result_list = []
     with torch.no_grad():
         for i, row in test_df.iterrows():
             nodeId = row["ID"]
@@ -388,62 +421,47 @@ def main(args):
 
             s = model(m, f, tani, cors)
             s_probs = F.softmax(s, dim=0)
-
-            '''
+            """
             # choose whether to use different choosing strategy and uncomment the one you want to use
             
-            '''
-            
+            """
+
             top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
             top_n_indices = top_n_indices.cpu().numpy()
             top_n_smiles = labels.iloc[top_n_indices].tolist()
 
-            # write in the file 
-            with open(result_path + f"/{args.situation}_test_top_{peak_pick_num}.txt", "a") as f:
-                f.write(f"node ID: {nodeId}, ground truth SMILE: {smiles}")
-                f.write("\n")
-                f.write(f"top {peak_pick_num} test cadidates: \n")
-                for idx, value, prob in zip(top_n_indices, top_n_smiles, top_n_probs):
-                    f.write(f"smiles: {value}, probs: {prob.item(): .5f}")
-                    f.write("\n")
-                f.close()
-                f.close
+            result = (
+                f"node ID: {nodeId}, ground truth SMILE: {smiles}"
+                + "\n"
+                + f"top {peak_pick_num} test cadidates: \n"
+            )
+            candidate = ""
+            for idx, value, prob in zip(
+                top_n_indices,
+                top_n_smiles,
+                top_n_probs,
+            ):
+                candidate += f"smiles: {value}, s: {prob.item(): .5f}" + "\n"
+            result += candidate
+            result_list.append(result)
+
             if smiles in top_n_smiles:
                 test_correct += 1
             else:
                 continue
-            
-            '''
-            predicted_label_index = s_probs.argmax().item()
-            predicted_label = labels.iloc[predicted_label_index]
-            # write in the file
-            with open(result_path + f"/{args.situation}_test_exact.txt", "a") as f:
-                f.write(
-                    f"node ID: {nodeId}, predicted SMILE:{predicted_label}, ground truth SMILE: {smiles}"
-                )
-                f.write("\n")
-                f.close
-            if predicted_label == smiles:
-                test_correct += 1
-            '''
-
+    # write in the file
+    with open(
+        result_path + f"/{dataset}_{method_variant}_top{peak_pick_num}.txt",
+        "w+",
+    ) as f:
+        for result in result_list:
+            f.write(result)
+        f.close()
     test_acc = test_correct / len(test_df)
     print(f"Test Acc: {test_acc: .4f}")
     print(f"Final alpha: {model.alpha.item(): .4f}")
     print(f"Final beta: {model.beta.item(): .4f}")
     print(f"Final gamma: {model.gamma.item(): .4f}")
-    with open(result_path + f"/{args.situation}_test_acc_exact.txt", "a") as f:
-        f.write(situation + cor_situation + test_val_situation)
-        f.write("\n")
-        f.write(f"Test Acc: {test_acc: .4f}")
-        f.write("\n")
-        f.write(f"Final alpha: {model.alpha.item(): .4f}")
-        f.write("\n")
-        f.write(f"Final beta: {model.beta.item(): .4f}")
-        f.write("\n")
-        f.write(f"Final gamma: {model.gamma.item(): .4f}")
-        f.write("\n")
-        f.close()
 
 
 if __name__ == "__main__":
@@ -453,7 +471,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset_path",
         type=str,
-        default="../Sediment_check",
+        default="../datasets/Sediment_check",
         help="The folder path of dataset",
     )
     parser.add_argument(
@@ -498,19 +516,18 @@ if __name__ == "__main__":
         default=0,
     )
     parser.add_argument(
-        "--situation",
+        "--method_variant",
         type=str,
-        default="mlp_combo",
-    )
-    parser.add_argument(
-        "--cor_situation", 
-        type=str,
-        default="no_correlation",
+        default="wo_cor",
+        choices=["wo_cor", "cor_inside", "cor_outside"],
     )
     parser.add_argument(
         "--peak_pick_num",
         type=int,
-        default=0,
+        default=1,
+    )
+    parser.add_argument(
+        "--scratch", type=str2bool, default="True", help="Train from scratch"
     )
     args = parser.parse_args()
     for arg in vars(args):

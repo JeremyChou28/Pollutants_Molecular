@@ -17,7 +17,7 @@ learning_rate=0.001
 epochs=5
 device="cuda:0"
 seed=1
-method_variant="cor_inside"  # "wo_cor", "cor_inside", "cor_outside"
+method_variant="cor_our"  # "wo_cor", "cor_inside", "cor_outside", "cor_our"
 peak_pick_num=10    # 1 5 10 20
 scratch=False   # True: Train from scratch; False: Load pre-trained model
 

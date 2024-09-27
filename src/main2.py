@@ -248,6 +248,8 @@ def main(args):
         model = Metfusion_Cor_Inside().to(device)
     elif method_variant == "cor_outside":
         model = Metfusion_Cor_Outside().to(device)
+    elif method_variant == "cor_our":
+        model = Metfusion_Our().to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -478,6 +480,7 @@ def main(args):
     print(f"Final alpha: {model.alpha.item(): .4f}")
     print(f"Final beta: {model.beta.item(): .4f}")
     print(f"Final gamma: {model.gamma.item(): .4f}")
+    print(f"Final lambda: {model.lamda.item(): .4f}")
 
 
 if __name__ == "__main__":
@@ -535,7 +538,7 @@ if __name__ == "__main__":
         "--method_variant",
         type=str,
         default="wo_cor",
-        choices=["wo_cor", "cor_inside", "cor_outside"],
+        choices=["wo_cor", "cor_inside", "cor_outside", "cor_our"],
     )
     parser.add_argument(
         "--peak_pick_num",
