@@ -35,3 +35,15 @@ pip install -r requirements.txt
 cd scripts
 bash run_mlp_changjiang.sh
 ```
+
+## TODO
+
+1. 提高模型训练效率（训练过程的文件读取操作导致 IO 过多，时间消耗大）
+2. 教下衍志几个注意事项
+   train from scratch 和 load trained model
+   how to save result
+   how to set arguments
+   how to acclerate the training speed: 数据预处理都在训练前完成，尤其是 tanimoto 的计算
+3. 需要跟郑博士确认的几个细节
+   同样的 smile 具有不同的 ID，这是为什么，需要处理掉吗
+   m 文件中存在重复数据，需要去重吗

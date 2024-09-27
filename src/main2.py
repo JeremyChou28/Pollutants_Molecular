@@ -222,11 +222,6 @@ def main(args):
     peak_pick_num = args.peak_pick_num
     method_variant = args.method_variant
 
-    if not os.path.exists(result_path):
-        os.makedirs(result_path)
-    if not os.path.exists(checkpoint_path):
-        os.makedirs(checkpoint_path)
-
     # set seed
     seed_torch(args.seed)
 
@@ -253,10 +248,12 @@ def main(args):
         model = Metfusion_Cor_Inside().to(device)
     elif method_variant == "cor_outside":
         model = Metfusion_Cor_Outside().to(device)
+    elif method_variant == "cor_our":
+        model = Metfusion_Our().to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
-    best_test_acc = 0
+    best_trial_test_acc = 0
     best_val_acc = 0
     if args.scratch:
         # Training
@@ -346,49 +343,9 @@ def main(args):
             validation_acc = validation_correct / len(validation_data)
             print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
 
-            test_correct = 0
-            with torch.no_grad():
-                for i, row in test_df.iterrows():
-                    nodeId = row["ID"]
-                    smiles = row["SMILES"]
-
-                    node_df, tani, m, cors, ground_truth_vector, labels = (
-                        data_preprocessing(
-                            nodeId,
-                            smiles,
-                            edges,
-                            libraryNodes,
-                            library_m,
-                            correlation,
-                            nodeFolder,
-                        )
-                    )
-
-                    f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(
-                        device
-                    )
-                    tani = torch.tensor(tani, dtype=torch.float32).to(device)
-                    m = torch.tensor(m, dtype=torch.float32).to(device)
-                    cors = torch.tensor(cors, dtype=torch.float32).to(device)
-                    ground_truth_vector = ground_truth_vector.to(device)
-
-                    s = model(m, f, tani, cors)
-                    s_probs = F.softmax(s, dim=0)
-
-                    top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
-                    top_n_indices = top_n_indices.cpu().numpy()
-                    top_n_smiles = labels.iloc[top_n_indices].tolist()
-                    if smiles in top_n_smiles:
-                        test_correct += 1
-                    else:
-                        continue
-
-            test_acc = test_correct / len(test_df)
-            print(f"Epoch [{epoch + 1}], Test Acc: {test_acc: .4f}\n")
-
             # saving the best model on validation set
-            if test_acc >= best_test_acc:
-                best_test_acc = test_acc
+            if validation_acc >= best_val_acc:
+                best_val_acc = validation_acc
                 torch.save(
                     model.state_dict(),
                     os.path.join(
@@ -396,6 +353,49 @@ def main(args):
                         f"{dataset}_{method_variant}_top{peak_pick_num}_best_model.pth",
                     ),
                 )
+
+            # test_correct = 0
+            # with torch.no_grad():
+            #     for i, row in test_df.iterrows():
+            #         nodeId = row["ID"]
+            #         smiles = row["SMILES"]
+
+            #         node_df, tani, m, cors, ground_truth_vector, labels = (
+            #             data_preprocessing(
+            #                 nodeId,
+            #                 smiles,
+            #                 edges,
+            #                 libraryNodes,
+            #                 library_m,
+            #                 correlation,
+            #                 nodeFolder,
+            #             ))
+
+            #         f = torch.tensor(node_df["Score"].values,
+            #                          dtype=torch.float32).to(device)
+            #         tani = torch.tensor(tani, dtype=torch.float32).to(device)
+            #         m = torch.tensor(m, dtype=torch.float32).to(device)
+            #         cors = torch.tensor(cors, dtype=torch.float32).to(device)
+            #         ground_truth_vector = ground_truth_vector.to(device)
+
+            #         s = model(m, f, tani, cors)
+            #         s_probs = F.softmax(s, dim=0)
+            #         """
+            #         # choose whether to use different choosing strategy and uncomment the one you want to use
+
+            #         """
+
+            #         top_n_probs, top_n_indices = torch.topk(
+            #             s_probs, peak_pick_num)
+            #         top_n_indices = top_n_indices.cpu().numpy()
+            #         top_n_smiles = labels.iloc[top_n_indices].tolist()
+            #         if smiles in top_n_smiles:
+            #             test_correct += 1
+            #         else:
+            #             continue
+
+            # trial_test_acc = test_correct / len(test_df)
+            # print(f"Epoch [{epoch + 1}], Test Acc: {trial_test_acc: .4f}\n")
 
     # Testing
     model.load_state_dict(
@@ -454,7 +454,20 @@ def main(args):
                 test_correct += 1
             else:
                 continue
-    # write in the file
+            """
+            predicted_label_index = s_probs.argmax().item()
+            predicted_label = labels.iloc[predicted_label_index]
+            # write in the file
+            with open(result_path + f"/{args.dataset}_test_exact.txt", "a") as f:
+                f.write(
+                    f"node ID: {nodeId}, predicted SMILE:{predicted_label}, ground truth SMILE: {smiles}"
+                )
+                f.write("\n")
+                f.close
+            if predicted_label == smiles:
+                test_correct += 1
+            """
+            # write in the file
     with open(
         result_path + f"/{dataset}_{method_variant}_top{peak_pick_num}.txt",
         "w+",
@@ -467,6 +480,7 @@ def main(args):
     print(f"Final alpha: {model.alpha.item(): .4f}")
     print(f"Final beta: {model.beta.item(): .4f}")
     print(f"Final gamma: {model.gamma.item(): .4f}")
+    print(f"Final lambda: {model.lamda.item(): .4f}")
 
 
 if __name__ == "__main__":
@@ -524,7 +538,7 @@ if __name__ == "__main__":
         "--method_variant",
         type=str,
         default="wo_cor",
-        choices=["wo_cor", "cor_inside", "cor_outside"],
+        choices=["wo_cor", "cor_inside", "cor_outside", "cor_our"],
     )
     parser.add_argument(
         "--peak_pick_num",

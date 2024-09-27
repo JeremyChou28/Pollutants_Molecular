@@ -1,0 +1,38 @@
+dataset_path: ../datasets/ChangjiangRiver_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 5
+device: cuda:0
+seed: 1
+method_variant: cor_inside
+peak_pick_num: 10
+scratch: True
+The following files missing: [778, 895, 1388, 1590, 1836, 3195, 5021, 5881, 6487, 8121, 8989, 13399, 15457]
+Epoch [1], Loss:  6.1751
+
+Epoch [1], Validation Acc:  0.2000
+
+Epoch [2], Loss:  6.3307
+
+Epoch [2], Validation Acc:  0.4000
+
+Epoch [3], Loss:  6.4221
+
+Epoch [3], Validation Acc:  0.2000
+
+Epoch [4], Loss:  6.0461
+
+Epoch [4], Validation Acc:  0.2000
+
+Epoch [5], Loss:  5.9767
+
+Epoch [5], Validation Acc:  0.4000
+
+Testing on test data...
+Test Acc:  0.3810
+Final alpha:  0.2782
+Final beta: -9.0276
+Final gamma:  0.5612
+Spend time: 299.75607109069824
