@@ -35,3 +35,8 @@ pip install -r requirements.txt
 cd scripts
 bash run_mlp_changjiang.sh
 ```
+
+## TODO
+
+1. 提高模型训练效率（训练过程的文件读取操作导致 IO 过多，时间消耗大）
+2.

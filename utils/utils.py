@@ -2,7 +2,7 @@
 Description: 
 Author: Jianping Zhou
 Email: jianpingzhou0927@gmail.com
-Date: 2024-09-19 20:34:30
+Date: 2024-09-27 13:31:36
 """
 
 import os
@@ -20,3 +20,7 @@ def seed_torch(seed=0):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
     torch.set_default_dtype(torch.float32)
+
+
+def str2bool(str):
+    return True if str.lower() == "true" else False

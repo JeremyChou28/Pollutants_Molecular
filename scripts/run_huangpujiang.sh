@@ -14,16 +14,15 @@ result_path="../results"
 checkpoint_path="../checkpoints"
 train_sample_ratio=0.8
 learning_rate=0.001
-epochs=100
-device="cuda:1"
+epochs=5
+device="cuda:0"
 seed=1
-situation="Huangpujiang_ "
-cor_situation="with_cor_inside_sig_ "
-peak_pick_num=10
-
+method_variant="wo_cor"  # "wo_cor", "cor_inside", "cor_outside"
+peak_pick_num=10    # 1 5 10 20
+scratch=False
 
 nohup python -u ../src/main2.py \
-    --scratch \
+    --scratch $scratch \
     --dataset_path $dataset_path \
     --result_path $result_path \
     --checkpoint_path $checkpoint_path \
@@ -32,6 +31,5 @@ nohup python -u ../src/main2.py \
     --epochs $epochs \
     --device $device \
     --seed $seed \
-    --situation $situation \
-    --cor_situation $cor_situation \
-    --peak_pick_num $peak_pick_num > ../logs/${situation}_${cor_situation}_${current_datetime}.log 2>&1 &
+    --method_variant $method_variant \
+    --peak_pick_num $peak_pick_num > ../logs/HuangpujiangRiver_${method_variant}_${current_datetime}.log 2>&1 &
