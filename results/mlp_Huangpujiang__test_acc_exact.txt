@@ -64,3 +64,8 @@ Test Acc:  0.3077
 Final alpha: -0.2659
 Final beta: -9.6840
 Final gamma:  0.4106
+mlp_Huangpujiang_without_cortest and validation with peak pick number to be 20
+Test Acc:  0.7308
+Final alpha: -0.2659
+Final beta: -9.6840
+Final gamma:  0.4106
