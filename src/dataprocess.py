@@ -5,7 +5,7 @@ Email: jianpingzhou0927@gmail.com
 Date: 2024-09-12 15:46:56
 '''
 import os
-import pandas as pd
+import pandas as pd 
 from rdkit import Chem
 from rdkit.Chem import AllChem, DataStructs
 from rdkit.Chem import rdMolDescriptors
@@ -52,7 +52,7 @@ def generate_t_score(args):
         fp_sim = np.zeros((n, n))
         for i in range(n):
             for j in range(i + 1, n):
-                sim = DataStructs.TanimotoSimilarity(fps[i], fps[j])
+                sim = DataStructs.TanimotoSimilarity(fps[i], fps[j]) 
                 fp_sim[i, j] = fp_sim[j, i] = sim
         
         # 提取第一个物质与其它所有物质的相似度
