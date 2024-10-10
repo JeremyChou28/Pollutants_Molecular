@@ -1,16 +1,17 @@
-import pandas as pd
 import os
-import numpy as np
+import time
 import argparse
+import numpy as np
+import pandas as pd
 from rdkit import Chem
 from rdkit.DataStructs import TanimotoSimilarity
 from rdkit.Chem import AllChem
-import warnings
-import time
-warnings.filterwarnings("ignore", category=UserWarning)
 from rdkit import RDLogger
+import warnings
+
+warnings.filterwarnings("ignore", category=UserWarning)
 RDLogger.DisableLog("rdApp.*")
-import torch
+
 
 # check the existence of the files in f_filter
 def check_files_exist(df, column_name, folder_path):
@@ -20,6 +21,7 @@ def check_files_exist(df, column_name, folder_path):
         if not os.path.isfile(file_path):
             missing_files.append(item)
     return missing_files
+
 
 def load_data(dataset_path, nodeFolder):
     # basic data preprocessing
@@ -70,7 +72,8 @@ def load_data(dataset_path, nodeFolder):
         edges,
         correlation,
     )
-    
+
+
 def findConnectedLibrary(nodeId, edges, libraryNodes):
     connectedNodes = []
     connectedNodes.extend(edges[edges["Connected_node"] == nodeId]["Library_node"])
@@ -78,6 +81,7 @@ def findConnectedLibrary(nodeId, edges, libraryNodes):
     connectedDf = pd.Series(connectedNodes)
     connectedLibrary = connectedDf[connectedDf.isin(libraryNodes["ID"])].tolist()
     return connectedLibrary
+
 
 # load the csv files correspond to the id of the nodes
 def loadNodeCsv(nodeId, folderPath):
@@ -87,6 +91,7 @@ def loadNodeCsv(nodeId, folderPath):
     else:
         raise FileNotFoundError(f"No CSV file found for node ID {nodeId} at {filePath}")
 
+
 def findConnectedSmiles(connectedNodes, libraryNodes):
     smileSet = []
     smileSet.extend(
@@ -94,6 +99,7 @@ def findConnectedSmiles(connectedNodes, libraryNodes):
     )
     smileSet.reverse()
     return smileSet
+
 
 def smiles2Fingerprint(smile):
     mol = Chem.MolFromSmiles(smile)
@@ -118,35 +124,35 @@ def calcTanimotoCoef(smile, smileSet):
     return tanimoto_scores
 
 
-import numpy as np
-import os
-
 def data_preprocessing(edges, libraryNodes, nodeFolder, dataframe, result_path):
     if not os.path.exists(result_path):
         os.makedirs(result_path)
 
     for i, row in dataframe.iterrows():
-        nodeId = row['ID']
+        nodeId = row["ID"]
         connected_node_ids = findConnectedLibrary(nodeId, edges, libraryNodes)
         node_df = loadNodeCsv(nodeId, nodeFolder)
-        
-        # find the max len to construct matrix
-        max_len = max([len(findConnectedSmiles(connected_node_ids, libraryNodes)) for _, row_ in node_df.iterrows()])
 
-        scores = np.zeros((len(node_df), max_len))  
+        # find the max len to construct matrix
+        max_len = max(
+            [
+                len(findConnectedSmiles(connected_node_ids, libraryNodes))
+                for _, row_ in node_df.iterrows()
+            ]
+        )
+
+        scores = np.zeros((len(node_df), max_len))
 
         # fillin
         for i_, row_ in node_df.iterrows():
             connectedSmiles = findConnectedSmiles(connected_node_ids, libraryNodes)
             tani = calcTanimotoCoef(row_["SMILES"], connectedSmiles)
-            scores[i_, :len(tani)] = tani  
+            scores[i_, : len(tani)] = tani
 
         np.save(f"{result_path}/{nodeId}.npy", scores)
         print(f"Node {nodeId} done!")
 
     return 0
-
-
 
 
 def main(args):
@@ -167,7 +173,8 @@ def main(args):
     test_df = NlibraryNodes
     data_preprocessing(edges, libraryNodes, nodeFolder, train_df, result_path)
     data_preprocessing(edges, libraryNodes, nodeFolder, test_df, result_path)
-    
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Tanimoto Coefficient Library Construction."
@@ -182,7 +189,7 @@ if __name__ == "__main__":
         "--result_path",
         type=str,
         default="../datasets/ChangjiangRiver_check/train_tani_lib",
-        help="basically should be consistent with what you set in dataset_path argument"        
+        help="basically should be consistent with what you set in dataset_path argument",
     )
     args = parser.parse_args()
     for arg in vars(args):

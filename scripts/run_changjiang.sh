@@ -14,12 +14,12 @@ result_path="../results"
 checkpoint_path="../checkpoints"
 train_sample_ratio=0.8
 learning_rate=0.001
-epochs=5
+epochs=100
 device="cuda:0"
 seed=1
 method_variant="cor_our"  # "wo_cor", "cor_inside", "cor_outside", "cor_our"
 peak_pick_num=10    # 1 5 10 20
-scratch=False   # True: Train from scratch; False: Load pre-trained model
+scratch=True   # True: Train from scratch; False: Load pre-trained model
 
 nohup python -u ../src/main2.py \
     --scratch $scratch \
