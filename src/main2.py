@@ -184,7 +184,7 @@ def load_data(dataset_path, nodeFolder):
 
 
 def data_preprocessing(
-    nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder
+    nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder, tani_lib_folder
 ):
     connected_node_ids = findConnectedLibrary(nodeId, edges, libraryNodes)
 
@@ -194,12 +194,13 @@ def data_preprocessing(
     ground_truth_vector = oneHotVect(labels, ground_truth_index)
 
     # get tanimoto for each of the connected nodes
-    tani_list = []
-    for smile in node_df["SMILES"].values:
-        connectedSmiles = findConnectedSmiles(connected_node_ids, libraryNodes)
-        tani = calcTanimotoCoef(smile, connectedSmiles)
-        tani_list.append(tani)
-    tani = np.array(tani_list)
+    # tani_list = []
+    # for smile in node_df["SMILES"].values:
+    #     connectedSmiles = findConnectedSmiles(connected_node_ids, libraryNodes)
+    #     tani = calcTanimotoCoef(smile, connectedSmiles)
+    #     tani_list.append(tani)
+    # tani = np.array(tani_list)
+    tani = np.load(tani_lib_folder + f"/{nodeId}.npy")
 
     connected_lib = findConnectedLibrary(nodeId, edges, libraryNodes)
     m = getMVal(connected_lib, library_m)
@@ -215,7 +216,7 @@ def main(args):
     result_path = args.result_path
     checkpoint_path = args.checkpoint_path
     nodeFolder = dataset_path + "/f_filter"
-    connected_node_folder = dataset_path + "/outputs"
+    tani_lib_folder = dataset_path + "/train_tani_lib"
     train_ratio = args.train_sample_ratio
     learning_rate = args.learning_rate
     epochs = args.epochs
@@ -278,6 +279,7 @@ def main(args):
                         library_m,
                         correlation,
                         nodeFolder,
+                        tani_lib_folder,
                     )
                 )
 
@@ -317,6 +319,7 @@ def main(args):
                             library_m,
                             correlation,
                             nodeFolder,
+                            tani_lib_folder,
                         )
                     )
 
@@ -415,7 +418,7 @@ def main(args):
             smiles = row["SMILES"]
 
             node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
-                nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder
+                nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder, tani_lib_folder
             )
 
             f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
