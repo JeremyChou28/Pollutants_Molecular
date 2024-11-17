@@ -39,6 +39,7 @@ pip install -r requirements.txt
 
 ```
 cd scripts
+bash dataprocess.sh
 bash tanimotoGenerator.sh
 ```
 
@@ -46,11 +47,11 @@ bash tanimotoGenerator.sh
 
 ```
 cd scripts
-bash run_mlp_changjiang.sh
+bash run_changjiang.sh
+bash run_huangpujiang.sh
+bash run_Sediment.sh
+bash run_honeyNeg.sh
+bash run_honeyPos.sh
+bash run_synthtic.sh
 ```
 
-## TODO
-
-1. 需要跟郑博士确认的几个细节
-   同样的 smile 具有不同的 ID，这是为什么，需要处理掉吗
-   m 文件中存在重复数据，需要去重吗

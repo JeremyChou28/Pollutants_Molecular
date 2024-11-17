@@ -1,0 +1,102 @@
+dataset_path: ../datasets/Honey_pos_check
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+method_variant: cor_our
+peak_pick_num: 20
+scratch: True
+The following files missing: [2023, 3231, 3349, 3358, 3688, 4173, 5607, 14129, 18276, 10320]
+Epoch [1], Loss:  7.0425
+
+Epoch [1], Validation Acc:  1.0000
+
+Epoch [2], Loss:  6.8703
+
+Epoch [2], Validation Acc:  0.6667
+
+Epoch [3], Loss:  6.5474
+
+Epoch [3], Validation Acc:  0.6667
+
+Epoch [4], Loss:  7.1901
+
+Epoch [4], Validation Acc:  1.0000
+
+Epoch [5], Loss:  6.4551
+
+Epoch [5], Validation Acc:  0.6667
+
+Epoch [6], Loss:  6.3388
+
+Epoch [6], Validation Acc:  0.6667
+
+Epoch [7], Loss:  6.8428
+
+Epoch [7], Validation Acc:  1.0000
+
+Epoch [8], Loss:  6.2683
+
+Epoch [8], Validation Acc:  0.3333
+
+Epoch [9], Loss:  6.5378
+
+Epoch [9], Validation Acc:  1.0000
+
+Epoch [10], Loss:  6.7361
+
+Epoch [10], Validation Acc:  0.6667
+
+Epoch [11], Loss:  6.6376
+
+Epoch [11], Validation Acc:  1.0000
+
+Epoch [12], Loss:  6.2875
+
+Epoch [12], Validation Acc:  0.6667
+
+Epoch [13], Loss:  7.0635
+
+Epoch [13], Validation Acc:  1.0000
+
+Epoch [14], Loss:  6.5991
+
+Epoch [14], Validation Acc:  0.6667
+
+Epoch [15], Loss:  6.7406
+
+Epoch [15], Validation Acc:  0.6667
+
+Epoch [16], Loss:  6.3678
+
+Epoch [16], Validation Acc:  1.0000
+
+Epoch [17], Loss:  6.6559
+
+Epoch [17], Validation Acc:  0.6667
+
+Epoch [18], Loss:  6.7278
+
+Epoch [18], Validation Acc:  1.0000
+
+Epoch [19], Loss:  6.5454
+
+Epoch [19], Validation Acc:  0.6667
+
+Epoch [20], Loss:  6.2008
+
+Epoch [20], Validation Acc:  0.3333
+
+Epoch [21], Loss:  6.6293
+
+Epoch [21], Validation Acc:  1.0000
+
+Epoch [22], Loss:  6.2453
+
+Epoch [22], Validation Acc:  0.3333
+
+Epoch [23], Loss:  6.2181
+

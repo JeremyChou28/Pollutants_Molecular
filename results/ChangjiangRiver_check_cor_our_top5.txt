@@ -1,0 +1,294 @@
+node ID: 2302, ground truth SMILE: C1=CC=C(C(=C1)C(=O)O)C(=O)O
+top 5 test cadidates: 
+smiles: COC#COC#COC#COC, s:  0.00325
+smiles: C(N)(NF)(N(F)F)N(F)F, s:  0.00313
+smiles: C1=C(C(=C(C(=C1F)F)[NH3+])F)F, s:  0.00312
+smiles: C1=C(C(=C(C(=C1F)F)F)F)[NH3+], s:  0.00312
+smiles: CC1=C([N+](=C(C=C1F)F)F)F, s:  0.00311
+node ID: 896, ground truth SMILE: C1=CC=C2C=NC=CC2=C1
+top 5 test cadidates: 
+smiles: C1=N[13C](=[13C](C(=O)N1)[15NH2])N, s:  0.00646
+smiles: C=C=C=NC1=CC=CC=C1, s:  0.00642
+smiles: C#CC=NC1=CC=CC=C1, s:  0.00642
+smiles: C1=N[13C](=[13C]([15NH]1)C(=O)N)N, s:  0.00628
+smiles: CN1C=C(C(=C1)C#C)C#C, s:  0.00613
+node ID: 2275, ground truth SMILE: C1=CC=C(C=C1)CC(C(=O)O)N
+top 5 test cadidates: 
+smiles: C[C@@H](C(=O)OC1=CC=CC=C1)N, s:  0.00031
+smiles: CC(N)OC(=O)C1=CC=CC=C1, s:  0.00030
+smiles: CC(=O)C1=CNC=C(C1)C(=O)C, s:  0.00029
+smiles: CCOC(=N)OC1=CC=CC=C1, s:  0.00029
+smiles: C=CC(OC1=CC=CC=C1)ON, s:  0.00029
+node ID: 5699, ground truth SMILE: CCN(CC)CC(=O)NC1=C(C=CC=C1C)C
+top 5 test cadidates: 
+smiles: CC(C)CC(C1=CC=CC=C1)NC(=O)C(C)N, s:  0.00006
+smiles: CC(C)CC(C)NC(=O)C(C1=CC=CC=C1)N, s:  0.00006
+smiles: CC(C)CC(C(=O)NC(C)C1=CC=CC=C1)N, s:  0.00006
+smiles: CC(C)CC(C(=O)N(C)CC1=CC=CC=C1)N, s:  0.00006
+smiles: CCN(C1=CC=CC=C1)C(=O)[C@H](CC(C)C)N, s:  0.00006
+node ID: 4482, ground truth SMILE: C1=CC=C(C=C1)N(C2=CC=CC=C2)C(=O)N
+top 5 test cadidates: 
+smiles: C1=CC(=CC(=C1)C(=O)N)C2=CC(=CC=C2)N, s:  0.00066
+smiles: C1=CC(=CC(=C1)N)C(=O)C2=CC(=CC=C2)N, s:  0.00063
+smiles: C1=CC(=CC(=C1)C(=O)N)C2=CC=C(C=C2)N, s:  0.00049
+smiles: C1=CC(=CC(=C1)N)C2=CC=C(C=C2)C(=O)N, s:  0.00049
+smiles: C1=CC(=CC(=C1)N)C(=O)C2=CC=C(C=C2)N, s:  0.00048
+node ID: 8129, ground truth SMILE: CCCCCCCCCCCCCCCC[N+](C)(C)C
+top 5 test cadidates: 
+smiles: CCCCCC[N+](CCCC)(CCCC)CCCCC, s:  0.02121
+smiles: CCCCCCC[N+](CCCC)(CCCC)CCCC, s:  0.02121
+smiles: CCCCCCCC[N+](CCC)(CCC)CCCCC, s:  0.02050
+smiles: CCCCCCCCCC[N+](CCC)(CCC)CCC, s:  0.02050
+smiles: CCCCCC[N+](C)(CCCCCC)CCCCCC, s:  0.02050
+node ID: 1397, ground truth SMILE: CCCC(CCC)C(=O)N
+top 5 test cadidates: 
+smiles: CCCC(CCC)C(=O)N, s:  0.00133
+smiles: CCCC(C(C)C)C(=O)N, s:  0.00056
+smiles: CCCC(C)C(C)C(=O)N, s:  0.00055
+smiles: CCCCC(CC)C(=O)N, s:  0.00051
+smiles: CCCC(CCN)C(=O)C, s:  0.00047
+node ID: 1600, ground truth SMILE: C1=CC=C2C(=C1)C(=O)OC2=O
+top 5 test cadidates: 
+smiles: C1=CC=C2C(=C1)C(=O)OC2=O, s:  0.61775
+smiles: C1=CC=C2C(=C1)C(=O)C(=O)O2, s:  0.01088
+smiles: C1=CC2=CC(=C1)C(=O)OC2=O, s:  0.00720
+smiles: C(/C=C/C(=O)N)[P+](=O)O, s:  0.00633
+smiles: CC(=O)C(=N)[P+](=O)OC, s:  0.00633
+node ID: 7229, ground truth SMILE: CCCCOP(=O)(OCCCC)OCCCC
+top 5 test cadidates: 
+smiles: CCCCCCCCCCOP(=O)(O)OCC, s:  0.39458
+smiles: CCCCCCOP(=O)(O)OCCCCCC, s:  0.13081
+smiles: CCCCCCCOP(=O)(O)OCCCCC, s:  0.13079
+smiles: CCCCCCCCOP(=O)(O)OCCCC, s:  0.10409
+smiles: CCCCOP(=O)(OCCCC)OCCCC, s:  0.02115
+node ID: 2140, ground truth SMILE: C1=CC=C2C(=C1)C(=CC(=O)O2)O
+top 5 test cadidates: 
+smiles: C1=CC=C2C(=C1)C(=CC(=O)O2)O, s:  0.01536
+smiles: C1=CC(=C2C=CC(=O)OC2=C1)O, s:  0.00790
+smiles: C1=CC2=CC(=O)OC(=C2C=C1)O, s:  0.00503
+smiles: CSC1=CC(=CC(C1)F)F, s:  0.00427
+smiles: C1=CC=C2C(=C1)C(=O)C(=CO2)O, s:  0.00424
+node ID: 3512, ground truth SMILE: CN1C=NC2=C1C(=O)N(C(=O)N2C)C
+top 5 test cadidates: 
+smiles: CCN1C(=O)C2=C(N=CN2)N(C1=O)C, s:  0.00226
+smiles: CCN1C2=C(C(=O)N(C1=O)C)NC=N2, s:  0.00219
+smiles: CC1=NC2=C(N1)C(=O)N(C(=O)N2C)C, s:  0.00114
+smiles: CN1C2=C(C(=O)N(C1=O)C)NC=C2N, s:  0.00108
+smiles: CN1C=NC2=C1C(=O)N(C(=O)N2C)C, s:  0.00102
+node ID: 3381, ground truth SMILE: COC(=O)NC1=NC2=CC=CC=C2N1
+top 5 test cadidates: 
+smiles: COC(=O)NC1=NC2=CC=CC=C2N1, s:  0.00377
+smiles: C1=CC=C2C(=C1)NC(=N2)NC(=O)CO, s:  0.00224
+smiles: C1=CC=C2C(=C1)NC(=N2)NCC(=O)O, s:  0.00183
+smiles: CNC(=O)OC1=NC2=CC=CC=C2N1, s:  0.00149
+smiles: CONC(=O)C1=NC2=CC=CC=C2N1, s:  0.00114
+node ID: 3435, ground truth SMILE: COC1=CC=C(C=C1)N2CCNCC2
+top 5 test cadidates: 
+smiles: CCN(CC)C(=O)C1=CC(=CC=C1)N, s:  0.00083
+smiles: CCN(CC)C(=O)C1=CN=CC(=C1)C, s:  0.00055
+smiles: CCN(CC)C(=O)C1=CC(=NC=C1)C, s:  0.00050
+smiles: CCN(CC)C(=O)C1=NC=CC(=C1)C, s:  0.00050
+smiles: CC1=CC(=CC=C1)C(=O)N(C)CCN, s:  0.00050
+node ID: 6021, ground truth SMILE: CC(C)NC1=NC(=NC(=N1)SC)NC(C)C
+top 5 test cadidates: 
+smiles: CCNC1=NC(=NC(=N1)C(C)S)NC(C)C, s:  0.00390
+smiles: CCNC1=NC(=NC(=N1)SCC)NC(C)C, s:  0.00236
+smiles: CCNC1=NC(=NC(=N1)SC(C)C)NCC, s:  0.00085
+smiles: CCC(C)NC1=NC(=NC(=N1)NCC)SC, s:  0.00075
+smiles: CCC(C)NC1=NC(=NC(=N1)NCC)CS, s:  0.00074
+node ID: 5212, ground truth SMILE: CC(C)NC1=NC(=NC(=N1)OC)NC(C)C
+top 5 test cadidates: 
+smiles: CCNC1=NC(=NC(=N1)OCC)NC(C)C, s:  0.00355
+smiles: CCC(C)NC1=NC(=NC(=N1)NCC)OC, s:  0.00354
+smiles: CC(C)NC1=NC(=NC(=N1)OC)NC(C)C, s:  0.00321
+smiles: CCCNC1=NC(=NC(=N1)OC)NC(C)C, s:  0.00306
+smiles: CCNC1=NC(=NC(=N1)COC)NC(C)C, s:  0.00267
+node ID: 5330, ground truth SMILE: CCNC1=NC(=NC(=N1)SC)NC(C)C
+top 5 test cadidates: 
+smiles: CCNC1=NC(=NC(=N1)CS)NC(C)C, s:  0.01559
+smiles: CCNC1=NC(=NC(=N1)SC)NC(C)C, s:  0.01546
+smiles: CCNC1=NC(=NC(=N1)C(C)S)NCC, s:  0.00745
+smiles: CCSC1=NC(=NC(=N1)NC(C)C)NC, s:  0.00375
+smiles: CCNC1=NC(=NC(=N1)SCC)NCC, s:  0.00358
+node ID: 5423, ground truth SMILE: CCNC1=NC(=NC(=N1)Cl)NC(C)(C)C
+top 5 test cadidates: 
+smiles: CC(C)NC1=NC(=NC(=N1)Cl)NC(C)C, s:  0.03569
+smiles: CCCNC1=NC(=NC(=N1)Cl)NC(C)C, s:  0.03541
+smiles: CCNC1=NC(=NC(=N1)CCl)NC(C)C, s:  0.03093
+smiles: CCC(C)NC1=NC(=NC(=N1)NCC)Cl, s:  0.03054
+smiles: CCNC1=NC(=NC(=N1)Cl)NCC(C)C, s:  0.02597
+node ID: 7840, ground truth SMILE: CC(C)COC(=O)C1=CC=CC=C1C(=O)OCC(C)C
+top 5 test cadidates: 
+smiles: CCCCOC(=O)C1=CC=CC=C1C(=O)OCCCC, s:  0.00077
+smiles: CCCCCCCCOC(=O)C1=CC=CC=C1C(=O)O, s:  0.00070
+smiles: CCCCCOC(=O)C1=CC=CC=C1C(=O)OCCC, s:  0.00063
+smiles: CCCCOC(=O)C1=CC=CC=C1C(=O)OC(C)(C)C, s:  0.00062
+smiles: CCCCOC(=O)C1=CC=CC=C1C(=O)OCC(C)C, s:  0.00062
+node ID: 6224, ground truth SMILE: CC1=C(C(=O)N(N1C)C2=CC=CC=C2)NC(=O)C
+top 5 test cadidates: 
+smiles: CCN1C(=C(C(=O)N1C2=CC=CC=C2)NC=O)C, s:  0.00053
+smiles: CCN1C(=O)C(=C(N1C2=CC=CC=C2)C)NC=O, s:  0.00040
+smiles: CC1=C(C(=O)N(N1C)C2=CC=CC=C2)NC(=O)C, s:  0.00038
+smiles: CCC1=C(C(=O)N(N1C2=CC=CC=C2)C)NC=O, s:  0.00031
+smiles: CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C=O, s:  0.00024
+node ID: 6473, ground truth SMILE: CC(C)(C)C1=CC(=CC(=C1O)C(C)(C)C)C(=O)O
+top 5 test cadidates: 
+smiles: CC(C)(C)C1=C(C(=CC(=C1)C=O)C(C)(C)CO)O, s:  0.00052
+smiles: CC(C)(C)C1=CC(=C(C(=C1O)C=O)O)C(C)(C)C, s:  0.00044
+smiles: CC(C)(C)C1=CC(=C(C(=C1C=O)O)O)C(C)(C)C, s:  0.00036
+smiles: CC(C)(C)C1=CC(=CC(=C1O)C(C)(C)C)OC=O, s:  0.00032
+smiles: CC(C)(C)C1=CC(=C(C(=C1O)C(C)(C)C)C=O)O, s:  0.00030
+node ID: 14827, ground truth SMILE: CC(CO)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)O
+top 5 test cadidates: 
+smiles: CC(CO)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)O, s:  0.64495
+smiles: CC(COC(C)COC(C)COC(C)COCC(C)OCC(C)OCC(C)OCC(C)O)O, s:  0.32785
+smiles: CC(COCC(C)OC(C)(C)OC(C)COCC(C)OC(C)(C)OC(C)COCC(C)O)O, s:  0.00140
+smiles: CCCCCCCCCCCCOCC(COC(COCC(CO)O)COCC(CO)O)O, s:  0.00046
+smiles: CCCCCCCCCCCCOCC(COCC(COCC(COCC(CO)O)O)O)O, s:  0.00044
+node ID: 14826, ground truth SMILE: CC(CO)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)O
+top 5 test cadidates: 
+smiles: CC(CO)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)O, s:  0.64875
+smiles: CC(COC(C)COC(C)COC(C)COCC(C)OCC(C)OCC(C)OCC(C)O)O, s:  0.31839
+smiles: CC(COCC(C)OC(C)(C)OC(C)COCC(C)OC(C)(C)OC(C)COCC(C)O)O, s:  0.00104
+smiles: CCCCCCCCCCCCOCC(COC(COCC(CO)O)COCC(CO)O)O, s:  0.00033
+smiles: CCCCCCCCCCCCOCC(COCC(COCC(COCC(CO)O)O)O)O, s:  0.00033
+node ID: 7933, ground truth SMILE: COC1=NN=C(C=C1)NS(=O)(=O)C2=CC=C(C=C2)N
+top 5 test cadidates: 
+smiles: CC1=CC(=NC(=O)N1)NS(=O)(=O)C2=CC=C(C=C2)N, s:  0.00067
+smiles: CC1=NC(=CC(=O)N1)NS(=O)(=O)C2=CC=C(C=C2)N, s:  0.00066
+smiles: COC1=NN=C(C=C1)NS(=O)(=O)C2=CC=C(C=C2)N, s:  0.00055
+smiles: COC1=NC=NC(=C1)NS(=O)(=O)C2=CC=C(C=C2)N, s:  0.00055
+smiles: CC1=CC(=NO1)NC(=O)C(=O)NC2=NC(=C(S2)C)C, s:  0.00055
+node ID: 7887, ground truth SMILE: CC1=C(C(=CC=C1)C)N(C(C)C(=O)OC)C(=O)COC
+top 5 test cadidates: 
+smiles: CC1=C(C(=CC=C1)C)N(C(C)C(=O)OC)C(=O)COC, s:  0.00070
+smiles: CC1=CC(=C(C(=C1)C)N([C@@H](C)C(=O)O)C(=O)COC)C, s:  0.00063
+smiles: CC1=C(C(=CC=C1)C)N(C(C)OC(=O)C)C(=O)COC, s:  0.00043
+smiles: CC1=C(C(=CC=C1)C)N(CC(C)C(=O)O)C(=O)COC, s:  0.00037
+smiles: CC1=C(C(=CC=C1)C)N(C(CC=O)OC)C(=O)COC, s:  0.00031
+node ID: 10169, ground truth SMILE: CCCCCC=CCC=CCCCCCCCC(=O)NCCO
+top 5 test cadidates: 
+smiles: CCCCCCCC/C=C/CCCCCCCC(=O)CC(=O)N, s:  0.00802
+smiles: CCCCCCCC/C=C/CCCCCCCC(=O)NC(=O)C, s:  0.00576
+smiles: CCCC[C@H](C=CCCCCCCCC=CCCCC(=O)N)O, s:  0.00522
+smiles: CCCCCCCC/C=C/CCCCCCCC(=O)NCC=O, s:  0.00500
+smiles: CCCCCCCC/C=C\CCCCCCCC(=O)N=CCO, s:  0.00500
+node ID: 8081, ground truth SMILE: CCCCCCC=CCCCCCCCC(=O)OCC
+top 5 test cadidates: 
+smiles: CCCCCCCCC/C=C/CCCCC(=O)OCC, s:  0.00277
+smiles: CCCCCCCC/C=C\CCCCCC(=O)OCC, s:  0.00276
+smiles: CCCCCCCC=CCCCCCCC(=O)OCC, s:  0.00275
+smiles: CCCCCCC=CCCCCCCCC(=O)OCC, s:  0.00274
+smiles: CCCCCCCCCC/C=C\CCCC(=O)OCC, s:  0.00269
+node ID: 10926, ground truth SMILE: CCCCCCCCCCCCCCCCCCCCCC(=O)N
+top 5 test cadidates: 
+smiles: CCCCCCCCCCCCCCCCCCCCCC(=O)N, s:  0.13510
+smiles: CCC(CC)CCCCCCCCCCCCCCCCC(=O)N, s:  0.02046
+smiles: CCCCCCCCC(CCCCCC)(CCCCCC)C(=O)N, s:  0.01957
+smiles: CCCCCCCCCCC(CCCCC)(CCCCC)C(=O)N, s:  0.01869
+smiles: CCCCCCCCCCCCCCCCCCCC(=O)N(C)C, s:  0.01609
+node ID: 9353, ground truth SMILE: CC(C)(C)C(CCC1=CC=C(C=C1)Cl)(CN2C=NC=N2)O
+top 5 test cadidates: 
+smiles: CC(C)(C)C(C(CCC1=CC=C(C=C1)Cl)N2C=NC=N2)O, s:  0.00180
+smiles: CC(C)(C)C(C(CC1=CC=C(C=C1)Cl)N2C=NC=N2)OC, s:  0.00171
+smiles: CCC(C(C(C)(C)CC1=CC=C(C=C1)Cl)O)N2C=NC=N2, s:  0.00147
+smiles: CC(C)(C)C(C(CC1=CC=C(C=C1)Cl)CN2C=NC=N2)O, s:  0.00136
+smiles: CC1=C(C=CC(=C1)Cl)CC(C(C(C)(C)C)O)N2C=NC=N2, s:  0.00129
+node ID: 8586, ground truth SMILE: CC(C)(C)[C@@H]([C@H](CC1=CC=C(C=C1)Cl)N2C=NC=N2)O
+top 5 test cadidates: 
+smiles: CCCCC(CN1C=NC=N1)(CO)C2=CC=C(C=C2)Cl, s:  0.00137
+smiles: CCCCCC(CN1C=NC=N1)(C2=CC=C(C=C2)Cl)O, s:  0.00121
+smiles: CCCC(C)C(CN1C=NC=N1)(C2=CC=C(C=C2)Cl)O, s:  0.00060
+smiles: CCCCCC(CN1C=NC=N1)(C2=CC(=CC=C2)Cl)O, s:  0.00049
+smiles: CCCCC(CN1C=NC=N1)(C2=C(C=C(C=C2)Cl)C)O, s:  0.00044
+node ID: 8579, ground truth SMILE: CC(C)(C)C(=O)C(N1C=NC=N1)OC2=CC=C(C=C2)Cl
+top 5 test cadidates: 
+smiles: CC(C)(C)C(=O)[C@@H](N1C=NN=C1)OC2=CC=C(C=C2)Cl, s:  0.00050
+smiles: CC(C)(C)C(=O)C(N1C=CN=C1)OC2=NC(=CC=C2)Cl, s:  0.00049
+smiles: CC(C)(C)C(=O)C(N1N=CC=N1)OC2=CC=C(C=C2)Cl, s:  0.00039
+smiles: CC(C)(C)C(=O)C(N1C=NC=N1)OC2=CC=C(C=C2)Cl, s:  0.00036
+smiles: CC(C)(C)C(=O)C(N1C=CN=N1)OC2=CC=C(C=C2)Cl, s:  0.00036
+node ID: 10381, ground truth SMILE: CCCCCCCCCCCCCCCCCC(=O)NCCO
+top 5 test cadidates: 
+smiles: CCCCCCCCCCCCCCCCCC(=O)NCCO, s:  0.00939
+smiles: CCCCCCCCCCCCCCCCC(=O)NCCCO, s:  0.00755
+smiles: CCCCCCCCCCCCCCCC(=O)NCCCCO, s:  0.00715
+smiles: CCCCCCCCCCCCCCNC(=O)CCCCCO, s:  0.00715
+smiles: CCCCCCCCCCCCCCCCCCC(=O)NCO, s:  0.00685
+node ID: 12690, ground truth SMILE: C(COCCOCCOCCOCCOCCOCCOCCO)O
+top 5 test cadidates: 
+smiles: C(COCCOCCOCCOCCOCCOCCOCCO)O, s:  0.05062
+smiles: C(COCCOCC(COCCOCCO)COCCOCCO)O, s:  0.02728
+smiles: C(COCCOCCOCCO)COCOCCOCCOCCO, s:  0.02563
+smiles: C(CCOCCOCCOCCOO)COCCOCCOCCO, s:  0.01860
+smiles: CCOCCOCCOCCOOCCOCCOCCOCCO, s:  0.01413
+node ID: 10821, ground truth SMILE: CCCCCCCC/C=C\CCCCCCCCCCCC(=O)N
+top 5 test cadidates: 
+smiles: CCCCCCCCCCCCCCCC=CCCCCC(=O)N, s:  0.00856
+smiles: CCCCCCCCCCCCCCC/C=C\CCCCC(=O)N, s:  0.00856
+smiles: CCCCCCCC/C=C\CCCCCCCCCCCC(=O)N, s:  0.00855
+smiles: CCCCCCCC/C=C/CCCCCCCCCCCC(=O)N, s:  0.00855
+smiles: CCCCCCCCC=CCCCCCCCCCCCC(=O)N, s:  0.00855
+node ID: 10997, ground truth SMILE: CCCC1COC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)Cl)Cl
+top 5 test cadidates: 
+smiles: CCCC1COC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)Cl)Cl, s:  0.00135
+smiles: CCC1COC(O1)(CCN2C=NC=N2)C3=C(C=C(C=C3)Cl)Cl, s:  0.00128
+smiles: CCC1CCOC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)Cl)Cl, s:  0.00118
+smiles: CCCC1COC(O1)(CN2C=NC=N2)C3=C(C(=CC=C3)Cl)Cl, s:  0.00118
+smiles: CCCC1COC(O1)(CN2C=NN=C2)C3=C(C=C(C=C3)Cl)Cl, s:  0.00118
+node ID: 13114, ground truth SMILE: COC1=C(C=C(C=C1)C2=CC(=O)C3=C(O2)C(=C(C(=C3OC)OC)OC)OC)OC
+top 5 test cadidates: 
+smiles: COC1=CC(=CC(=C1)C2=CC(=O)C3=C(O2)C(=C(C(=C3OC)OC)OC)OC)OC, s:  0.00353
+smiles: COC1=C(C=C(C=C1)C2=CC(=O)C3=C(O2)C(=C(C(=C3OC)OC)OC)OC)OC, s:  0.00227
+smiles: COC1=CC=CC(=C1)C2=C(C(=O)C3=C(O2)C(=C(C(=C3OC)OC)OC)OC)OC, s:  0.00209
+smiles: COC1=C(C(=CC=C1)OC)C2=CC(=O)C3=C(O2)C(=C(C(=C3OC)OC)OC)OC, s:  0.00197
+smiles: COC1=CC(=C(C=C1)C2=CC(=O)C3=C(O2)C(=C(C(=C3OC)OC)OC)OC)OC, s:  0.00190
+node ID: 13178, ground truth SMILE: CC1COC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)OC4=CC=C(C=C4)Cl)Cl
+top 5 test cadidates: 
+smiles: CC1COC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)OC4=CC=C(C=C4)Cl)Cl, s:  0.00203
+smiles: C[C@H]1CO[C@@](O1)(CN2C=NC=N2)C3=CC=C(C=C3)OC4=C(C=C(C=C4)Cl)Cl, s:  0.00201
+smiles: C[C@H]1CO[C@](O1)(CN2C=NC=N2)C3=C(C=C(C=C3)OC4=CC=CC=C4Cl)Cl, s:  0.00185
+smiles: CC1COC(O1)(CN2C=NN=C2)C3=C(C=C(C=C3)OC4=CC=C(C=C4)Cl)Cl, s:  0.00182
+smiles: C1C(OC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)Cl)Cl)COC4=CC=CC=C4, s:  0.00174
+node ID: 13632, ground truth SMILE: CCCC1CC(N(C1)C)C(=O)NC(C2C(C(C(C(O2)SC)O)O)O)C(C)Cl
+top 5 test cadidates: 
+smiles: CCCC1CC(N(C1)C)C(=O)NC(C2C(C(C(C(O2)SC)O)O)O)C(C)Cl, s:  0.00150
+smiles: CC[C@@H]1CCN([C@@H](C1)C(=O)NC(C2C(C(C(C(O2)SC)O)O)O)C(C)Cl)C, s:  0.00088
+smiles: CCCC[C@@H]1C[C@H](N(C1)C)C(=O)NC([C@@H]2[C@H]([C@@H]([C@H]([C@H](O2)S)O)O)O)[C@H](C)Cl, s:  0.00083
+smiles: CCC[C@@H]1CCC(N1C)C(=O)N[C@@H]([C@@H]2[C@@H]([C@@H]([C@H]([C@H](O2)SC)O)O)O)[C@@H](C)Cl, s:  0.00074
+smiles: CCC[C@@H]1C[C@@H](N(C1)C)C(=O)N[C@@H]([C@@H]2[C@@H]([C@@H]([C@H]([C@@](O2)(C)S)O)O)O)[C@H](C)Cl, s:  0.00068
+node ID: 13404, ground truth SMILE: CCC1=CC=C(C=C1)C2OCC3C(O2)C(OC(O3)C4=CC=C(C=C4)CC)C(CO)O
+top 5 test cadidates: 
+smiles: CCC1=CC=C(C=C1)C2OCC3C(O2)C(OC(O3)C4=CC=C(C=C4)CC)C(CO)O, s:  0.00362
+smiles: CCC1=CC(=CC=C1)C2OC[C@H]3[C@@H](O2)[C@H](OC(O3)C4=CC=CC(=C4)CC)[C@@H](CO)O, s:  0.00303
+smiles: CC1=C(C=C(C=C1)C2OC[C@H](O2)[C@@H]3[C@H](OC(O3)C4=CC(=C(C=C4)C)C)[C@@H](CO)O)C, s:  0.00272
+smiles: CC1=C(C=C(C=C1)C2OCC3C(O2)C(OC(O3)C4=CC(=C(C=C4)C)C)C(CO)O)C, s:  0.00272
+smiles: CC1=CC(=CC(=C1)C2OC[C@H]3[C@@H](O2)[C@H](OC(O3)C4=CC(=CC(=C4)C)C)[C@@H](CO)O)C, s:  0.00250
+node ID: 13634, ground truth SMILE: CCCCOC(=O)CC(CC(=O)OCCCC)(C(=O)OCCCC)OC(=O)C
+top 5 test cadidates: 
+smiles: CCCCOC(=O)CC(CC(=O)OCCCC)(C(=O)OCCCC)OC(=O)C, s:  0.00645
+smiles: CCCCCCOC(=O)CC(CC(=O)O)(C(=O)OCCCCCC)OC(=O)C, s:  0.00556
+smiles: CCCCOC(=O)CC(CC(=O)OC(=O)C)(C(=O)OCCCC)OCCCC, s:  0.00443
+smiles: CCCCCCOC(=O)CC(CC(=O)OCCCCCC)(C(=O)O)OC(=O)C, s:  0.00434
+smiles: CCCCCCCCCCCCOC(=O)CC(CC(=O)O)(C(=O)O)OC(=O)C, s:  0.00348
+node ID: 13871, ground truth SMILE: CCCCC(=O)N(CC1=CC=C(C=C1)C2=CC=CC=C2C3=NNN=N3)C(C(C)C)C(=O)O
+top 5 test cadidates: 
+smiles: CCCCC(=O)N(CC1=CC=C(C=C1)C2=CC=CC=C2C3=NNN=N3)C(C(C)C)C(=O)O, s:  0.00940
+smiles: CCCCC(=O)N(CC1=CC=C(C=C1)C2=CC=CC=C2C3=NNN=N3)C(CCC)C(=O)O, s:  0.00628
+smiles: CCCCC(=O)N(C(CC1=CC=C(C=C1)C2=CC=CC=C2C3=NNN=N3)C(C)C)C(=O)O, s:  0.00524
+smiles: CCCCC(=O)N(CC1=CC(=CC=C1)C2=CC=CC=C2C3=NNN=N3)C(C(C)C)C(=O)O, s:  0.00478
+smiles: CCCCC(=O)N(CC1=CC=C(C=C1)C2=CC=CC=C2C3=NNN=N3)[C@H](C(C)C)OC=O, s:  0.00451
+node ID: 14032, ground truth SMILE: CCNC1=CC2=C(C=C1C)C(=C3C=C(C(=NCC)C=C3O2)C)C4=CC=CC=C4C(=O)OCC
+top 5 test cadidates: 
+smiles: CCNC1=CC2=C(C=C1C)C(=C3C=C(C(=NCC)C=C3O2)C)C4=CC=CC=C4C(=O)OCC, s:  0.00090
+smiles: CCNC1=CC2=C(C=C3C=C(C(=NCC)C=C3O2)C)C(=C1C)C4=CC=CC=C4C(=O)OCC, s:  0.00081
+smiles: CCC(=O)OC1=CC=CC=C1C2=C3C=C(C(=NCC)C=C3OC4=C2C=C(C(=C4)NCC)C)C, s:  0.00077
+smiles: CCN=C1C=C2C(=C(C3=C(O2)C=C(C(=C3)C)CNC)C4=CC=CC=C4C(=O)OCC)C=C1C, s:  0.00074
+smiles: CCC1=CC=CC=C1C(=O)OC2=C3C=C(C(=NCC)C=C3OC4=C2C=C(C(=C4)NCC)C)C, s:  0.00072
+node ID: 17400, ground truth SMILE: C(CCOCCCCOCCCCOCCCCOCCCCOCCCCOCCCCOCCCCOCCCCO)CO
+top 5 test cadidates: 
+smiles: C(CCOCCCCOCCCCOCCCCOCCCCOCCCCOCCCCOCCCCOCCCCO)CO, s:  0.44908
+smiles: CCCCCCCCCCCCCCCCCCOCCOCCOCCOCCOCCOCCOCCOCCOCCO, s:  0.10304
+smiles: CCCCCCCCCCOCCCC(CCCCCC)C(CO)OCCOCCOCCOCCOCCOCCOCCO, s:  0.03816
+smiles: CCCCCCCCCCCCCOCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCCOCCOCCOCCO, s:  0.03736
+smiles: CCCCCCCCCCCCOCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCC(C)OCCOCCOCCO, s:  0.03736

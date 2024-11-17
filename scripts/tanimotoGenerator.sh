@@ -5,22 +5,22 @@
  # @Date: 2024-10-10 17:01:04
 ### 
 cd ../src
-python taniLibGenerator.py \
---input_file_path "../datasets/ChangjiangRiver_check/library&librarymatch" \
---output_file_path "../datasets/ChangjiangRiver_check/tani_lib"
+# python taniLibGenerator.py \
+# --dataset_path "../datasets/ChangjiangRiver_check" \
+# --result_path "../datasets/ChangjiangRiver_check/train_tani_lib"
 
 # python -u taniLibGenerator.py \
-# --input_file_path "../datasets/Honey_neg_check/library&librarymatch" \
-# --output_file_path "../datasets/Honey_neg_check/tani_lib"
+# --dataset_path "../datasets/Honey_neg_check" \
+# --result_path "../datasets/Honey_neg_check/train_tani_lib"
 
 # python -u taniLibGenerator.py \
-# --input_file_path "../datasets/Honey_pos_check/library&librarymatch" \
-# --output_file_path "../datasets/Honey_pos_check/tani_lib"
+# --dataset_path "../datasets/Honey_pos_check" \
+# --result_path "../datasets/Honey_pos_check/train_tani_lib"
 
-# python -u taniLibGenerator.py \
-# --input_file_path "../datasets/HuangpujiangRiver_check/library&librarymatch" \
-# --output_file_path "../datasets/HuangpujiangRiver_check/tani_lib"
+python -u taniLibGenerator.py \
+--dataset_path "../datasets/HuangpujiangRiver_check" \
+--result_path "../datasets/HuangpujiangRiver_check/train_tani_lib"
 
-# python -u taniLibGenerator.py \
-# --input_file_path "../datasets/Sediment_check/library&librarymatch" \
-# --output_file_path "../datasets/Sediment_check/tani_lib"
+python -u taniLibGenerator.py \
+--dataset_path "../datasets/Sediment_check" \
+--result_path "../datasets/Sediment_check/train_tani_lib"

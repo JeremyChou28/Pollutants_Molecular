@@ -21,18 +21,18 @@ method_variant="cor_our"  # "wo_cor", "cor_inside", "cor_outside", "cor_our"
 peak_pick_num=10    # 1 5 10 20
 scratch=True   # True: Train from scratch; False: Load pre-trained model
 
-nohup python -u ../src/main2.py \
-    --scratch $scratch \
-    --dataset_path $dataset_path \
-    --result_path $result_path \
-    --checkpoint_path $checkpoint_path \
-    --train_sample_ratio $train_sample_ratio \
-    --learning_rate $learning_rate \
-    --epochs $epochs \
-    --device $device \
-    --seed $seed \
-    --method_variant $method_variant \
-    --peak_pick_num $peak_pick_num > ../logs/ChangjiangRiver_${method_variant}_${current_datetime}.log 2>&1 &
+# nohup python -u ../src/main2.py \
+#     --scratch $scratch \
+#     --dataset_path $dataset_path \
+#     --result_path $result_path \
+#     --checkpoint_path $checkpoint_path \
+#     --train_sample_ratio $train_sample_ratio \
+#     --learning_rate $learning_rate \
+#     --epochs $epochs \
+#     --device $device \
+#     --seed $seed \
+#     --method_variant $method_variant \
+#     --peak_pick_num $peak_pick_num > ../logs/ChangjiangRiver_${method_variant}_${current_datetime}.log 2>&1 &
 
 
 # # different method
@@ -55,21 +55,21 @@ nohup python -u ../src/main2.py \
 # done
 
 
-# # different evaluation metric: top_k
-# peak_pick_num_list=(1 5 10 20)
-# for peak_pick_num in ${peak_pick_num_list[@]}; do
-#     echo "peak_pick_num:" $peak_pick_num
-#     nohup python -u ../src/main2.py \
-#         --scratch $scratch \
-#         --dataset_path $dataset_path \
-#         --result_path $result_path \
-#         --checkpoint_path $checkpoint_path \
-#         --train_sample_ratio $train_sample_ratio \
-#         --learning_rate $learning_rate \
-#         --epochs $epochs \
-#         --device $device \
-#         --seed $seed \
-#         --method_variant $method_variant \
-#         --peak_pick_num $peak_pick_num > ../logs/ChangjiangRiver_${method_variant}_${current_datetime}.log 2>&1 &
-#     wait
-# done
+# different evaluation metric: top_k
+peak_pick_num_list=(1 5 10 20)
+for peak_pick_num in ${peak_pick_num_list[@]}; do
+    echo "peak_pick_num:" $peak_pick_num
+    nohup python -u ../src/main2.py \
+        --scratch $scratch \
+        --dataset_path $dataset_path \
+        --result_path $result_path \
+        --checkpoint_path $checkpoint_path \
+        --train_sample_ratio $train_sample_ratio \
+        --learning_rate $learning_rate \
+        --epochs $epochs \
+        --device $device \
+        --seed $seed \
+        --method_variant $method_variant \
+        --peak_pick_num $peak_pick_num > ../logs/ChangjiangRiver_${method_variant}_top${peak_pick_num}_${current_datetime}.log 2>&1 &
+    wait
+done
