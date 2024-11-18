@@ -18,7 +18,7 @@ datasets/Sediment_check/f_filter/
 datasets/Sediment_check/library&librarymatch
 datasets/Sediment_check/outputs
 
-datasets/combo/f_filter/
+datasets/Synthetic/f_filter/
 
 models/__pycache__/
 utils/__pycache__/

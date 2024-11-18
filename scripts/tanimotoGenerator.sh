@@ -17,10 +17,14 @@ cd ../src
 # --dataset_path "../datasets/Honey_pos_check" \
 # --result_path "../datasets/Honey_pos_check/train_tani_lib"
 
-python -u taniLibGenerator.py \
---dataset_path "../datasets/HuangpujiangRiver_check" \
---result_path "../datasets/HuangpujiangRiver_check/train_tani_lib"
+# python -u taniLibGenerator.py \
+# --dataset_path "../datasets/HuangpujiangRiver_check" \
+# --result_path "../datasets/HuangpujiangRiver_check/train_tani_lib"
+
+# python -u taniLibGenerator.py \
+# --dataset_path "../datasets/Sediment_check" \
+# --result_path "../datasets/Sediment_check/train_tani_lib"
 
 python -u taniLibGenerator.py \
---dataset_path "../datasets/Sediment_check" \
---result_path "../datasets/Sediment_check/train_tani_lib"
+--dataset_path "../datasets/Synthetic" \
+--result_path "../datasets/Synthetic/train_tani_lib"

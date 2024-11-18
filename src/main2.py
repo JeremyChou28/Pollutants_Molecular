@@ -184,7 +184,14 @@ def load_data(dataset_path, nodeFolder):
 
 
 def data_preprocessing(
-    nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder, tani_lib_folder
+    nodeId,
+    smiles,
+    edges,
+    libraryNodes,
+    library_m,
+    correlation,
+    nodeFolder,
+    tani_lib_folder,
 ):
     connected_node_ids = findConnectedLibrary(nodeId, edges, libraryNodes)
 
@@ -251,6 +258,8 @@ def main(args):
         model = Metfusion_Cor_Outside().to(device)
     elif method_variant == "cor_our":
         model = Metfusion_Our().to(device)
+    elif method_variant == "cor_our_v2":
+        model = Metfusion_Our_v2().to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -418,7 +427,14 @@ def main(args):
             smiles = row["SMILES"]
 
             node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
-                nodeId, smiles, edges, libraryNodes, library_m, correlation, nodeFolder, tani_lib_folder
+                nodeId,
+                smiles,
+                edges,
+                libraryNodes,
+                library_m,
+                correlation,
+                nodeFolder,
+                tani_lib_folder,
             )
 
             f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
@@ -480,10 +496,10 @@ def main(args):
         f.close()
     test_acc = test_correct / len(test_df)
     print(f"Test Acc: {test_acc: .4f}")
-    print(f"Final alpha: {model.alpha.item(): .4f}")
-    print(f"Final beta: {model.beta.item(): .4f}")
-    print(f"Final gamma: {model.gamma.item(): .4f}")
-    print(f"Final lambda: {model.lamda.item(): .4f}")
+    # print(f"Final alpha: {model.alpha.item(): .4f}")
+    # print(f"Final beta: {model.beta.item(): .4f}")
+    # print(f"Final gamma: {model.gamma.item(): .4f}")
+    # print(f"Final lambda: {model.lamda.item(): .4f}")
 
 
 if __name__ == "__main__":
@@ -541,7 +557,7 @@ if __name__ == "__main__":
         "--method_variant",
         type=str,
         default="wo_cor",
-        choices=["wo_cor", "cor_inside", "cor_outside", "cor_our"],
+        choices=["wo_cor", "cor_inside", "cor_outside", "cor_our", "cor_our_v2"],
     )
     parser.add_argument(
         "--peak_pick_num",

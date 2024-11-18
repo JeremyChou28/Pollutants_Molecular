@@ -17,7 +17,7 @@ learning_rate=0.001
 epochs=100
 device="cuda:4"
 seed=1
-method_variant="wo_cor"  # "wo_cor", "cor_inside", "cor_outside"
+method_variant="cor_our_v2"  # "wo_cor", "cor_inside", "cor_outside"
 peak_pick_num=10    # 1 5 10 20
 scratch=True
 
