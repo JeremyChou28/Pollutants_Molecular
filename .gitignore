@@ -20,6 +20,19 @@ datasets/Sediment_check/outputs
 
 datasets/Synthetic/f_filter/
 
+datasets/new_data/subset_1/f/
+datasets/new_data/subset_1/SMILES_1/
+datasets/new_data/subset_2/f/
+datasets/new_data/subset_2/SMILES_2/
+datasets/new_data/subset_3/f/
+datasets/new_data/subset_3/SMILES_3/
+datasets/new_data/subset_4/f/
+datasets/new_data/subset_4/SMILES_4/
+datasets/new_data/subset_5/f/
+datasets/new_data/subset_5/SMILES_5/
+
+
+
 models/__pycache__/
 utils/__pycache__/
 

@@ -15,9 +15,9 @@ checkpoint_path="../checkpoints"
 train_sample_ratio=0.8
 learning_rate=0.001
 epochs=100
-device="cuda:0"
+device="cuda:3"
 seed=1
-method_variant="cor_our_v2"  # "wo_cor", "cor_inside", "cor_outside"
+method_variant="cor_our_v3"  # "wo_cor", "cor_inside", "cor_outside"
 peak_pick_num=10    # 1 5 10 20
 scratch=True
 

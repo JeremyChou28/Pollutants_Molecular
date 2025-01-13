@@ -132,7 +132,56 @@ def calcCustomCrossEntropy(predicted_probs, ground_truth_vector):
     return crossEntropy
 
 
-def load_data(dataset_path, nodeFolder):
+def load_data(dataset_path, test_subset_index):
+    (
+        test_libraryNodes,
+        test_NlibraryNodes,
+        test_library_m,
+        test_edges,
+        test_correlation,
+    ) = load_sub_data(dataset_path + f"/subset_{test_subset_index}")
+
+    (
+        train_libraryNodes_dict,
+        train_NlibraryNodes_dict,
+        train_library_m_dict,
+        train_edges_dict,
+        train_correlation_dict,
+    ) = ({}, {}, {}, {}, {})
+    train_subset_index_list = [i for i in range(1, 6) if i != test_subset_index]
+    for i in train_subset_index_list:
+        subset_path = dataset_path + f"/subset_{i}"
+        (
+            libraryNodes,
+            NlibraryNodes,
+            library_m,
+            edges,
+            correlation,
+        ) = load_sub_data(subset_path)
+        train_libraryNodes_dict[f"subset_{i}"] = libraryNodes
+        train_NlibraryNodes_dict[f"subset_{i}"] = NlibraryNodes
+        train_library_m_dict[f"subset_{i}"] = library_m
+        train_edges_dict[f"subset_{i}"] = edges
+        train_correlation_dict[f"subset_{i}"] = correlation
+
+    train_data = [
+        train_libraryNodes_dict,
+        train_NlibraryNodes_dict,
+        train_library_m_dict,
+        train_edges_dict,
+        train_correlation_dict,
+    ]
+    test_data = [
+        test_libraryNodes,
+        test_NlibraryNodes,
+        test_library_m,
+        test_edges,
+        test_correlation,
+    ]
+    return train_data, test_data
+
+
+def load_sub_data(dataset_path):
     # basic data preprocessing
     allNodes = pd.read_csv(dataset_path + "/nodes_data.csv")
     correlation = pd.read_csv(dataset_path + "/cor.csv")
@@ -144,38 +193,8 @@ def load_data(dataset_path, nodeFolder):
     libraryNodes = allNodes[allNodes["ID"].isin(library_m["ID"])].reset_index(drop=True)
     libraryNodes = libraryNodes.iloc[::-1]
     libraryNodes = libraryNodes.reset_index(drop=True)
-    # connected library nodes
-    connected_library_nodes = edges[
-        edges["Library_node"].isin(libraryNodes["ID"])
-        & edges["Connected_node"].isin(libraryNodes["ID"])
-    ].reset_index(drop=True)
-
-    data = connected_library_nodes
-
-    # renaming
-    library_nodes = data[["Library_node", "SMILES"]].rename(
-        columns={"Library_node": "ID", "SMILES": "SMILES"}
-    )
-    connected_nodes = data[["Connected_node", "Expected_SMILES"]].rename(
-        columns={"Connected_node": "ID", "Expected_SMILES": "SMILES"}
-    )
-
-    # union all
-    merged_nodes = pd.concat([library_nodes, connected_nodes]).drop_duplicates()
-
-    missing_files = check_files_exist(merged_nodes, "ID", nodeFolder)
-
-    if len(missing_files) == 0:
-        print("all files exist!")
-    else:
-        print(f"The following files missing: {missing_files}")
-
-    final = merged_nodes[~merged_nodes["ID"].isin(missing_files)].reset_index(drop=True)
     return (
         libraryNodes,
-        library_nodes,
-        connected_nodes,
-        final,
         NlibraryNodes,
         library_m,
         edges,
@@ -200,13 +219,6 @@ def data_preprocessing(
     ground_truth_index = labels[labels == smiles].index[0]
     ground_truth_vector = oneHotVect(labels, ground_truth_index)
 
-    # get tanimoto for each of the connected nodes
-    # tani_list = []
-    # for smile in node_df["SMILES"].values:
-    #     connectedSmiles = findConnectedSmiles(connected_node_ids, libraryNodes)
-    #     tani = calcTanimotoCoef(smile, connectedSmiles)
-    #     tani_list.append(tani)
-    # tani = np.array(tani_list)
     tani = np.load(tani_lib_folder + f"/{nodeId}.npy")
 
     connected_lib = findConnectedLibrary(nodeId, edges, libraryNodes)
@@ -222,8 +234,7 @@ def main(args):
     dataset = dataset_path.split("/")[-1]
     result_path = args.result_path
     checkpoint_path = args.checkpoint_path
-    nodeFolder = dataset_path + "/f_filter"
-    tani_lib_folder = dataset_path + "/train_tani_lib"
+
     train_ratio = args.train_sample_ratio
     learning_rate = args.learning_rate
     epochs = args.epochs
@@ -236,18 +247,26 @@ def main(args):
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
 
     # load data
+    train_dataset, test_dataset = load_data(dataset_path, args.subset_index)
     (
-        libraryNodes,
-        library_nodes,
-        connected_nodes,
-        final,
-        NlibraryNodes,
-        library_m,
-        edges,
-        correlation,
-    ) = load_data(dataset_path, nodeFolder)
-    train_df = final
-    test_df = NlibraryNodes
+        train_libraryNodes_dict,
+        train_NlibraryNodes_dict,
+        train_library_m_dict,
+        train_edges_dict,
+        train_correlation_dict,
+    ) = train_dataset
+    (
+        test_libraryNodes,
+        test_NlibraryNodes,
+        test_library_m,
+        test_edges,
+        test_correlation,
+    ) = test_dataset
+
+    train_subset_index_list = [i for i in range(1, 6) if i != args.subset_index]
+
+    test_nodeFolder = dataset_path + f"/subset_{args.subset_index}/f"
+    test_tani_lib_folder = dataset_path + f"/subset_{args.subset_index}/train_tani_lib"
 
     # Define model and optimizer
     if method_variant == "wo_cor":
@@ -260,6 +279,8 @@ def main(args):
         model = Metfusion_Our().to(device)
     elif method_variant == "cor_our_v2":
         model = Metfusion_Our_v2().to(device)
+    elif method_variant == "cor_our_v3":
+        model = Metfusion_Our_v3(hidden_size=64).to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -268,67 +289,38 @@ def main(args):
     if args.scratch:
         # Training
         for epoch in range(epochs):
-            # prepare data
-            train_data, validation_data = train_test_split(
-                train_df, test_size=(1 - train_ratio), shuffle=True
-            )
 
-            model.train()
-            total_loss = 0
-            for i, row in train_data.iterrows():
-                nodeId = row["ID"]
-                smiles = row["SMILES"]
+            for index in train_subset_index_list:
+                train_libraryNodes = train_libraryNodes_dict[f"subset_{index}"]
+                train_NlibraryNodes = train_NlibraryNodes_dict[f"subset_{index}"]
+                train_library_m = train_library_m_dict[f"subset_{index}"]
+                train_edges = train_edges_dict[f"subset_{index}"]
+                train_correlation = train_correlation_dict[f"subset_{index}"]
 
-                node_df, tani, m, cors, ground_truth_vector, labels = (
-                    data_preprocessing(
-                        nodeId,
-                        smiles,
-                        edges,
-                        libraryNodes,
-                        library_m,
-                        correlation,
-                        nodeFolder,
-                        tani_lib_folder,
-                    )
+                train_nodeFolder = dataset_path + f"/subset_{index}/f"
+                train_tani_lib_folder = dataset_path + f"/subset_{index}/train_tani_lib"
+
+                # prepare data
+                train_data, validation_data = train_test_split(
+                    train_NlibraryNodes, test_size=(1 - train_ratio), shuffle=True
                 )
 
-                f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(
-                    device
-                )
-                tani = torch.tensor(tani, dtype=torch.float32).to(device)
-                m = torch.tensor(m, dtype=torch.float32).to(device)
-                cors = torch.tensor(cors, dtype=torch.float32).to(device)
-                ground_truth_vector = ground_truth_vector.to(device)
-
-                s = model(m, f, tani, cors)
-                s_probs = F.softmax(s, dim=0)
-
-                loss = calcCustomCrossEntropy(s_probs, ground_truth_vector)
-                total_loss += loss.item()
-
-                optimizer.zero_grad()
-                loss.backward()
-                optimizer.step()
-
-            print(f"Epoch [{epoch + 1}], Loss: {total_loss/len(train_data): .4f}\n")
-
-            # Validate the model
-            model.eval()
-            validation_correct = 0
-            with torch.no_grad():
-                for i, row in validation_data.iterrows():
+                model.train()
+                total_loss = 0
+                for i, row in train_data.iterrows():
                     nodeId = row["ID"]
                     smiles = row["SMILES"]
+
                     node_df, tani, m, cors, ground_truth_vector, labels = (
                         data_preprocessing(
                             nodeId,
                             smiles,
-                            edges,
-                            libraryNodes,
-                            library_m,
-                            correlation,
-                            nodeFolder,
-                            tani_lib_folder,
+                            train_edges,
+                            train_libraryNodes,
+                            train_library_m,
+                            train_correlation,
+                            train_nodeFolder,
+                            train_tani_lib_folder,
                         )
                     )
 
@@ -343,71 +335,68 @@ def main(args):
                     s = model(m, f, tani, cors)
                     s_probs = F.softmax(s, dim=0)
 
-                    predicted_label_index = s_probs.argmax().item()
-                    predicted_label = labels.iloc[predicted_label_index]
+                    loss = calcCustomCrossEntropy(s_probs, ground_truth_vector)
+                    total_loss += loss.item()
 
-                    # print(
-                    # f"Node ID: {nodeId}, Labels: {predicted_label}, Ground Truth: {smiles}"
-                    # )
-                    if predicted_label == smiles:
-                        validation_correct += 1
+                    optimizer.zero_grad()
+                    loss.backward()
+                    optimizer.step()
 
-            validation_acc = validation_correct / len(validation_data)
-            print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
+                print(f"Epoch [{epoch + 1}], Loss: {total_loss/len(train_data): .4f}\n")
 
-            # saving the best model on validation set
-            if validation_acc >= best_val_acc:
-                best_val_acc = validation_acc
-                torch.save(
-                    model.state_dict(),
-                    os.path.join(
-                        checkpoint_path,
-                        f"{dataset}_{method_variant}_top{peak_pick_num}_best_model.pth",
-                    ),
-                )
+                # Validate the model
+                model.eval()
+                validation_correct = 0
+                with torch.no_grad():
+                    for i, row in validation_data.iterrows():
+                        nodeId = row["ID"]
+                        smiles = row["SMILES"]
+                        node_df, tani, m, cors, ground_truth_vector, labels = (
+                            data_preprocessing(
+                                nodeId,
+                                smiles,
+                                train_edges,
+                                train_libraryNodes,
+                                train_library_m,
+                                train_correlation,
+                                train_nodeFolder,
+                                train_tani_lib_folder,
+                            )
+                        )
 
-            # test_correct = 0
-            # with torch.no_grad():
-            #     for i, row in test_df.iterrows():
-            #         nodeId = row["ID"]
-            #         smiles = row["SMILES"]
+                        f = torch.tensor(
+                            node_df["Score"].values, dtype=torch.float32
+                        ).to(device)
+                        tani = torch.tensor(tani, dtype=torch.float32).to(device)
+                        m = torch.tensor(m, dtype=torch.float32).to(device)
+                        cors = torch.tensor(cors, dtype=torch.float32).to(device)
+                        ground_truth_vector = ground_truth_vector.to(device)
 
-            #         node_df, tani, m, cors, ground_truth_vector, labels = (
-            #             data_preprocessing(
-            #                 nodeId,
-            #                 smiles,
-            #                 edges,
-            #                 libraryNodes,
-            #                 library_m,
-            #                 correlation,
-            #                 nodeFolder,
-            #             ))
+                        s = model(m, f, tani, cors)
+                        s_probs = F.softmax(s, dim=0)
 
-            #         f = torch.tensor(node_df["Score"].values,
-            #                          dtype=torch.float32).to(device)
-            #         tani = torch.tensor(tani, dtype=torch.float32).to(device)
-            #         m = torch.tensor(m, dtype=torch.float32).to(device)
-            #         cors = torch.tensor(cors, dtype=torch.float32).to(device)
-            #         ground_truth_vector = ground_truth_vector.to(device)
+                        predicted_label_index = s_probs.argmax().item()
+                        predicted_label = labels.iloc[predicted_label_index]
 
-            #         s = model(m, f, tani, cors)
-            #         s_probs = F.softmax(s, dim=0)
-            #         """
-            #         # choose whether to use different choosing strategy and uncomment the one you want to use
+                        # print(
+                        # f"Node ID: {nodeId}, Labels: {predicted_label}, Ground Truth: {smiles}"
+                        # )
+                        if predicted_label == smiles:
+                            validation_correct += 1
 
-            #         """
+                validation_acc = validation_correct / len(validation_data)
+                print(f"Epoch [{epoch + 1}], Validation Acc: {validation_acc: .4f}\n")
 
-            #         top_n_probs, top_n_indices = torch.topk(
-            #             s_probs, peak_pick_num)
-            #         top_n_indices = top_n_indices.cpu().numpy()
-            #         top_n_smiles = labels.iloc[top_n_indices].tolist()
-            #         if smiles in top_n_smiles:
-            #             test_correct += 1
-            #         else:
-            #             continue
-
-            # trial_test_acc = test_correct / len(test_df)
-            # print(f"Epoch [{epoch + 1}], Test Acc: {trial_test_acc: .4f}\n")
+                # saving the best model on validation set
+                if validation_acc >= best_val_acc:
+                    best_val_acc = validation_acc
+                    torch.save(
+                        model.state_dict(),
+                        os.path.join(
+                            checkpoint_path,
+                            f"{dataset}_{method_variant}_top{peak_pick_num}_best_model.pth",
+                        ),
+                    )
 
     # Testing
     model.load_state_dict(
@@ -422,19 +411,19 @@ def main(args):
     test_correct = 0
     result_list = []
     with torch.no_grad():
-        for i, row in test_df.iterrows():
+        for i, row in test_NlibraryNodes.iterrows():
             nodeId = row["ID"]
             smiles = row["SMILES"]
 
             node_df, tani, m, cors, ground_truth_vector, labels = data_preprocessing(
                 nodeId,
                 smiles,
-                edges,
-                libraryNodes,
-                library_m,
-                correlation,
-                nodeFolder,
-                tani_lib_folder,
+                test_edges,
+                test_libraryNodes,
+                test_library_m,
+                test_correlation,
+                test_nodeFolder,
+                test_tani_lib_folder,
             )
 
             f = torch.tensor(node_df["Score"].values, dtype=torch.float32).to(device)
@@ -488,18 +477,15 @@ def main(args):
             """
             # write in the file
     with open(
-        result_path + f"/{dataset}_{method_variant}_top{peak_pick_num}.txt",
+        result_path
+        + f"/{dataset}_{args.subset_index}_{method_variant}_top{peak_pick_num}.txt",
         "w+",
     ) as f:
         for result in result_list:
             f.write(result)
         f.close()
-    test_acc = test_correct / len(test_df)
+    test_acc = test_correct / len(test_NlibraryNodes)
     print(f"Test Acc: {test_acc: .4f}")
-    # print(f"Final alpha: {model.alpha.item(): .4f}")
-    # print(f"Final beta: {model.beta.item(): .4f}")
-    # print(f"Final gamma: {model.gamma.item(): .4f}")
-    # print(f"Final lambda: {model.lamda.item(): .4f}")
 
 
 if __name__ == "__main__":
@@ -509,7 +495,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset_path",
         type=str,
-        default="../datasets/Sediment_check",
+        default="../datasets/new_data/",
         help="The folder path of dataset",
     )
     parser.add_argument(
@@ -556,8 +542,15 @@ if __name__ == "__main__":
     parser.add_argument(
         "--method_variant",
         type=str,
-        default="wo_cor",
-        choices=["wo_cor", "cor_inside", "cor_outside", "cor_our", "cor_our_v2"],
+        default="cor_our_v3",
+        choices=[
+            "wo_cor",
+            "cor_inside",
+            "cor_outside",
+            "cor_our",
+            "cor_our_v2",
+            "cor_our_v3",
+        ],
     )
     parser.add_argument(
         "--peak_pick_num",
@@ -566,6 +559,9 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--scratch", type=str2bool, default="True", help="Train from scratch"
+    )
+    parser.add_argument(
+        "--subset_index", type=int, default=1, help="The index of the subset"
     )
     args = parser.parse_args()
     for arg in vars(args):

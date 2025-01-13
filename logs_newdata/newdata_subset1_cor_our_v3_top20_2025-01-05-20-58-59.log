@@ -1,0 +1,1615 @@
+dataset_path: ../datasets/new_data
+result_path: ../results
+checkpoint_path: ../checkpoints
+train_sample_ratio: 0.8
+learning_rate: 0.001
+epochs: 100
+device: cuda:0
+seed: 1
+method_variant: cor_our_v3
+peak_pick_num: 20
+scratch: True
+subset_index: 1
+Epoch [1], Loss:  7.5214
+
+Epoch [1], Validation Acc:  0.1429
+
+Epoch [1], Loss:  7.9253
+
+Epoch [1], Validation Acc:  0.2857
+
+Epoch [1], Loss:  7.1903
+
+Epoch [1], Validation Acc:  0.1429
+
+Epoch [1], Loss:  6.9075
+
+Epoch [1], Validation Acc:  0.1429
+
+Epoch [2], Loss:  7.0729
+
+Epoch [2], Validation Acc:  0.4286
+
+Epoch [2], Loss:  6.9106
+
+Epoch [2], Validation Acc:  0.1429
+
+Epoch [2], Loss:  6.3853
+
+Epoch [2], Validation Acc:  0.1429
+
+Epoch [2], Loss:  6.1360
+
+Epoch [2], Validation Acc:  0.0000
+
+Epoch [3], Loss:  6.5481
+
+Epoch [3], Validation Acc:  0.2857
+
+Epoch [3], Loss:  6.1243
+
+Epoch [3], Validation Acc:  0.2857
+
+Epoch [3], Loss:  5.7537
+
+Epoch [3], Validation Acc:  0.7143
+
+Epoch [3], Loss:  5.3766
+
+Epoch [3], Validation Acc:  0.1429
+
+Epoch [4], Loss:  5.7074
+
+Epoch [4], Validation Acc:  0.0000
+
+Epoch [4], Loss:  5.6017
+
+Epoch [4], Validation Acc:  0.2857
+
+Epoch [4], Loss:  5.0772
+
+Epoch [4], Validation Acc:  0.4286
+
+Epoch [4], Loss:  5.1302
+
+Epoch [4], Validation Acc:  0.4286
+
+Epoch [5], Loss:  5.2632
+
+Epoch [5], Validation Acc:  0.1429
+
+Epoch [5], Loss:  5.1588
+
+Epoch [5], Validation Acc:  0.2857
+
+Epoch [5], Loss:  4.3728
+
+Epoch [5], Validation Acc:  0.1429
+
+Epoch [5], Loss:  4.5890
+
+Epoch [5], Validation Acc:  0.2857
+
+Epoch [6], Loss:  5.0399
+
+Epoch [6], Validation Acc:  0.1429
+
+Epoch [6], Loss:  5.1520
+
+Epoch [6], Validation Acc:  0.2857
+
+Epoch [6], Loss:  4.8233
+
+Epoch [6], Validation Acc:  0.4286
+
+Epoch [6], Loss:  4.1269
+
+Epoch [6], Validation Acc:  0.2857
+
+Epoch [7], Loss:  4.9116
+
+Epoch [7], Validation Acc:  0.1429
+
+Epoch [7], Loss:  5.1404
+
+Epoch [7], Validation Acc:  0.2857
+
+Epoch [7], Loss:  4.5903
+
+Epoch [7], Validation Acc:  0.2857
+
+Epoch [7], Loss:  4.7280
+
+Epoch [7], Validation Acc:  0.4286
+
+Epoch [8], Loss:  4.9911
+
+Epoch [8], Validation Acc:  0.2857
+
+Epoch [8], Loss:  4.9412
+
+Epoch [8], Validation Acc:  0.1429
+
+Epoch [8], Loss:  4.2162
+
+Epoch [8], Validation Acc:  0.1429
+
+Epoch [8], Loss:  4.1973
+
+Epoch [8], Validation Acc:  0.1429
+
+Epoch [9], Loss:  4.6834
+
+Epoch [9], Validation Acc:  0.1429
+
+Epoch [9], Loss:  5.1979
+
+Epoch [9], Validation Acc:  0.4286
+
+Epoch [9], Loss:  4.7085
+
+Epoch [9], Validation Acc:  0.2857
+
+Epoch [9], Loss:  3.9343
+
+Epoch [9], Validation Acc:  0.2857
+
+Epoch [10], Loss:  4.6467
+
+Epoch [10], Validation Acc:  0.1429
+
+Epoch [10], Loss:  4.8632
+
+Epoch [10], Validation Acc:  0.1429
+
+Epoch [10], Loss:  4.1597
+
+Epoch [10], Validation Acc:  0.1429
+
+Epoch [10], Loss:  4.5001
+
+Epoch [10], Validation Acc:  0.4286
+
+Epoch [11], Loss:  4.7717
+
+Epoch [11], Validation Acc:  0.0000
+
+Epoch [11], Loss:  4.6476
+
+Epoch [11], Validation Acc:  0.0000
+
+Epoch [11], Loss:  4.5433
+
+Epoch [11], Validation Acc:  0.1429
+
+Epoch [11], Loss:  4.2832
+
+Epoch [11], Validation Acc:  0.4286
+
+Epoch [12], Loss:  5.0361
+
+Epoch [12], Validation Acc:  0.2857
+
+Epoch [12], Loss:  5.2470
+
+Epoch [12], Validation Acc:  0.2857
+
+Epoch [12], Loss:  4.7589
+
+Epoch [12], Validation Acc:  0.5714
+
+Epoch [12], Loss:  4.3620
+
+Epoch [12], Validation Acc:  0.5714
+
+Epoch [13], Loss:  5.1135
+
+Epoch [13], Validation Acc:  0.2857
+
+Epoch [13], Loss:  4.7012
+
+Epoch [13], Validation Acc:  0.2857
+
+Epoch [13], Loss:  4.8517
+
+Epoch [13], Validation Acc:  0.5714
+
+Epoch [13], Loss:  4.0899
+
+Epoch [13], Validation Acc:  0.1429
+
+Epoch [14], Loss:  5.0570
+
+Epoch [14], Validation Acc:  0.2857
+
+Epoch [14], Loss:  5.0364
+
+Epoch [14], Validation Acc:  0.4286
+
+Epoch [14], Loss:  4.8178
+
+Epoch [14], Validation Acc:  0.4286
+
+Epoch [14], Loss:  4.0316
+
+Epoch [14], Validation Acc:  0.2857
+
+Epoch [15], Loss:  4.7581
+
+Epoch [15], Validation Acc:  0.1429
+
+Epoch [15], Loss:  5.4283
+
+Epoch [15], Validation Acc:  0.4286
+
+Epoch [15], Loss:  4.8565
+
+Epoch [15], Validation Acc:  0.5714
+
+Epoch [15], Loss:  4.1919
+
+Epoch [15], Validation Acc:  0.2857
+
+Epoch [16], Loss:  4.8090
+
+Epoch [16], Validation Acc:  0.2857
+
+Epoch [16], Loss:  4.8530
+
+Epoch [16], Validation Acc:  0.2857
+
+Epoch [16], Loss:  4.6234
+
+Epoch [16], Validation Acc:  0.4286
+
+Epoch [16], Loss:  4.0631
+
+Epoch [16], Validation Acc:  0.0000
+
+Epoch [17], Loss:  5.1309
+
+Epoch [17], Validation Acc:  0.1429
+
+Epoch [17], Loss:  5.4524
+
+Epoch [17], Validation Acc:  0.5714
+
+Epoch [17], Loss:  4.3698
+
+Epoch [17], Validation Acc:  0.2857
+
+Epoch [17], Loss:  4.5203
+
+Epoch [17], Validation Acc:  0.2857
+
+Epoch [18], Loss:  4.4572
+
+Epoch [18], Validation Acc:  0.0000
+
+Epoch [18], Loss:  4.5608
+
+Epoch [18], Validation Acc:  0.2857
+
+Epoch [18], Loss:  4.3309
+
+Epoch [18], Validation Acc:  0.4286
+
+Epoch [18], Loss:  4.3857
+
+Epoch [18], Validation Acc:  0.2857
+
+Epoch [19], Loss:  5.1029
+
+Epoch [19], Validation Acc:  0.2857
+
+Epoch [19], Loss:  4.4459
+
+Epoch [19], Validation Acc:  0.2857
+
+Epoch [19], Loss:  4.8724
+
+Epoch [19], Validation Acc:  0.7143
+
+Epoch [19], Loss:  4.1838
+
+Epoch [19], Validation Acc:  0.2857
+
+Epoch [20], Loss:  4.8520
+
+Epoch [20], Validation Acc:  0.1429
+
+Epoch [20], Loss:  4.9775
+
+Epoch [20], Validation Acc:  0.4286
+
+Epoch [20], Loss:  4.5261
+
+Epoch [20], Validation Acc:  0.4286
+
+Epoch [20], Loss:  3.9049
+
+Epoch [20], Validation Acc:  0.1429
+
+Epoch [21], Loss:  4.8098
+
+Epoch [21], Validation Acc:  0.0000
+
+Epoch [21], Loss:  5.2332
+
+Epoch [21], Validation Acc:  0.4286
+
+Epoch [21], Loss:  5.0409
+
+Epoch [21], Validation Acc:  0.5714
+
+Epoch [21], Loss:  4.3340
+
+Epoch [21], Validation Acc:  0.2857
+
+Epoch [22], Loss:  5.1640
+
+Epoch [22], Validation Acc:  0.0000
+
+Epoch [22], Loss:  5.0945
+
+Epoch [22], Validation Acc:  0.2857
+
+Epoch [22], Loss:  4.8441
+
+Epoch [22], Validation Acc:  0.4286
+
+Epoch [22], Loss:  4.5447
+
+Epoch [22], Validation Acc:  0.4286
+
+Epoch [23], Loss:  4.4310
+
+Epoch [23], Validation Acc:  0.0000
+
+Epoch [23], Loss:  5.7633
+
+Epoch [23], Validation Acc:  0.5714
+
+Epoch [23], Loss:  4.4259
+
+Epoch [23], Validation Acc:  0.2857
+
+Epoch [23], Loss:  4.0661
+
+Epoch [23], Validation Acc:  0.1429
+
+Epoch [24], Loss:  4.7377
+
+Epoch [24], Validation Acc:  0.2857
+
+Epoch [24], Loss:  5.1702
+
+Epoch [24], Validation Acc:  0.4286
+
+Epoch [24], Loss:  4.9188
+
+Epoch [24], Validation Acc:  0.5714
+
+Epoch [24], Loss:  4.6214
+
+Epoch [24], Validation Acc:  0.4286
+
+Epoch [25], Loss:  5.1435
+
+Epoch [25], Validation Acc:  0.1429
+
+Epoch [25], Loss:  5.2414
+
+Epoch [25], Validation Acc:  0.4286
+
+Epoch [25], Loss:  4.9378
+
+Epoch [25], Validation Acc:  0.4286
+
+Epoch [25], Loss:  4.1109
+
+Epoch [25], Validation Acc:  0.1429
+
+Epoch [26], Loss:  4.9747
+
+Epoch [26], Validation Acc:  0.4286
+
+Epoch [26], Loss:  4.6867
+
+Epoch [26], Validation Acc:  0.2857
+
+Epoch [26], Loss:  4.8806
+
+Epoch [26], Validation Acc:  0.4286
+
+Epoch [26], Loss:  4.4872
+
+Epoch [26], Validation Acc:  0.5714
+
+Epoch [27], Loss:  4.8480
+
+Epoch [27], Validation Acc:  0.1429
+
+Epoch [27], Loss:  5.3030
+
+Epoch [27], Validation Acc:  0.2857
+
+Epoch [27], Loss:  4.5176
+
+Epoch [27], Validation Acc:  0.5714
+
+Epoch [27], Loss:  4.0102
+
+Epoch [27], Validation Acc:  0.2857
+
+Epoch [28], Loss:  4.6961
+
+Epoch [28], Validation Acc:  0.1429
+
+Epoch [28], Loss:  4.8126
+
+Epoch [28], Validation Acc:  0.2857
+
+Epoch [28], Loss:  4.2652
+
+Epoch [28], Validation Acc:  0.1429
+
+Epoch [28], Loss:  3.9037
+
+Epoch [28], Validation Acc:  0.1429
+
+Epoch [29], Loss:  4.8991
+
+Epoch [29], Validation Acc:  0.1429
+
+Epoch [29], Loss:  4.8986
+
+Epoch [29], Validation Acc:  0.2857
+
+Epoch [29], Loss:  4.5096
+
+Epoch [29], Validation Acc:  0.2857
+
+Epoch [29], Loss:  4.2836
+
+Epoch [29], Validation Acc:  0.4286
+
+Epoch [30], Loss:  4.2130
+
+Epoch [30], Validation Acc:  0.0000
+
+Epoch [30], Loss:  4.8379
+
+Epoch [30], Validation Acc:  0.4286
+
+Epoch [30], Loss:  4.6724
+
+Epoch [30], Validation Acc:  0.4286
+
+Epoch [30], Loss:  3.9253
+
+Epoch [30], Validation Acc:  0.1429
+
+Epoch [31], Loss:  4.6559
+
+Epoch [31], Validation Acc:  0.1429
+
+Epoch [31], Loss:  4.7541
+
+Epoch [31], Validation Acc:  0.1429
+
+Epoch [31], Loss:  4.5206
+
+Epoch [31], Validation Acc:  0.4286
+
+Epoch [31], Loss:  4.1820
+
+Epoch [31], Validation Acc:  0.2857
+
+Epoch [32], Loss:  4.6685
+
+Epoch [32], Validation Acc:  0.1429
+
+Epoch [32], Loss:  4.6199
+
+Epoch [32], Validation Acc:  0.1429
+
+Epoch [32], Loss:  4.9996
+
+Epoch [32], Validation Acc:  0.7143
+
+Epoch [32], Loss:  4.2217
+
+Epoch [32], Validation Acc:  0.2857
+
+Epoch [33], Loss:  4.9111
+
+Epoch [33], Validation Acc:  0.1429
+
+Epoch [33], Loss:  5.2140
+
+Epoch [33], Validation Acc:  0.4286
+
+Epoch [33], Loss:  3.9291
+
+Epoch [33], Validation Acc:  0.1429
+
+Epoch [33], Loss:  4.2533
+
+Epoch [33], Validation Acc:  0.4286
+
+Epoch [34], Loss:  5.0670
+
+Epoch [34], Validation Acc:  0.1429
+
+Epoch [34], Loss:  5.2110
+
+Epoch [34], Validation Acc:  0.4286
+
+Epoch [34], Loss:  4.6109
+
+Epoch [34], Validation Acc:  0.2857
+
+Epoch [34], Loss:  4.0502
+
+Epoch [34], Validation Acc:  0.4286
+
+Epoch [35], Loss:  4.5221
+
+Epoch [35], Validation Acc:  0.0000
+
+Epoch [35], Loss:  5.5590
+
+Epoch [35], Validation Acc:  0.4286
+
+Epoch [35], Loss:  4.8417
+
+Epoch [35], Validation Acc:  0.4286
+
+Epoch [35], Loss:  4.2885
+
+Epoch [35], Validation Acc:  0.2857
+
+Epoch [36], Loss:  5.0787
+
+Epoch [36], Validation Acc:  0.4286
+
+Epoch [36], Loss:  4.8208
+
+Epoch [36], Validation Acc:  0.2857
+
+Epoch [36], Loss:  4.7267
+
+Epoch [36], Validation Acc:  0.4286
+
+Epoch [36], Loss:  3.9611
+
+Epoch [36], Validation Acc:  0.1429
+
+Epoch [37], Loss:  4.1432
+
+Epoch [37], Validation Acc:  0.0000
+
+Epoch [37], Loss:  4.8342
+
+Epoch [37], Validation Acc:  0.2857
+
+Epoch [37], Loss:  4.1417
+
+Epoch [37], Validation Acc:  0.1429
+
+Epoch [37], Loss:  4.1311
+
+Epoch [37], Validation Acc:  0.1429
+
+Epoch [38], Loss:  4.7142
+
+Epoch [38], Validation Acc:  0.2857
+
+Epoch [38], Loss:  5.1468
+
+Epoch [38], Validation Acc:  0.2857
+
+Epoch [38], Loss:  4.4501
+
+Epoch [38], Validation Acc:  0.2857
+
+Epoch [38], Loss:  4.5013
+
+Epoch [38], Validation Acc:  0.5714
+
+Epoch [39], Loss:  4.4289
+
+Epoch [39], Validation Acc:  0.0000
+
+Epoch [39], Loss:  5.0088
+
+Epoch [39], Validation Acc:  0.2857
+
+Epoch [39], Loss:  4.9206
+
+Epoch [39], Validation Acc:  0.5714
+
+Epoch [39], Loss:  4.4268
+
+Epoch [39], Validation Acc:  0.1429
+
+Epoch [40], Loss:  4.1003
+
+Epoch [40], Validation Acc:  0.0000
+
+Epoch [40], Loss:  4.9461
+
+Epoch [40], Validation Acc:  0.4286
+
+Epoch [40], Loss:  4.3484
+
+Epoch [40], Validation Acc:  0.2857
+
+Epoch [40], Loss:  4.3504
+
+Epoch [40], Validation Acc:  0.4286
+
+Epoch [41], Loss:  4.6380
+
+Epoch [41], Validation Acc:  0.1429
+
+Epoch [41], Loss:  5.3692
+
+Epoch [41], Validation Acc:  0.4286
+
+Epoch [41], Loss:  5.0420
+
+Epoch [41], Validation Acc:  0.5714
+
+Epoch [41], Loss:  4.3885
+
+Epoch [41], Validation Acc:  0.4286
+
+Epoch [42], Loss:  4.5428
+
+Epoch [42], Validation Acc:  0.1429
+
+Epoch [42], Loss:  4.5976
+
+Epoch [42], Validation Acc:  0.1429
+
+Epoch [42], Loss:  4.6479
+
+Epoch [42], Validation Acc:  0.1429
+
+Epoch [42], Loss:  4.5863
+
+Epoch [42], Validation Acc:  0.4286
+
+Epoch [43], Loss:  4.9209
+
+Epoch [43], Validation Acc:  0.1429
+
+Epoch [43], Loss:  4.6008
+
+Epoch [43], Validation Acc:  0.2857
+
+Epoch [43], Loss:  4.2812
+
+Epoch [43], Validation Acc:  0.2857
+
+Epoch [43], Loss:  3.8160
+
+Epoch [43], Validation Acc:  0.0000
+
+Epoch [44], Loss:  5.1839
+
+Epoch [44], Validation Acc:  0.4286
+
+Epoch [44], Loss:  4.7141
+
+Epoch [44], Validation Acc:  0.2857
+
+Epoch [44], Loss:  4.1284
+
+Epoch [44], Validation Acc:  0.2857
+
+Epoch [44], Loss:  3.9431
+
+Epoch [44], Validation Acc:  0.4286
+
+Epoch [45], Loss:  4.8949
+
+Epoch [45], Validation Acc:  0.1429
+
+Epoch [45], Loss:  4.9624
+
+Epoch [45], Validation Acc:  0.2857
+
+Epoch [45], Loss:  4.4399
+
+Epoch [45], Validation Acc:  0.2857
+
+Epoch [45], Loss:  4.3555
+
+Epoch [45], Validation Acc:  0.4286
+
+Epoch [46], Loss:  5.1695
+
+Epoch [46], Validation Acc:  0.2857
+
+Epoch [46], Loss:  5.0229
+
+Epoch [46], Validation Acc:  0.2857
+
+Epoch [46], Loss:  4.6759
+
+Epoch [46], Validation Acc:  0.4286
+
+Epoch [46], Loss:  3.7476
+
+Epoch [46], Validation Acc:  0.2857
+
+Epoch [47], Loss:  5.3773
+
+Epoch [47], Validation Acc:  0.4286
+
+Epoch [47], Loss:  5.1184
+
+Epoch [47], Validation Acc:  0.4286
+
+Epoch [47], Loss:  4.2322
+
+Epoch [47], Validation Acc:  0.1429
+
+Epoch [47], Loss:  4.2802
+
+Epoch [47], Validation Acc:  0.2857
+
+Epoch [48], Loss:  4.8455
+
+Epoch [48], Validation Acc:  0.1429
+
+Epoch [48], Loss:  5.1351
+
+Epoch [48], Validation Acc:  0.2857
+
+Epoch [48], Loss:  4.9740
+
+Epoch [48], Validation Acc:  0.4286
+
+Epoch [48], Loss:  4.5128
+
+Epoch [48], Validation Acc:  0.4286
+
+Epoch [49], Loss:  4.7682
+
+Epoch [49], Validation Acc:  0.0000
+
+Epoch [49], Loss:  4.8301
+
+Epoch [49], Validation Acc:  0.4286
+
+Epoch [49], Loss:  4.1313
+
+Epoch [49], Validation Acc:  0.2857
+
+Epoch [49], Loss:  4.0558
+
+Epoch [49], Validation Acc:  0.2857
+
+Epoch [50], Loss:  4.8148
+
+Epoch [50], Validation Acc:  0.0000
+
+Epoch [50], Loss:  4.9828
+
+Epoch [50], Validation Acc:  0.4286
+
+Epoch [50], Loss:  4.4033
+
+Epoch [50], Validation Acc:  0.2857
+
+Epoch [50], Loss:  4.0004
+
+Epoch [50], Validation Acc:  0.1429
+
+Epoch [51], Loss:  5.1221
+
+Epoch [51], Validation Acc:  0.2857
+
+Epoch [51], Loss:  4.8749
+
+Epoch [51], Validation Acc:  0.2857
+
+Epoch [51], Loss:  4.7460
+
+Epoch [51], Validation Acc:  0.4286
+
+Epoch [51], Loss:  4.7305
+
+Epoch [51], Validation Acc:  0.5714
+
+Epoch [52], Loss:  5.0045
+
+Epoch [52], Validation Acc:  0.1429
+
+Epoch [52], Loss:  5.1455
+
+Epoch [52], Validation Acc:  0.2857
+
+Epoch [52], Loss:  4.3186
+
+Epoch [52], Validation Acc:  0.2857
+
+Epoch [52], Loss:  4.3691
+
+Epoch [52], Validation Acc:  0.4286
+
+Epoch [53], Loss:  4.6910
+
+Epoch [53], Validation Acc:  0.0000
+
+Epoch [53], Loss:  4.6887
+
+Epoch [53], Validation Acc:  0.1429
+
+Epoch [53], Loss:  4.8898
+
+Epoch [53], Validation Acc:  0.4286
+
+Epoch [53], Loss:  4.3135
+
+Epoch [53], Validation Acc:  0.5714
+
+Epoch [54], Loss:  4.8613
+
+Epoch [54], Validation Acc:  0.0000
+
+Epoch [54], Loss:  4.8037
+
+Epoch [54], Validation Acc:  0.1429
+
+Epoch [54], Loss:  4.5749
+
+Epoch [54], Validation Acc:  0.4286
+
+Epoch [54], Loss:  4.2964
+
+Epoch [54], Validation Acc:  0.1429
+
+Epoch [55], Loss:  4.8878
+
+Epoch [55], Validation Acc:  0.1429
+
+Epoch [55], Loss:  5.2502
+
+Epoch [55], Validation Acc:  0.2857
+
+Epoch [55], Loss:  3.9093
+
+Epoch [55], Validation Acc:  0.1429
+
+Epoch [55], Loss:  3.8346
+
+Epoch [55], Validation Acc:  0.0000
+
+Epoch [56], Loss:  4.8754
+
+Epoch [56], Validation Acc:  0.0000
+
+Epoch [56], Loss:  5.0413
+
+Epoch [56], Validation Acc:  0.2857
+
+Epoch [56], Loss:  4.1217
+
+Epoch [56], Validation Acc:  0.1429
+
+Epoch [56], Loss:  4.3825
+
+Epoch [56], Validation Acc:  0.1429
+
+Epoch [57], Loss:  4.7089
+
+Epoch [57], Validation Acc:  0.1429
+
+Epoch [57], Loss:  4.7524
+
+Epoch [57], Validation Acc:  0.1429
+
+Epoch [57], Loss:  4.0506
+
+Epoch [57], Validation Acc:  0.2857
+
+Epoch [57], Loss:  4.0746
+
+Epoch [57], Validation Acc:  0.1429
+
+Epoch [58], Loss:  4.6364
+
+Epoch [58], Validation Acc:  0.1429
+
+Epoch [58], Loss:  4.8724
+
+Epoch [58], Validation Acc:  0.2857
+
+Epoch [58], Loss:  4.7013
+
+Epoch [58], Validation Acc:  0.4286
+
+Epoch [58], Loss:  4.1680
+
+Epoch [58], Validation Acc:  0.2857
+
+Epoch [59], Loss:  4.9277
+
+Epoch [59], Validation Acc:  0.1429
+
+Epoch [59], Loss:  5.0299
+
+Epoch [59], Validation Acc:  0.4286
+
+Epoch [59], Loss:  4.8012
+
+Epoch [59], Validation Acc:  0.5714
+
+Epoch [59], Loss:  4.5689
+
+Epoch [59], Validation Acc:  0.2857
+
+Epoch [60], Loss:  5.0151
+
+Epoch [60], Validation Acc:  0.1429
+
+Epoch [60], Loss:  5.2396
+
+Epoch [60], Validation Acc:  0.5714
+
+Epoch [60], Loss:  4.3185
+
+Epoch [60], Validation Acc:  0.4286
+
+Epoch [60], Loss:  4.0211
+
+Epoch [60], Validation Acc:  0.1429
+
+Epoch [61], Loss:  5.3833
+
+Epoch [61], Validation Acc:  0.2857
+
+Epoch [61], Loss:  4.5855
+
+Epoch [61], Validation Acc:  0.2857
+
+Epoch [61], Loss:  4.6595
+
+Epoch [61], Validation Acc:  0.4286
+
+Epoch [61], Loss:  3.9161
+
+Epoch [61], Validation Acc:  0.1429
+
+Epoch [62], Loss:  5.0735
+
+Epoch [62], Validation Acc:  0.2857
+
+Epoch [62], Loss:  5.1757
+
+Epoch [62], Validation Acc:  0.5714
+
+Epoch [62], Loss:  4.6322
+
+Epoch [62], Validation Acc:  0.4286
+
+Epoch [62], Loss:  4.4950
+
+Epoch [62], Validation Acc:  0.5714
+
+Epoch [63], Loss:  5.2022
+
+Epoch [63], Validation Acc:  0.2857
+
+Epoch [63], Loss:  4.9171
+
+Epoch [63], Validation Acc:  0.2857
+
+Epoch [63], Loss:  4.6100
+
+Epoch [63], Validation Acc:  0.4286
+
+Epoch [63], Loss:  4.0827
+
+Epoch [63], Validation Acc:  0.1429
+
+Epoch [64], Loss:  5.1074
+
+Epoch [64], Validation Acc:  0.2857
+
+Epoch [64], Loss:  5.0541
+
+Epoch [64], Validation Acc:  0.1429
+
+Epoch [64], Loss:  4.4112
+
+Epoch [64], Validation Acc:  0.1429
+
+Epoch [64], Loss:  4.0590
+
+Epoch [64], Validation Acc:  0.1429
+
+Epoch [65], Loss:  5.0545
+
+Epoch [65], Validation Acc:  0.2857
+
+Epoch [65], Loss:  4.5819
+
+Epoch [65], Validation Acc:  0.1429
+
+Epoch [65], Loss:  4.8142
+
+Epoch [65], Validation Acc:  0.5714
+
+Epoch [65], Loss:  4.5781
+
+Epoch [65], Validation Acc:  0.5714
+
+Epoch [66], Loss:  4.9746
+
+Epoch [66], Validation Acc:  0.0000
+
+Epoch [66], Loss:  5.2583
+
+Epoch [66], Validation Acc:  0.2857
+
+Epoch [66], Loss:  4.4925
+
+Epoch [66], Validation Acc:  0.2857
+
+Epoch [66], Loss:  4.2836
+
+Epoch [66], Validation Acc:  0.2857
+
+Epoch [67], Loss:  4.5051
+
+Epoch [67], Validation Acc:  0.1429
+
+Epoch [67], Loss:  4.9282
+
+Epoch [67], Validation Acc:  0.4286
+
+Epoch [67], Loss:  4.6719
+
+Epoch [67], Validation Acc:  0.5714
+
+Epoch [67], Loss:  4.3469
+
+Epoch [67], Validation Acc:  0.5714
+
+Epoch [68], Loss:  4.5153
+
+Epoch [68], Validation Acc:  0.0000
+
+Epoch [68], Loss:  4.8489
+
+Epoch [68], Validation Acc:  0.1429
+
+Epoch [68], Loss:  4.5094
+
+Epoch [68], Validation Acc:  0.2857
+
+Epoch [68], Loss:  4.2473
+
+Epoch [68], Validation Acc:  0.7143
+
+Epoch [69], Loss:  5.0428
+
+Epoch [69], Validation Acc:  0.1429
+
+Epoch [69], Loss:  4.7676
+
+Epoch [69], Validation Acc:  0.1429
+
+Epoch [69], Loss:  4.6345
+
+Epoch [69], Validation Acc:  0.4286
+
+Epoch [69], Loss:  4.5584
+
+Epoch [69], Validation Acc:  0.4286
+
+Epoch [70], Loss:  4.9103
+
+Epoch [70], Validation Acc:  0.2857
+
+Epoch [70], Loss:  5.0617
+
+Epoch [70], Validation Acc:  0.2857
+
+Epoch [70], Loss:  4.4830
+
+Epoch [70], Validation Acc:  0.4286
+
+Epoch [70], Loss:  3.9689
+
+Epoch [70], Validation Acc:  0.1429
+
+Epoch [71], Loss:  5.2849
+
+Epoch [71], Validation Acc:  0.1429
+
+Epoch [71], Loss:  5.1157
+
+Epoch [71], Validation Acc:  0.4286
+
+Epoch [71], Loss:  4.5807
+
+Epoch [71], Validation Acc:  0.2857
+
+Epoch [71], Loss:  4.0730
+
+Epoch [71], Validation Acc:  0.2857
+
+Epoch [72], Loss:  4.8195
+
+Epoch [72], Validation Acc:  0.1429
+
+Epoch [72], Loss:  4.9712
+
+Epoch [72], Validation Acc:  0.2857
+
+Epoch [72], Loss:  4.0533
+
+Epoch [72], Validation Acc:  0.1429
+
+Epoch [72], Loss:  4.0528
+
+Epoch [72], Validation Acc:  0.7143
+
+Epoch [73], Loss:  4.6351
+
+Epoch [73], Validation Acc:  0.1429
+
+Epoch [73], Loss:  4.1865
+
+Epoch [73], Validation Acc:  0.1429
+
+Epoch [73], Loss:  4.7626
+
+Epoch [73], Validation Acc:  0.4286
+
+Epoch [73], Loss:  4.4621
+
+Epoch [73], Validation Acc:  0.2857
+
+Epoch [74], Loss:  5.0682
+
+Epoch [74], Validation Acc:  0.1429
+
+Epoch [74], Loss:  5.2002
+
+Epoch [74], Validation Acc:  0.4286
+
+Epoch [74], Loss:  4.3588
+
+Epoch [74], Validation Acc:  0.4286
+
+Epoch [74], Loss:  4.2357
+
+Epoch [74], Validation Acc:  0.4286
+
+Epoch [75], Loss:  4.3761
+
+Epoch [75], Validation Acc:  0.1429
+
+Epoch [75], Loss:  4.6703
+
+Epoch [75], Validation Acc:  0.1429
+
+Epoch [75], Loss:  4.2307
+
+Epoch [75], Validation Acc:  0.1429
+
+Epoch [75], Loss:  3.7777
+
+Epoch [75], Validation Acc:  0.1429
+
+Epoch [76], Loss:  4.7992
+
+Epoch [76], Validation Acc:  0.1429
+
+Epoch [76], Loss:  4.9272
+
+Epoch [76], Validation Acc:  0.2857
+
+Epoch [76], Loss:  4.6387
+
+Epoch [76], Validation Acc:  0.2857
+
+Epoch [76], Loss:  4.0809
+
+Epoch [76], Validation Acc:  0.1429
+
+Epoch [77], Loss:  5.1862
+
+Epoch [77], Validation Acc:  0.2857
+
+Epoch [77], Loss:  5.4043
+
+Epoch [77], Validation Acc:  0.4286
+
+Epoch [77], Loss:  4.3477
+
+Epoch [77], Validation Acc:  0.2857
+
+Epoch [77], Loss:  3.8883
+
+Epoch [77], Validation Acc:  0.1429
+
+Epoch [78], Loss:  4.9000
+
+Epoch [78], Validation Acc:  0.2857
+
+Epoch [78], Loss:  4.6963
+
+Epoch [78], Validation Acc:  0.4286
+
+Epoch [78], Loss:  4.6230
+
+Epoch [78], Validation Acc:  0.2857
+
+Epoch [78], Loss:  3.9756
+
+Epoch [78], Validation Acc:  0.2857
+
+Epoch [79], Loss:  4.9885
+
+Epoch [79], Validation Acc:  0.4286
+
+Epoch [79], Loss:  4.8635
+
+Epoch [79], Validation Acc:  0.2857
+
+Epoch [79], Loss:  4.8536
+
+Epoch [79], Validation Acc:  0.5714
+
+Epoch [79], Loss:  4.3883
+
+Epoch [79], Validation Acc:  0.2857
+
+Epoch [80], Loss:  4.9346
+
+Epoch [80], Validation Acc:  0.2857
+
+Epoch [80], Loss:  4.6520
+
+Epoch [80], Validation Acc:  0.1429
+
+Epoch [80], Loss:  4.2791
+
+Epoch [80], Validation Acc:  0.4286
+
+Epoch [80], Loss:  3.8169
+
+Epoch [80], Validation Acc:  0.1429
+
+Epoch [81], Loss:  4.8491
+
+Epoch [81], Validation Acc:  0.1429
+
+Epoch [81], Loss:  4.8390
+
+Epoch [81], Validation Acc:  0.2857
+
+Epoch [81], Loss:  4.4841
+
+Epoch [81], Validation Acc:  0.2857
+
+Epoch [81], Loss:  3.6512
+
+Epoch [81], Validation Acc:  0.1429
+
+Epoch [82], Loss:  4.4610
+
+Epoch [82], Validation Acc:  0.0000
+
+Epoch [82], Loss:  4.9498
+
+Epoch [82], Validation Acc:  0.1429
+
+Epoch [82], Loss:  4.6113
+
+Epoch [82], Validation Acc:  0.4286
+
+Epoch [82], Loss:  4.2260
+
+Epoch [82], Validation Acc:  0.1429
+
+Epoch [83], Loss:  4.7845
+
+Epoch [83], Validation Acc:  0.1429
+
+Epoch [83], Loss:  4.5628
+
+Epoch [83], Validation Acc:  0.1429
+
+Epoch [83], Loss:  4.1301
+
+Epoch [83], Validation Acc:  0.1429
+
+Epoch [83], Loss:  4.3747
+
+Epoch [83], Validation Acc:  0.1429
+
+Epoch [84], Loss:  5.3677
+
+Epoch [84], Validation Acc:  0.2857
+
+Epoch [84], Loss:  5.0547
+
+Epoch [84], Validation Acc:  0.5714
+
+Epoch [84], Loss:  4.9246
+
+Epoch [84], Validation Acc:  0.4286
+
+Epoch [84], Loss:  4.1272
+
+Epoch [84], Validation Acc:  0.2857
+
+Epoch [85], Loss:  4.8118
+
+Epoch [85], Validation Acc:  0.0000
+
+Epoch [85], Loss:  5.2647
+
+Epoch [85], Validation Acc:  0.2857
+
+Epoch [85], Loss:  4.9751
+
+Epoch [85], Validation Acc:  0.5714
+
+Epoch [85], Loss:  3.9567
+
+Epoch [85], Validation Acc:  0.2857
+
+Epoch [86], Loss:  4.9239
+
+Epoch [86], Validation Acc:  0.1429
+
+Epoch [86], Loss:  5.1053
+
+Epoch [86], Validation Acc:  0.4286
+
+Epoch [86], Loss:  4.0527
+
+Epoch [86], Validation Acc:  0.1429
+
+Epoch [86], Loss:  4.2340
+
+Epoch [86], Validation Acc:  0.1429
+
+Epoch [87], Loss:  4.5615
+
+Epoch [87], Validation Acc:  0.0000
+
+Epoch [87], Loss:  4.8706
+
+Epoch [87], Validation Acc:  0.2857
+
+Epoch [87], Loss:  4.4536
+
+Epoch [87], Validation Acc:  0.4286
+
+Epoch [87], Loss:  4.0614
+
+Epoch [87], Validation Acc:  0.2857
+
+Epoch [88], Loss:  4.7945
+
+Epoch [88], Validation Acc:  0.1429
+
+Epoch [88], Loss:  5.0397
+
+Epoch [88], Validation Acc:  0.1429
+
+Epoch [88], Loss:  4.5086
+
+Epoch [88], Validation Acc:  0.2857
+
+Epoch [88], Loss:  4.4003
+
+Epoch [88], Validation Acc:  0.2857
+
+Epoch [89], Loss:  4.9412
+
+Epoch [89], Validation Acc:  0.1429
+
+Epoch [89], Loss:  4.8651
+
+Epoch [89], Validation Acc:  0.2857
+
+Epoch [89], Loss:  4.2333
+
+Epoch [89], Validation Acc:  0.1429
+
+Epoch [89], Loss:  4.5128
+
+Epoch [89], Validation Acc:  0.4286
+
+Epoch [90], Loss:  4.8414
+
+Epoch [90], Validation Acc:  0.1429
+
+Epoch [90], Loss:  5.0377
+
+Epoch [90], Validation Acc:  0.2857
+
+Epoch [90], Loss:  4.5816
+
+Epoch [90], Validation Acc:  0.4286
+
+Epoch [90], Loss:  4.0045
+
+Epoch [90], Validation Acc:  0.2857
+
+Epoch [91], Loss:  5.0420
+
+Epoch [91], Validation Acc:  0.2857
+
+Epoch [91], Loss:  5.0554
+
+Epoch [91], Validation Acc:  0.5714
+
+Epoch [91], Loss:  4.5645
+
+Epoch [91], Validation Acc:  0.4286
+
+Epoch [91], Loss:  4.3881
+
+Epoch [91], Validation Acc:  0.4286
+
+Epoch [92], Loss:  5.1035
+
+Epoch [92], Validation Acc:  0.1429
+
+Epoch [92], Loss:  5.0654
+
+Epoch [92], Validation Acc:  0.2857
+
+Epoch [92], Loss:  4.2731
+
+Epoch [92], Validation Acc:  0.1429
+
+Epoch [92], Loss:  4.5157
+
+Epoch [92], Validation Acc:  0.5714
+
+Epoch [93], Loss:  4.4475
+
+Epoch [93], Validation Acc:  0.0000
+
+Epoch [93], Loss:  5.1955
+
+Epoch [93], Validation Acc:  0.2857
+
+Epoch [93], Loss:  4.6152
+
+Epoch [93], Validation Acc:  0.2857
+
+Epoch [93], Loss:  3.1515
+
+Epoch [93], Validation Acc:  0.0000
+
+Epoch [94], Loss:  4.9786
+
+Epoch [94], Validation Acc:  0.1429
+
+Epoch [94], Loss:  4.7473
+
+Epoch [94], Validation Acc:  0.2857
+
+Epoch [94], Loss:  4.0387
+
+Epoch [94], Validation Acc:  0.1429
+
+Epoch [94], Loss:  3.9625
+
+Epoch [94], Validation Acc:  0.1429
+
+Epoch [95], Loss:  4.7460
+
+Epoch [95], Validation Acc:  0.0000
+
+Epoch [95], Loss:  5.3337
+
+Epoch [95], Validation Acc:  0.4286
+
+Epoch [95], Loss:  4.9401
+
+Epoch [95], Validation Acc:  0.5714
+
+Epoch [95], Loss:  3.9007
+
+Epoch [95], Validation Acc:  0.2857
+
+Epoch [96], Loss:  4.9183
+
+Epoch [96], Validation Acc:  0.1429
+
+Epoch [96], Loss:  4.9988
+
+Epoch [96], Validation Acc:  0.2857
+
+Epoch [96], Loss:  4.3853
+
+Epoch [96], Validation Acc:  0.1429
+
+Epoch [96], Loss:  4.1059
+
+Epoch [96], Validation Acc:  0.2857
+
+Epoch [97], Loss:  4.5340
+
+Epoch [97], Validation Acc:  0.0000
+
+Epoch [97], Loss:  4.2193
+
+Epoch [97], Validation Acc:  0.1429
+
+Epoch [97], Loss:  4.2078
+
+Epoch [97], Validation Acc:  0.4286
+
+Epoch [97], Loss:  4.4597
+
+Epoch [97], Validation Acc:  0.4286
+
+Epoch [98], Loss:  4.8892
+
+Epoch [98], Validation Acc:  0.2857
+
+Epoch [98], Loss:  4.7302
+
+Epoch [98], Validation Acc:  0.1429
+
+Epoch [98], Loss:  4.0519
+
+Epoch [98], Validation Acc:  0.2857
+
+Epoch [98], Loss:  4.4007
+
+Epoch [98], Validation Acc:  0.4286
+
+Epoch [99], Loss:  4.1837
+
+Epoch [99], Validation Acc:  0.1429
+
+Epoch [99], Loss:  4.6422
+
+Epoch [99], Validation Acc:  0.1429
+
+Epoch [99], Loss:  4.3632
+
+Epoch [99], Validation Acc:  0.1429
+
+Epoch [99], Loss:  4.1763
+
+Epoch [99], Validation Acc:  0.4286
+
+Epoch [100], Loss:  4.8512
+
+Epoch [100], Validation Acc:  0.2857
+
+Epoch [100], Loss:  4.8309
+
+Epoch [100], Validation Acc:  0.2857
+
+Epoch [100], Loss:  4.7715
+
+Epoch [100], Validation Acc:  0.5714
+
+Epoch [100], Loss:  3.6618
+
+Epoch [100], Validation Acc:  0.2857
+
+Testing on test data...
+Test Acc:  0.7419
+Spend time: 2368.5962328910828

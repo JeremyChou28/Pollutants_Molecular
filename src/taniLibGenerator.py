@@ -158,7 +158,7 @@ def data_preprocessing(edges, libraryNodes, nodeFolder, dataframe, result_path):
 def main(args):
     dataset_path = args.dataset_path
     result_path = args.result_path
-    nodeFolder = dataset_path + "/f_filter"
+    nodeFolder = dataset_path + "/f"
     (
         libraryNodes,
         library_nodes,

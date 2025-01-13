@@ -318,3 +318,102 @@ Epoch [77], Loss:  4.2638
 
 Epoch [77], Validation Acc:  0.6667
 
+Epoch [78], Loss:  3.9920
+
+Epoch [78], Validation Acc:  0.8333
+
+Epoch [79], Loss:  4.1007
+
+Epoch [79], Validation Acc:  0.7500
+
+Epoch [80], Loss:  3.9516
+
+Epoch [80], Validation Acc:  0.6667
+
+Epoch [81], Loss:  3.8434
+
+Epoch [81], Validation Acc:  0.7500
+
+Epoch [82], Loss:  3.7610
+
+Epoch [82], Validation Acc:  0.7500
+
+Epoch [83], Loss:  3.8373
+
+Epoch [83], Validation Acc:  0.6667
+
+Epoch [84], Loss:  3.9801
+
+Epoch [84], Validation Acc:  0.8333
+
+Epoch [85], Loss:  3.8586
+
+Epoch [85], Validation Acc:  0.5833
+
+Epoch [86], Loss:  4.0668
+
+Epoch [86], Validation Acc:  0.9167
+
+Epoch [87], Loss:  3.7897
+
+Epoch [87], Validation Acc:  0.5833
+
+Epoch [88], Loss:  4.0517
+
+Epoch [88], Validation Acc:  0.8333
+
+Epoch [89], Loss:  3.8991
+
+Epoch [89], Validation Acc:  0.6667
+
+Epoch [90], Loss:  3.8107
+
+Epoch [90], Validation Acc:  0.6667
+
+Epoch [91], Loss:  3.5383
+
+Epoch [91], Validation Acc:  0.5000
+
+Epoch [92], Loss:  3.7045
+
+Epoch [92], Validation Acc:  0.7500
+
+Epoch [93], Loss:  3.6874
+
+Epoch [93], Validation Acc:  0.8333
+
+Epoch [94], Loss:  3.6395
+
+Epoch [94], Validation Acc:  0.7500
+
+Epoch [95], Loss:  3.5757
+
+Epoch [95], Validation Acc:  0.6667
+
+Epoch [96], Loss:  3.7821
+
+Epoch [96], Validation Acc:  0.7500
+
+Epoch [97], Loss:  3.8597
+
+Epoch [97], Validation Acc:  0.8333
+
+Epoch [98], Loss:  3.8968
+
+Epoch [98], Validation Acc:  0.9167
+
+Epoch [99], Loss:  3.8014
+
+Epoch [99], Validation Acc:  0.7500
+
+Epoch [100], Loss:  3.3909
+
+Epoch [100], Validation Acc:  0.8333
+
+Testing on test data...
+Traceback (most recent call last):
+  File "../src/main2.py", line 574, in <module>
+    main(args)
+  File "../src/main2.py", line 453, in main
+    top_n_probs, top_n_indices = torch.topk(s_probs, peak_pick_num)
+RuntimeError: invalid argument 5: k not in range for dimension at /pytorch/aten/src/THC/generic/THCTensorTopK.cu:24
