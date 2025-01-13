@@ -55,3 +55,11 @@ bash run_honeyPos.sh
 bash run_synthtic.sh
 ```
 
+4. Five-fold Training and Testing
+
+```
+cd scripts
+bash run_newdata.sh
+```
+
+
